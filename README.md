@@ -16,8 +16,6 @@
 
 ## 4️⃣ Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
 Emma Zarate  https://github.com/yoshimii                                
 Amy Barba   https://github.com/Amybarba                               
 Ian Sanchez https://github.com/slimylizard                                     
@@ -25,21 +23,19 @@ Nick Dailey https://github.com/ndailey000
 Nicole Antonacci https://github.com/nantonacci
 Cori Sternberg https://github.com/CScori   
 Joshua Roy Draper    https://github.com/Classic-username                           
-
-
-:-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |                 
-[<img src="https://media-exp1.licdn.com/dms/image/C5603AQG69PVtZVWoKg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=i2USzrP19WAPoRYp6Oa7tfwtt_KiGgThFA8v4JwJcUk width = "200" />](https://www.linkedin.com/)                                     
-[<img src="https://media-exp1.licdn.com/dms/image/C5603AQGmRW9MsVbiPA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ylme1FybrFp671gmyM8OGnqhewsgfqRh9XUjMTqpcoQ width = "200" />](https://www.linkedin.com/)
+             
+[<img src="https://media-exp1.licdn.com/dms/image/C5603AQG69PVtZVWoKg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=i2USzrP19WAPoRYp6Oa7tfwtt_KiGgThFA8v4JwJcUk width = "200" />](https://www.linkedin.com/)                   |                                     
+[<img src="https://media-exp1.licdn.com/dms/image/C5603AQGmRW9MsVbiPA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ylme1FybrFp671gmyM8OGnqhewsgfqRh9XUjMTqpcoQ width = "200" />](https://www.linkedin.com/)                    |
 //Ian Sanchez can not find linked in or picture    
 [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />]
-(https://github.com/)
-[<img src="https://media-exp1.licdn.com/dms/image/C5103AQENke-1cPb7_g/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=n841d8mSSUDCzMXdWjf60Zv3JbtLJOuQQT72Bui-rL4 width = "200" />](https://www.linkedin.com/)                      
+(https://github.com/)                   |
+[<img src="https://media-exp1.licdn.com/dms/image/C5103AQENke-1cPb7_g/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=n841d8mSSUDCzMXdWjf60Zv3JbtLJOuQQT72Bui-rL4 width = "200" />](https://www.linkedin.com/)                      |                      
 [<img src="https://media-exp1.licdn.com/dms/image/C4D03AQGTswjNS3NVTQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=Dtb53pFkso8I0k4jKb1FiaMCxFTU2MJQwIAEhKO72Xo" width = "200" />]
-(https://www.linkedin.com/)
+(https://www.linkedin.com/)          |
 [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQF1q4HJO59Azg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=QBAL3E93jjnaaETQrz0gXq4H_b2JWBfGkPnq4FGYk2w" width = "200" />]
-(https://www.linkedin.com/)
+(https://www.linkedin.com/)            |
 [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFmXtYlJYbVhA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ahiO3X17g-w4MiQ4Lw7_ZhZufrGRHNYNkk34FIPyC_o" width = "200" />]
-(https://www.linkedin.com/)
+(https://www.linkedin.com/)             |
  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
