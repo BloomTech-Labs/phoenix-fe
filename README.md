@@ -10,21 +10,18 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Phoenix 
+#  **Phoenix** 
 
-1️⃣ You can find the deployed project at https://phoenix-fe-production.herokuapp.com/  
+You can find the deployed project at [https://phoenix-fe-production.herokuapp.com/] 
 
-## 4️⃣ Contributors
+##  Contributors
 
-Emma Zarate  https://github.com/yoshimii                                
-Amy Barba   https://github.com/Amybarba                               
-Ian Sanchez https://github.com/slimylizard                                     
-Nick Dailey https://github.com/ndailey000                               
-Nicole Antonacci https://github.com/nantonacci
-Cori Sternberg https://github.com/CScori   
-Joshua Roy Draper    https://github.com/Classic-username                           
-             
-[<img src="https://media-exp1.licdn.com/dms/image/C5603AQG69PVtZVWoKg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=i2USzrP19WAPoRYp6Oa7tfwtt_KiGgThFA8v4JwJcUk width = "200" />](https://www.linkedin.com/)                   |                                     
+[**Emma Zarate**] (https://github.com/yoshimii)                                    |[**Amy Barba**] (https://github.com/Amybarba)                                     | [**Ian Sanchez**] (https://github.com/slimylizard)                                  |                                             
+[**Nick Dailey**] (https://github.com/ndailey000)                                  |                               
+[**Nicole Antonacci**] (https://github.com/nantonacci)                        |
+[**Cori Sternberg**] (https://github.com/CScori)                                   |   
+[**Joshua Roy Draper**] (https://github.com/Classic-username)                      ||:-------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |     
+|                     [<img src="https://media-exp1.licdn.com/dms/image/C5603AQG69PVtZVWoKg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=i2USzrP19WAPoRYp6Oa7tfwtt_KiGgThFA8v4JwJcUk width = "200" />](https://www.linkedin.com/)                   |                                     
 [<img src="https://media-exp1.licdn.com/dms/image/C5603AQGmRW9MsVbiPA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ylme1FybrFp671gmyM8OGnqhewsgfqRh9XUjMTqpcoQ width = "200" />](https://www.linkedin.com/)                    |
 //Ian Sanchez can not find linked in or picture    
 [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />]
