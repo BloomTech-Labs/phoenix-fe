@@ -10,18 +10,37 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+# 1️⃣ Phoenix 
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+1️⃣ You can find the deployed project at https://phoenix-fe-production.herokuapp.com/  
 
 ## 4️⃣ Contributors
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
+Emma Zarate  https://github.com/yoshimii                                
+Amy Barba   https://github.com/Amybarba                               
+Ian Sanchez https://github.com/slimylizard                                     
+Nick Dailey https://github.com/ndailey000                               
+Nicole Antonacci https://github.com/nantonacci
+Cori Sternberg https://github.com/CScori   
+Joshua Roy Draper    https://github.com/Classic-username                           
+
+
+:-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |                 
+[<img src="https://media-exp1.licdn.com/dms/image/C5603AQG69PVtZVWoKg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=i2USzrP19WAPoRYp6Oa7tfwtt_KiGgThFA8v4JwJcUk width = "200" />](https://www.linkedin.com/)                                     
+[<img src="https://media-exp1.licdn.com/dms/image/C5603AQGmRW9MsVbiPA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ylme1FybrFp671gmyM8OGnqhewsgfqRh9XUjMTqpcoQ width = "200" />](https://www.linkedin.com/)
+//Ian Sanchez can not find linked in or picture    
+[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />]
+(https://github.com/)
+[<img src="https://media-exp1.licdn.com/dms/image/C5103AQENke-1cPb7_g/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=n841d8mSSUDCzMXdWjf60Zv3JbtLJOuQQT72Bui-rL4 width = "200" />](https://www.linkedin.com/)                      
+[<img src="https://media-exp1.licdn.com/dms/image/C4D03AQGTswjNS3NVTQ/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=Dtb53pFkso8I0k4jKb1FiaMCxFTU2MJQwIAEhKO72Xo" width = "200" />]
+(https://www.linkedin.com/)
+[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQF1q4HJO59Azg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=QBAL3E93jjnaaETQrz0gXq4H_b2JWBfGkPnq4FGYk2w" width = "200" />]
+(https://www.linkedin.com/)
+[<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFmXtYlJYbVhA/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=ahiO3X17g-w4MiQ4Lw7_ZhZufrGRHNYNkk34FIPyC_o" width = "200" />]
+(https://www.linkedin.com/)
+ [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 <br>
@@ -39,26 +58,27 @@
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+1️⃣ [Trello Board]  https://trello.com/b/T0wcLK6e/labspt7-phoenix
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+1️⃣ [Product Canvas] https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+1️⃣ [UX Design files] https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+The current research suggests 40% of Americans are currently dating, 27% of 
+which are using online dating. This application is focused on serving a specific 
+niche of those daters, specifically widows, widowers, and divorcees. This group
+in particular need a different platform than what is currently on the market. This 
+application is a hybrid of group meetings and dating individually. It will organize
+events based on location and interests and draw enough users to create a party
+type atmosphere to make connections less awkard and easier to make.
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Registration as a User or Host/Terms of service
+-    Meetup/Calendar based on location
+-    Real time event data detailed in calendar
+-    Upload pictures/silhouette guideline
+-    Users match via a built in personality test
 
 ## 1️⃣ Tech Stack
 
@@ -75,15 +95,14 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to `🚫insert service here`
+#### Front end deployed to `Heroku Git` at https://phoenix-fe-production.herokuapp.com/
 
-#### [Back end](🚫link to back end repo here) built using:
+#### Back end deployed to https://phoenix-be-production.herokuapp.com/ built using: Heroku Git
 
-#### 🚫 back end framework goes here
-
--    point one
--    point two
--    point three
+-    Express
+-    Node
+-    Create React App
+-    Websocket IO
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
