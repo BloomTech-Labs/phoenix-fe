@@ -10,7 +10,7 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-#  **Phoenix** 
+#  Phoenix
 
 You can find the deployed project at [https://phoenix-fe-production.herokuapp.com/] 
 
@@ -36,20 +36,17 @@ You can find the deployed project at [https://phoenix-fe-production.herokuapp.co
 🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![React](https://img.shields.io/badge/react-v16.12.0-blue.svg)
+[![React-Scripts](https://img.shields.io/badge/react-dom-v3.3.1-blue.svg)
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-1️⃣ [Trello Board]  https://trello.com/b/T0wcLK6e/labspt7-phoenix
+**Trello Board**  https://trello.com/b/T0wcLK6e/labspt7-phoenix
+**Product Canvas** https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322
 
-1️⃣ [Product Canvas] https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322
-
-1️⃣ [UX Design files] https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46
+**UX Design Files**https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46
 
 The current research suggests 40% of Americans are currently dating, 27% of 
 which are using online dating. This application is focused on serving a specific 
@@ -59,7 +56,7 @@ application is a hybrid of group meetings and dating individually. It will organ
 events based on location and interests and draw enough users to create a party
 type atmosphere to make connections less awkard and easier to make.
 
-### 4️⃣ Key Features
+## Key Features
 
 -    Registration as a User or Host/Terms of service
 -    Meetup/Calendar based on location
@@ -67,7 +64,7 @@ type atmosphere to make connections less awkard and easier to make.
 -    Upload pictures/silhouette guideline
 -    Users match via a built in personality test
 
-## 1️⃣ Tech Stack
+##  Tech Stack
 - cyp
 
 ### Front end built using:
