@@ -34,10 +34,11 @@ You can find the deployed project at [https://phoenix-fe-production.herokuapp.co
 <br>
 
 🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/0866453dd852ec63cf6c/maintainability)]
+(https://codeclimate.com/github/Lambda-School-Labs/phoenix-fe/maintainability)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.12.0-blue.svg)
-[![React-Scripts](https://img.shields.io/badge/react-dom-v3.3.1-blue.svg)
+
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
