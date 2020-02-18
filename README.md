@@ -12,7 +12,7 @@
 
 #  Phoenix
 
-You can find the deployed project at [https://phoenix-fe-production.herokuapp.com/] 
+You can find the deployed project at [Phoenix](https://phoenix-fe-production.herokuapp.com/)
 
 ##  Contributors
 
