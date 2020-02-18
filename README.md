@@ -27,16 +27,13 @@ You can find the deployed project at [https://phoenix-fe-production.herokuapp.co
  |                     [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Cscori)                        |                     [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Classic-username)    |
  |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/cori-sternberg/)                |         [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/joshua-draper-15267818a/)   | 
 
-<br>
-  
+
 
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-[![Maintainability](https://api.codeclimate.com/v1/badges/0866453dd852ec63cf6c/maintainability)]
-(https://codeclimate.com/github/Lambda-School-Labs/phoenix-fe/maintainability)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+
 ![React](https://img.shields.io/badge/react-v16.12.0-blue.svg)
 
 
@@ -44,10 +41,10 @@ You can find the deployed project at [https://phoenix-fe-production.herokuapp.co
 
 ## Project Overview
 
-**Trello Board**  https://trello.com/b/T0wcLK6e/labspt7-phoenix
-**Product Canvas** https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322
+[Trello Board](https://trello.com/b/T0wcLK6e/labspt7-phoenix)        |
+[Product Canvas](https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322)      |
 
-**UX Design Files**https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46
+[UX Design Files](https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46)
 
 The current research suggests 40% of Americans are currently dating, 27% of 
 which are using online dating. This application is focused on serving a specific 
