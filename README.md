@@ -41,8 +41,9 @@ You can find the deployed project at [https://phoenix-fe-production.herokuapp.co
 
 ## Project Overview
 
-[Trello Board](https://trello.com/b/T0wcLK6e/labspt7-phoenix)        |
-[Product Canvas](https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322)      |
+[Trello Board](https://trello.com/b/T0wcLK6e/labspt7-phoenix)        
+
+[Product Canvas](https://www.notion.so/Phoenix-683a1eea00324cfa86240149783eb322)      
 
 [UX Design Files](https://www.figma.com/file/hSUe62UZgLeatX4bfg0BKt/Phoenix-Layout?node-id=31%3A46)
 
@@ -63,7 +64,7 @@ type atmosphere to make connections less awkard and easier to make.
 -    Users match via a built in personality test
 
 ##  Tech Stack
-- cyp
+- 
 
 ### Front end built using:
 
@@ -80,9 +81,11 @@ type atmosphere to make connections less awkard and easier to make.
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to `Heroku Git` at https://phoenix-fe-production.herokuapp.com/
+**Front End deployed to:** [Heroku Git](https://phoenix-fe-production.herokuapp.com/)
 
-#### Back end deployed to https://phoenix-be-production.herokuapp.com/ built using: Heroku Git
+**Back End deployed to:** [Heroku Git](https://phoenix-be-production.herokuapp.com/) 
+
+**Back End Built Using:**
 
 -    Express
 -    Node
@@ -150,9 +153,11 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-# 4️⃣ Testing
+#  Testing
 
-🚫Document what you used for testing and why
+### Jest
+
+### React Testing Library
 
 # 4️⃣ Installation Instructions
 
@@ -205,4 +210,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/phoenix-be/blob/master/README.md) for details on the backend of our project.
