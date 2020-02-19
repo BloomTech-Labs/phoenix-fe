@@ -57,14 +57,26 @@ type atmosphere to make connections less awkard and easier to make.
 
 ## Key Features
 
--    Registration as a User or Host/Terms of service
+-    Registration as a User or Host
+-    Terms of service - Clearly Organized
 -    Meetup/Calendar based on location
 -    Real time event data detailed in calendar
--    Upload pictures/silhouette guideline
+-    Upload pictures
+-     Silhouette Guideline for Profile Pictures
 -    Users match via a built in personality test
 
 ##  Tech Stack
-- 
+# React
+ - React as the front end will make for a quick web-app setup
+
+# NPM
+- NPM: prevent yarn/npm mix ups
+
+# Material UI
+- Material UI: Styling library with flexibility
+
+# LESS/SASS
+- Clean CSS
 
 ### Front end built using:
 
