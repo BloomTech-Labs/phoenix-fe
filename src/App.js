@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import {
-  BrowserRouter as Router, 
-  Switch, 
-  Route
-} from "react-router-dom"
+// import {
+//   BrowserRouter as Router, 
+//   Switch, 
+//   Route
+// } from "react-router-dom"
 import Registration from "./components/Registration"
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
   ReactGa.pageview(window.location.pathname + window.location.search)
 //pathway to connect the routes and search
 }, [])
+
   return (
     <div className="App">
       <header className="App-header">

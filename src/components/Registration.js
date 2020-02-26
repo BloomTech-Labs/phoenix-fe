@@ -1,6 +1,6 @@
-// import React, { useState } from 'react';
-// import { Modal } from '@material-ui/core/Modal';
-// import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
+import  Modal  from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 // import {  } from '@material-ui/core/';
 
 
@@ -37,7 +37,38 @@ function Registration () {
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
-
     
-}
+    const handleOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
+      return (
+          <>
+        <div>
+          <button type="button" onClick={handleOpen}>
+            Open Modal
+          </button>
+          <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={open}
+            onClose={handleClose}
+          >
+            <div style={modalStyle} className={classes.paper}>
+              <h2 id="simple-modal-title">Start Your Journey As A Phoenix </h2>
+              <p id="simple-modal-description">
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              </p>
+              <Registration/>
+            </div>
+          </Modal>
+        </div>
+        </>
+      );
+      }
+    
+
 export default Registration;
