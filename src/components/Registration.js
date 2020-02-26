@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
+import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-// import {  } from '@material-ui/core/';
+
 
 
 function rand() {
@@ -28,7 +29,14 @@ function rand() {
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    }
   }));
+
 
 
 function Registration () {
@@ -49,7 +57,7 @@ function Registration () {
           <>
         <div>
           <button type="button" onClick={handleOpen}>
-            Open Modal
+            Register Now
           </button>
           <Modal
             aria-labelledby="simple-modal-title"
@@ -58,11 +66,50 @@ function Registration () {
             onClose={handleClose}
           >
             <div style={modalStyle} className={classes.paper}>
-              <h2 id="simple-modal-title">Start Your Journey As A Phoenix </h2>
+              <h2 id="simple-modal-title">New Phoenix </h2>
               <p id="simple-modal-description">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              Start Your Journey As A Phoenix 
               </p>
-              <Registration/>
+              <div>
+                <form className={classes.root}>
+              
+              <TextField
+                  required
+                  id="filled-required"
+                  label="Required"
+                  defaultValue="Username "
+                  variant="filled"
+                  />
+                   <TextField
+                  required
+                  id="filled-required"
+                  label="Required"
+                  defaultValue="Password "
+                  variant="filled"
+                  />
+                    <TextField
+                  required
+                  id="filled-required"
+                  label="Required"
+                  defaultValue="Full Name"
+                  variant="filled"
+                  />
+                    <TextField
+                  required
+                  id="filled-required"
+                  label="Required"
+                  defaultValue="Email"
+                  variant="filled"
+                  />
+                   <TextField
+                  required
+                  id="filled-required"
+                  label="Required"
+                  defaultValue="Age"
+                  variant="filled"
+                  />
+                  </form>
+              </div>
             </div>
           </Modal>
         </div>
@@ -72,3 +119,25 @@ function Registration () {
     
 
 export default Registration;
+
+
+
+// users
+// .string('username', 255)
+// .notNullable()
+// .unique()
+
+// users
+// .string('password', 255)
+// .notNullable()
+
+// users
+// .string('name', 255)
+// .notNullable()
+
+// users
+// .string('email', 180)
+// .notNullable()
+
+// users
+// .integer('age')
