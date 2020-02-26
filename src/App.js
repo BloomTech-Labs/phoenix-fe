@@ -6,6 +6,8 @@ import {
   Switch, 
   Route
 } from "react-router-dom"
+import Registration from "./components/Registration"
+
 function App() {
 
   useEffect(() => {
@@ -17,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+      <Registration /> 
         {/* <Router>
           <Switch>
             <Route path="/one" > </Route>
