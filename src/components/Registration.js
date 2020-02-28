@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 // import Avatar from '@material-ui/core/Avatar';
@@ -42,10 +42,22 @@ function rand() {
 
 
 
-function Registration () {
-    
+function Registration (props) {
+  const [ credentials, setCredentials ] = useState({
+    user: { 
+        username: '',
+        password: '',
+        name:'',
+        email:'',
+        age: ''
+    }
+})
+const handleChange = (event) => {
+  setCredentials({
+      ...credentials, [event.target.name]: event.target.value
+  });
+}
     const classes = useStyles();
-    // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
     
@@ -81,7 +93,8 @@ function Registration () {
                   required
                   id="filled-required"
                   label="Username"
-                  defaultValue=""
+                  value={props.username} 
+                  onChange={handleChange}
                   placeholder="Username"
                   variant="filled" />
                   
@@ -90,7 +103,8 @@ function Registration () {
                   required
                   id="filled-required"
                   label="Password"
-                  defaultValue=""
+                  value={props.password} 
+                  onChange={handleChange}
                   placeholder="Must be 8 characters"
                   variant="filled"
                   />
@@ -98,7 +112,8 @@ function Registration () {
                   required
                   id="filled-required"
                   label="Full Name"
-                  defaultValue=""
+                  value={props.name} 
+                  onChange={handleChange}
                   placeholder='Letters are nice'
                   variant="filled"
                   />
@@ -106,15 +121,17 @@ function Registration () {
                   required
                   id="filled-required"
                   label="Email"
-                  defaultValue=""
+                  value={props.email} 
+                  onChange={handleChange}
                   placeholder="@ required"
                   variant="filled"
-                  />
+                  /> 
                    <TextField
                   required
                   id="filled-required"
                   label="Age"
-                  defaultValue=""
+                  value={props.age} 
+                  onChange={handleChange}
                   variant="filled"
                   />
                   </form>

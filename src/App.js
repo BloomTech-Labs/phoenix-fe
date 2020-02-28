@@ -5,7 +5,13 @@ import {
   BrowserRouter as Router, 
   Switch, 
   Route
-} from "react-router-dom"
+} from "react-router-dom";
+import Registration from "./components/Registration.js";
+import Navbar from "./components/Navbar.js"
+
+
+
+
 function App() {
 
   useEffect(() => {
@@ -24,7 +30,8 @@ function App() {
             <Route path="/two" > </Route>
           </Switch>
         </Router> */}
-        Hello
+        <Navbar /> 
+       <Registration /> 
       </header>
     </div>
   );
