@@ -31,7 +31,6 @@ function App() {
           </Switch>
         </Router> */}
         <Navbar /> 
-       <Registration /> 
       </header>
     </div>
   );
