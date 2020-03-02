@@ -1,4 +1,4 @@
- import React from 'react';
+ import React, { useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,6 +17,12 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import Registration from "./Registration.js";
 
 const useStyles = makeStyles(theme => ({
+  primary: {
+    // light: will be calculated from palette.primary.main,
+    main: '#000000',
+    // dark: will be calculated from palette.primary.main,
+    // contrastText: will be calculated to contrast with palette.primary.main
+  },
   grow: {
     flexGrow: 1,
   },
@@ -80,8 +86,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -165,7 +171,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar color="danger">
           <IconButton
             edge="start"
             className={classes.menuButton}

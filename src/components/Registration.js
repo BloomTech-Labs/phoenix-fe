@@ -1,6 +1,8 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import axios from 'axios';
 // import Avatar from '@material-ui/core/Avatar';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -35,7 +37,8 @@ function rand() {
       '& .MuiTextField-root': {
         display:"flex", 
         margin: theme.spacing(1),
-        width: 200,
+        width: 200
+        
       },
     }
   }));
@@ -68,12 +71,31 @@ const handleChange = (event) => {
       const handleClose = () => {
         setOpen(false);
       };
+      const handleSubmit = e => {
+        e.preventDefault();
+        axios
+          .post("http://localhost:5555/api/auth/register", {
+            username: credentials.username,
+            password: credentials.password,
+            name:credentials.name,
+            email:credentials.email,
+            age: credentials.age
+
+          })
+          .then(function(response) {
+            console.log(response);
+            localStorage.setItem("credentials", response);
+            props.history.push("/login");
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      };
       return (
           <>
         <div>
-          <button type="button" onClick={handleOpen}>
-            Register Now
-          </button>
+        <Button variant="outlined" onClick={handleOpen}>Register</Button>
+        
           <Modal
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
@@ -86,7 +108,7 @@ const handleChange = (event) => {
               Start Your Journey As A Phoenix 
               </p>
               <div>
-                <form className={classes.root}>
+                <form className={classes.root} onSubmit={handleSubmit}>
               <div>
               {/* <Avatar src="/broken-image.jpg" /> */}
               <TextField
@@ -96,7 +118,7 @@ const handleChange = (event) => {
                   value={props.username} 
                   onChange={handleChange}
                   placeholder="Username"
-                  variant="filled" />
+                  variant="outlined" />
                   
                   </div>
                    <TextField
@@ -106,7 +128,7 @@ const handleChange = (event) => {
                   value={props.password} 
                   onChange={handleChange}
                   placeholder="Must be 8 characters"
-                  variant="filled"
+                  variant="outlined"
                   />
                     <TextField
                   required
@@ -115,7 +137,7 @@ const handleChange = (event) => {
                   value={props.name} 
                   onChange={handleChange}
                   placeholder='Letters are nice'
-                  variant="filled"
+                  variant="outlined"
                   />
                     <TextField
                   required
@@ -124,7 +146,7 @@ const handleChange = (event) => {
                   value={props.email} 
                   onChange={handleChange}
                   placeholder="@ required"
-                  variant="filled"
+                  variant="outlined"
                   /> 
                    <TextField
                   required
@@ -132,9 +154,11 @@ const handleChange = (event) => {
                   label="Age"
                   value={props.age} 
                   onChange={handleChange}
-                  variant="filled"
+                  variant="outlined"
                   />
+                  
                   </form>
+                  <Button variant="outlined">Register</Button>
               </div>
             </div>
           </Modal>
