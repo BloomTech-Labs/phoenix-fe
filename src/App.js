@@ -6,7 +6,6 @@ import {
   Switch, 
   Route
 } from "react-router-dom";
-import Registration from "./components/Registration.js";
 import Navbar from "./components/Navbar.js"
 
 
