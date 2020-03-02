@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
 import axios from 'axios';
 // import Avatar from '@material-ui/core/Avatar';
 
@@ -25,7 +26,9 @@ function rand() {
   }
   
   const useStyles = makeStyles(theme => ({
+  
     paper: {
+      
       position: 'absolute',
       width: 400,
       backgroundColor: theme.palette.background.paper,
@@ -37,7 +40,7 @@ function rand() {
       '& .MuiTextField-root': {
         display:"flex", 
         margin: theme.spacing(1),
-        width: 200
+        width: 200,
         
       },
     }

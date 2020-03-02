@@ -14,13 +14,12 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Registration from "./Registration.js";
+import red from '@material-ui/core/colors/red'
 
 const useStyles = makeStyles(theme => ({
-  primary: {
-    // light: will be calculated from palette.primary.main,
-    main: '#000000',
-    // dark: will be calculated from palette.primary.main,
-    // contrastText: will be calculated to contrast with palette.primary.main
+  
+  palette:{
+    primary: red
   },
   grow: {
     flexGrow: 1,
@@ -37,13 +36,13 @@ const useStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.black, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '100%',
+    width: '70%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
       width: 'auto',
