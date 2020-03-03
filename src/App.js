@@ -6,6 +6,7 @@ import {
   Switch, 
   Route
 } from "react-router-dom"
+import CalendarSearch from './components/CalendarSearch'
 function App() {
 
   useEffect(() => {
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+        <CalendarSearch />
         {/* <Router>
           <Switch>
             <Route path="/one" > </Route>
