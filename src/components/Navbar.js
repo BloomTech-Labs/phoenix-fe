@@ -14,13 +14,11 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Registration from "./Registration.js";
-import red from '@material-ui/core/colors/red'
+
 
 const useStyles = makeStyles(theme => ({
   
-  palette:{
-    primary: red
-  },
+ 
   grow: {
     flexGrow: 1,
   },
