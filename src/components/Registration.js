@@ -49,20 +49,16 @@ function rand() {
 
 
 function Registration (props) {
-  const [ credentials, setCredentials ] = useState({
-    user: { 
+  const [ user, setUser ] = useState({
+    
         username: '',
         password: '',
         name:'',
         email:'',
-        age: ''
-    }
-})
-const handleChange = (event) => {
-  setCredentials({
-      ...credentials, [event.target.name]: event.target.value
-  });
-}
+        age: '',
+  })
+
+
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -74,26 +70,32 @@ const handleChange = (event) => {
       const handleClose = () => {
         setOpen(false);
       };
+
       const handleSubmit = e => {
         e.preventDefault();
         axios
-          .post("http://localhost:5555/api/auth/register", {
-            username: credentials.username,
-            password: credentials.password,
-            name:credentials.name,
-            email:credentials.email,
-            age: credentials.age
+          .post("localhost:4000/auth/register", {
+            username: user.username,
+            password: user.password,
+            name: user.name,
+            email: user.email,
+            age: user.age
 
           })
           .then(function(response) {
             console.log(response);
-            localStorage.setItem("credentials", response);
+            localStorage.setItem("user", response);
             props.history.push("/login");
           })
           .catch(function(error) {
             console.log(error);
           });
       };
+      const handleChange = (event) => {
+        setUser({
+            ...user, [event.target.name]: event.target.value
+        });
+      }
       return (
           <>
         <div>
@@ -112,7 +114,7 @@ const handleChange = (event) => {
               </p>
               <div>
                 <form className={classes.root} onSubmit={handleSubmit}>
-              <div>
+              
               {/* <Avatar src="/broken-image.jpg" /> */}
               <TextField
                   required
@@ -123,12 +125,12 @@ const handleChange = (event) => {
                   placeholder="Username"
                   variant="outlined" />
                   
-                  </div>
+                 
                    <TextField
                   required
                   id="filled-required"
                   label="Password"
-                  value={props.password} 
+                  value={user.password} 
                   onChange={handleChange}
                   placeholder="Must be 8 characters"
                   variant="outlined"
@@ -137,7 +139,7 @@ const handleChange = (event) => {
                   required
                   id="filled-required"
                   label="Full Name"
-                  value={props.name} 
+                  value={user.name} 
                   onChange={handleChange}
                   placeholder='Letters are nice'
                   variant="outlined"
@@ -146,7 +148,7 @@ const handleChange = (event) => {
                   required
                   id="filled-required"
                   label="Email"
-                  value={props.email} 
+                  value={user.email} 
                   onChange={handleChange}
                   placeholder="@ required"
                   variant="outlined"
@@ -155,7 +157,7 @@ const handleChange = (event) => {
                   required
                   id="filled-required"
                   label="Age"
-                  value={props.age} 
+                  value={user.age} 
                   onChange={handleChange}
                   variant="outlined"
                   />
