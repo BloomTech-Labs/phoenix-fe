@@ -46,8 +46,6 @@ function rand() {
     }
   }));
 
-
-
 function Registration (props) {
   const [ user, setUser ] = useState({
     
@@ -57,7 +55,6 @@ function Registration (props) {
         email:'',
         age: '',
   })
-
 
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -73,15 +70,11 @@ function Registration (props) {
 
       const handleSubmit = e => {
         e.preventDefault();
-        axios
-          .post("localhost:4000/auth/register", {
-            username: user.username,
-            password: user.password,
-            name: user.name,
-            email: user.email,
-            age: user.age
 
-          })
+        
+        axios
+          .post("localhost:4000/auth/register", user)
+          
           .then(function(response) {
             console.log(response);
             localStorage.setItem("user", response);
@@ -91,7 +84,9 @@ function Registration (props) {
             console.log(error);
           });
       };
+      console.log(user)
       const handleChange = (event) => {
+        console.log(event.target)
         setUser({
             ...user, [event.target.name]: event.target.value
         });
@@ -107,30 +102,30 @@ function Registration (props) {
             open={open}
             onClose={handleClose}
           >
-            <div style={modalStyle} className={classes.paper}>
-              <h2 id="simple-modal-title">New Phoenix </h2>
-              <p id="simple-modal-description">
-              Start Your Journey As A Phoenix 
-              </p>
-              <div>
-                <form className={classes.root} onSubmit={handleSubmit}>
+              <div style={modalStyle} className={classes.paper}>
+                <h2 id="simple-modal-title">New Phoenix </h2>
+                <p id="simple-modal-description">
+                Start Your Journey As A Phoenix 
+                </p>
+                <div>
+                  <form className={classes.root} onSubmit={handleSubmit}>
               
-              {/* <Avatar src="/broken-image.jpg" /> */}
               <TextField
                   required
                   id="filled-required"
+                  name="username"
                   label="Username"
                   value={props.username} 
                   onChange={handleChange}
                   placeholder="Username"
                   variant="outlined" />
-                  
-                 
+                
                    <TextField
                   required
                   id="filled-required"
+                  name="password"
                   label="Password"
-                  value={user.password} 
+                  value={props.password} 
                   onChange={handleChange}
                   placeholder="Must be 8 characters"
                   variant="outlined"
@@ -138,32 +133,37 @@ function Registration (props) {
                     <TextField
                   required
                   id="filled-required"
+                  name="name"
                   label="Full Name"
-                  value={user.name} 
+                  value={props.name} 
                   onChange={handleChange}
                   placeholder='Letters are nice'
                   variant="outlined"
                   />
+                    
                     <TextField
                   required
                   id="filled-required"
+                  name="email"
                   label="Email"
-                  value={user.email} 
+                  value={props.email} 
                   onChange={handleChange}
                   placeholder="@ required"
                   variant="outlined"
                   /> 
+                   
                    <TextField
                   required
                   id="filled-required"
+                  name="age"
                   label="Age"
-                  value={user.age} 
+                  value={props.age} 
                   onChange={handleChange}
                   variant="outlined"
                   />
-                  
+                  <button onSubmit={handleSubmit}>Register</button>
                   </form>
-                  <Button variant="outlined">Register</Button>
+                  
               </div>
             </div>
           </Modal>
