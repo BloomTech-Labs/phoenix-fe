@@ -13,10 +13,11 @@ useEffect(()=> {
         .then(res => {
             console.log('card data', res)
             const search = {res}.filter(item => {
-                return item.title.toLowerCase().includes(searchTerm.toLowerCase())
+                return item.title.toLowerCase().includes(string.toLowerCase())
         })
+        setRes(search);})
         .catch(err => console.log('err', err))
-    }, [format])
+    }, [string])
 
     const handleChange = e => {
         setString(e.target.value)
@@ -46,7 +47,6 @@ useEffect(()=> {
       <CalendarEvents/>
     </div>
     )
-})
 }
 
 export default CalendarSearch
