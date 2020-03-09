@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import {
-  BrowserRouter as Router, 
-  Switch, 
-  Route
-} from "react-router-dom";
-import Navbar from "./components/Navbar.js"
+
+import Navbar from "./components/Navbar.js";
+import Terms from "./components/Terms.js"
 
 
 
@@ -23,14 +20,13 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        {/* <Router>
-          <Switch>
-            <Route path="/one" > </Route>
-            <Route path="/two" > </Route>
-          </Switch>
-        </Router> */}
+    
         <Navbar /> 
+        
       </header>
+      <div>
+        <Terms /> 
+      </div>
     </div>
   );
 }
