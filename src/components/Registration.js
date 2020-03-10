@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
-// import Avatar from '@material-ui/core/Avatar';
+
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -45,17 +46,49 @@ function rand() {
       },
     }
   }));
-
-function Registration (props) {
-  const [ user, setUser ] = useState({
-    
+  const Registration = (props) => {
+    const [ credentials, setCredentials ] = useState({
+        user: {
         username: '',
         password: '',
         name:'',
         email:'',
         age: '',
-  })
+        }
+    })
+    
+    const history= useHistory();
 
+    const handleChange = (event) => {
+        setCredentials({
+            ...credentials, [event.target.name]: event.target.value
+        });
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+        axios
+            .post('https://phoenix-fe-staging.herokuapp.com/auth/register', credentials)
+
+            .then(res => {
+                console.log('registration res', res);
+                axios
+                    .post('/api/login', { username: credentials.username, password: credentials.password })
+                    .then(res => {
+                        console.log('login successful', res.data.message)
+                        localStorage.setItem('token', res.data.token)
+                        history.push('/')
+                    }) 
+                    .catch(err => {
+                        console.log(err)
+                        history.push('/')
+                    })
+            }).catch(err => {
+                console.log('registration error', err);
+                history.push('/')
+            })
+    }
 
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -69,33 +102,9 @@ function Registration (props) {
         setOpen(false);
       };
 
-      const handleSubmit = e => {
-        e.preventDefault();
-
-const header = new Headers();
-header.append('Access-Control-Allow-Origin', '*');
 
 
-
-axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
-.then(function(response) {
-  console.log(response);
-  localStorage.setItem("user", response);
-  props.history.push("/");
-})
-.catch(function(error) {
-  console.log(error);
-});
-  };
-        
-        
-      const handleChange = (event) => {
-        console.log(event.target)
-        setUser({
-            ...user, [event.target.name]: event.target.value
-        });
-      }
-      return (
+      return ( 
           <>
         <div>
         <Button variant="outlined" onClick={handleOpen}>Register</Button>
@@ -116,7 +125,7 @@ axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
               
               <TextField
                   required
-                  id="filled-required"
+                  id="filled-required1"
                   name="username"
                   label="Username"
                   value={props.username} 
@@ -126,7 +135,7 @@ axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
                 
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required2"
                   name="password"
                   label="Password"
                   value={props.password} 
@@ -136,7 +145,7 @@ axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
                   />
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required3"
                   name="name"
                   label="Full Name"
                   value={props.name} 
@@ -147,7 +156,7 @@ axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
                     
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required4"
                   name="email"
                   label="Email"
                   value={props.email} 
@@ -158,7 +167,7 @@ axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
                    
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required5"
                   name="age"
                   label="Age"
                   value={props.age} 
