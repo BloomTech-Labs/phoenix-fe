@@ -56,6 +56,7 @@ function Registration (props) {
         age: '',
   })
 
+
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -71,20 +72,23 @@ function Registration (props) {
       const handleSubmit = e => {
         e.preventDefault();
 
+const header = new Headers();
+header.append('Access-Control-Allow-Origin', '*');
+
+
+
+axios.post("https://phoenix-fe-staging.herokuapp.com/", user, header)
+.then(function(response) {
+  console.log(response);
+  localStorage.setItem("user", response);
+  props.history.push("/");
+})
+.catch(function(error) {
+  console.log(error);
+});
+  };
         
-        axios
-          .post("localhost:4000/auth/register", user)
-          
-          .then(function(response) {
-            console.log(response);
-            localStorage.setItem("user", response);
-            props.history.push("/login");
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      };
-      console.log(user)
+        
       const handleChange = (event) => {
         console.log(event.target)
         setUser({
