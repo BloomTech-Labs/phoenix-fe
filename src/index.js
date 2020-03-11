@@ -5,6 +5,7 @@ import App from './App';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import { red, amber } from '@material-ui/core/colors'
 import * as serviceWorker from './serviceWorker';
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core"
 
 const theme = createMuiTheme({
     palette: {
