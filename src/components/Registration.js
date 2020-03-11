@@ -78,7 +78,7 @@ function rand() {
                     .then(res => {
                         console.log('login successful', res.data.message)
                         localStorage.setItem('token', res.data.token)
-                        // history.push('/')
+                        // props.history.push('/')
                     }) 
                     .catch(err => {
                         console.log(err)
