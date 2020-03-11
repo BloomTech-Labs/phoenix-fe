@@ -24,9 +24,9 @@ function App() {
         <Navbar /> 
         
       </header>
-      {/* <div>
+      <div>
         <Terms /> 
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
 function rand() {
-  return Math.round(Math.random() * 20) - 10;
+  return Math.round(Math.random() * 10) ;
 }
 
 function getModalStyle() {
@@ -21,6 +21,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
     width: 400,
+    overflow:'scroll',
+    maxHeight: 600,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -44,7 +46,7 @@ function Terms() {
     return (
       <div className="fullTerms">
            <button type="button" onClick={handleOpen}>
-        Open Modal
+        Terms Of Service
       </button>
       <Modal
         aria-labelledby="simple-modal-title"
@@ -52,6 +54,7 @@ function Terms() {
         open={open}
         onClose={handleClose}
       >
+          <div style={modalStyle} className={classes.paper}>
        <h2>TERMS OF USE</h2>
        
 
@@ -335,7 +338,10 @@ United States</p>
  
  
 
-
+<button type="button" onClick={handleClose}>
+        Terms Of Service
+      </button>
+</div>
 
 </Modal>
       </div>
