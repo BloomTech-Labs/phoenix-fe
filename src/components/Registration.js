@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 
 import axios from 'axios';
 
@@ -48,16 +49,16 @@ function rand() {
   }));
   const Registration = (props) => {
     const [ credentials, setCredentials ] = useState({
-        user: {
+       
         username: '',
         password: '',
         name:'',
         email:'',
         age: '',
-        }
+        
     })
     
-    const history= useHistory();
+    // const history = useHistory();
 
     const handleChange = (event) => {
         setCredentials({
@@ -68,25 +69,24 @@ function rand() {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios
-            .post('https://phoenix-fe-staging.herokuapp.com/auth/register', credentials)
-
-            .then(res => {
-                console.log('registration res', res);
+        axiosWithAuth()
+            .post('/auth/register', credentials)
+             .then(res => {
+                
                 axios
-                    .post('/api/login', { username: credentials.username, password: credentials.password })
+                    .post('/auth/login', { username: credentials.username, password: credentials.password })
                     .then(res => {
                         console.log('login successful', res.data.message)
                         localStorage.setItem('token', res.data.token)
-                        history.push('/')
+                        // history.push('/')
                     }) 
                     .catch(err => {
                         console.log(err)
-                        history.push('/')
+                        // history.push('/')
                     })
             }).catch(err => {
                 console.log('registration error', err);
-                history.push('/')
+                // history.push('/')
             })
     }
 
@@ -101,8 +101,6 @@ function rand() {
       const handleClose = () => {
         setOpen(false);
       };
-
-
 
       return ( 
           <>
