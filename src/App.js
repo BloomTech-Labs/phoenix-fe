@@ -7,7 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from "./components/Navbar.js"
-
+import LandingPage from './components/LandingPage.js'
 
 
 
@@ -29,7 +29,8 @@ function App() {
             <Route path="/two" > </Route>
           </Switch>
         </Router> */}
-        <Navbar /> 
+        {/* <Navbar />  */}
+        <LandingPage/>
       </header>
     </div>
   );

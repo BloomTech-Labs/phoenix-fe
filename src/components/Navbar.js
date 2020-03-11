@@ -14,6 +14,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Registration from "./Registration.js";
+import logo from "./images/PhoenixLogo.png";
 
 
 const useStyles = makeStyles(theme => ({
@@ -24,6 +25,9 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+  },
+  logo: {
+maxWidth: 100,
   },
   title: {
     display: 'none',
@@ -137,7 +141,7 @@ export default function PrimarySearchAppBar() {
       
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
-            <MailIcon />
+            {/* <MailIcon /> */}
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -168,6 +172,7 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar color="danger">
+          <img src={logo} alt="logo" className={classes.logo} />
           <IconButton
             edge="start"
             className={classes.menuButton}
