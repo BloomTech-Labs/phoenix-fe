@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import CalendarFull from './components/Calendar/CalendarFull'
+import Calendar from './components/Calendar/Calendar'
 import {
   BrowserRouter as Router, 
   Switch, 
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <CalendarSearch /> */}
-        <CalendarFull />
+        <Calendar />
         {/* <Router>
           <Switch>
             <Route path="/one" > </Route>
