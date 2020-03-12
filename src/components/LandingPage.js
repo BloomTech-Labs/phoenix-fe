@@ -21,11 +21,11 @@ const useStyles = makeStyles(theme => ({
       marginRight: theme.spacing(2),
     },
     logo: {
-  maxWidth: 150,
+  maxWidth: 100,
     },
     phoenix: {
-        fontFamily: "Kurale",
-        fontSize: 60,
+        fontFamily: 'Kurale, serif',
+        fontSize: 35,
     },
     title: {
       display: 'none',
