@@ -19,9 +19,7 @@ import Registration from "./Registration.js";
 const useStyles = makeStyles(theme => ({
   
  
-  grow: {
-    flexGrow: 1,
-  },
+  grow: theme.grow,
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -167,7 +165,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar color="danger">
+        <Toolbar>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -177,9 +175,6 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Registration />
-          {/* <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography> */}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
