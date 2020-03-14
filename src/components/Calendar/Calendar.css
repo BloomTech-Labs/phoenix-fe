@@ -14,7 +14,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-
+  color: grey;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -106,6 +106,7 @@ main {
 .col-center {
   justify-content: center;
   text-align: center;
+  color: red;
 }
 
 .col-end {
