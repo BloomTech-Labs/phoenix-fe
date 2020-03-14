@@ -25,12 +25,12 @@
 /* VARIABLES */
 
 :root {
-  --main-color: #1a8fff;
-  --text-color: #777;
-  --text-color-light: #ccc;
+  --main-color: #fd7a00;
+  --text-color: rgb(243, 242, 242);
+  --text-color-light: rgb(204, 204, 204);
   --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --neutral-color: #fff;
+  --bg-color: rgba(255, 111, 111, 0.726);
+  --neutral-color: rgb(255, 255, 255);
 }
 
 
@@ -166,7 +166,7 @@ main {
   border-right: 1px solid var(--border-color);
   overflow: hidden;
   cursor: pointer;
-  background: var(--neutral-color);
+  background:rgba(253, 145, 5, 0.377);
   transition: 0.25s ease-out;
 }
 
@@ -177,7 +177,7 @@ main {
 
 .calendar .body .selected {
   border-left: 10px solid transparent;
-  border-image: linear-gradient(45deg, #1a8fff 0%,#53cbf1 40%);
+  /* border-image: linear-gradient(45deg, #1a8fff 0%,#53cbf1 40%); */
   border-image-slice: 1;
 }
 
@@ -221,7 +221,7 @@ main {
 }
 
 .calendar .body .cell:hover .bg, .calendar .body .selected .bg  {
-  opacity: 0.05;
+  opacity: 0.5;
   transition: .5s ease-in;
 }
 
