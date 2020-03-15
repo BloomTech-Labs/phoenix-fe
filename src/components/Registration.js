@@ -59,9 +59,19 @@ function rand() {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
-      await axiosWithAuth().post('/auth/register', credentials);
-      let data = await axiosWithAuth().post('/auth/login', { username: credentials.username, password: credentials.password });
-      localStorage.setItem('token', data.data.token)
+
+      try {
+        await axiosWithAuth().post('/auth/register', credentials);
+      } catch (error) {
+        return Response.status(400).send('Bad or incomplete credentials.')
+      }
+      
+      try {
+        let data = await axiosWithAuth().post('/auth/login', { username: credentials.username, password: credentials.password });
+        localStorage.setItem('token', data.data.token)
+      } catch (error) {
+        return Response.status(401).send('Not authorized.')
+      }
   }
 
     const classes = useStyles();
