@@ -1,7 +1,7 @@
 import React, { useState }from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-
+import { useForm, Controller } from "react-hook-form";
 function rand() {
   return Math.round(Math.random() * 10) ;
 }
@@ -30,17 +30,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Terms() {
+function Terms(props) {
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
-  
+    const [checked, setChecked] = useState(false);
+
     const handleOpen = () => {
         setOpen(true);
       };
     
       const handleClose = () => {
         setOpen(false);
+      };
+      const handleChange = event => {
+        setChecked(event.target.checked);
       };
 
     return (
@@ -335,11 +339,10 @@ United States</p>
 <email>projectphoenixlabs@gmail.com</email>
 </div>
 
- 
- 
+
 
 <button type="button" onClick={handleClose}>
-        Terms Of Service
+        I agree to the terms!
       </button>
 </div>
 
