@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-// import { useHistory } from 'react-router-dom';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
-
-import axios from 'axios';
-
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -66,29 +62,12 @@ function rand() {
         });
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        
-        axiosWithAuth()
-            .post('/auth/register', credentials)
-             .then(res => {
-                
-                axios
-                    .post('/auth/login', { username: credentials.username, password: credentials.password })
-                    .then(res => {
-                        console.log('login successful', res.data.message)
-                        localStorage.setItem('token', res.data.token)
-                        // props.history.push('/')
-                    }) 
-                    .catch(err => {
-                        console.log(err)
-                        // history.push('/')
-                    })
-            }).catch(err => {
-                console.log('registration error', err);
-                // history.push('/')
-            })
-    }
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      await axiosWithAuth().post('/auth/register', credentials);
+      let data = await axiosWithAuth().post('/auth/login', { username: credentials.username, password: credentials.password });
+      localStorage.setItem('token', data.data.token)
+  }
 
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
