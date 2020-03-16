@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import Login from './Login.js';
 
 const routes = [
-        <Route path='/login' component={Login} />
+        <Route key={0} path='/login' component={Login} />
     ]
 
 export default routes;
