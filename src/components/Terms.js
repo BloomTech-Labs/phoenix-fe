@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import Checkbox from '@material-ui/core/Checkbox';
 import { useForm, Controller } from "react-hook-form";
 function rand() {
   return Math.round(Math.random() * 10) ;
@@ -35,7 +36,9 @@ function Terms(props) {
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
     const [checked, setChecked] = useState(false);
-
+    const methods = useForm();
+    const { handleSubmit, control, register } = methods;
+    const onSubmit = data => console.log(data);
     const handleOpen = () => {
         setOpen(true);
       };
@@ -45,6 +48,7 @@ function Terms(props) {
       };
       const handleChange = event => {
         setChecked(event.target.checked);
+        
       };
 
     return (
@@ -136,7 +140,7 @@ As a user of the Site, you agree not to:</h3>
 </p>
         </div>
 
-<div classname="user-contr">
+<div className="user-contr">
     <h2>USER GENERATED CONTRIBUTIONS </h2>
     <p>The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary. When you create or make available any Contributions, you thereby represent and warrant that:
 </p> 
@@ -160,7 +164,7 @@ As a user of the Site, you agree not to:</h3>
 </p>
 </div>
      
-  <div classname="contr-lics">
+  <div className="contr-lics">
     <h2>CONTRIBUTION LICENSE</h2>
     <p>By posting your Contributions to any part of the Site or making Contributions accessible to the Site by linking your account from the Site to any of your social networking accounts, you automatically grant, and you represent and warrant that you have the right to grant, to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and license to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt (in whole or in part), and distribute such Contributions (including, without limitation, your image and voice) for any purpose, commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, such Contributions, and grant and authorize sublicenses of the foregoing. The use and distribution may occur in any media formats and through any media channels.
     
@@ -328,7 +332,7 @@ Any attendees under the age of 18 will be the responsibility of the registered u
 </div>
 
  
-<div classname="contact">
+<div className="contact">
     <h2>CONTACT US </h2>
     <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: 
 </p>
@@ -336,14 +340,26 @@ Any attendees under the age of 18 will be the responsibility of the registered u
 los angeles, CA 90001
 United States</p>
 <p>Telephone: <span>*********</span></p>
-<email>projectphoenixlabs@gmail.com</email>
+<p>projectphoenixlabs@gmail.com</p>
 </div>
+<div>
+    <p>By checking the box you agree to the terms of service. </p>
+</div>
+<form onSubmit={handleSubmit(onSubmit)}>
+        <label> By checking the box you are agreeing to the terms. </label>
+      <Controller
+        as={<Checkbox name="CheckBox" ref={register({ required: true})}/>}
+        name="MyCheckbox"
+        value={checked}
+        control={control}        
+        defaultValue={false}
+      />
 
+      <button onClick={handleChange} > I agree! </button>
+      
+    </form>
+    
 
-
-<button type="button" onClick={handleClose}>
-        I agree to the terms!
-      </button>
 </div>
 
 </Modal>
