@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
-
 import { makeStyles } from '@material-ui/core/styles';
-
-
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -53,8 +51,6 @@ function rand() {
         age: '',
         
     })
-    
-    // const history = useHistory();
 
     const handleChange = (event) => {
         setCredentials({
@@ -64,11 +60,12 @@ function rand() {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
-      await axiosWithAuth().post('/auth/register', credentials);
-      let data = await axiosWithAuth().post('/auth/login', { username: credentials.username, password: credentials.password });
-      localStorage.setItem('token', data.data.token)
+      axiosWithAuth().post('/auth/register', credentials)
+      .then(res => {
+        console.log(res)
+        props.history.push('/login')
+      })
   }
-
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -80,7 +77,6 @@ function rand() {
       const handleClose = () => {
         setOpen(false);
       };
-
       return ( 
           <>
         <div>
@@ -161,6 +157,5 @@ function rand() {
         </>
       );
       }
-    
 
-export default Registration;
+export default withRouter(Registration);
