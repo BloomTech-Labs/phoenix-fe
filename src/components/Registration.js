@@ -60,6 +60,7 @@ function rand() {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
+
       axiosWithAuth().post('/auth/register', credentials)
       .then(res => {
         console.log(res)
