@@ -1,22 +1,57 @@
 import React, { useState } from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Registration from "./Registration.js";
 import logo from "./images/PhoenixLogo.png";
+import HowToBar from "./images/howtobarphoenixlanding.png";
+import LandPgCal from "./images/landingpagecalendarview.jpeg";
+import LandPgPeople from "./images/landingpagepeoplemeeting.png"; 
 
 const useStyles = makeStyles(theme => ({
-  
- 
+
+  root: {
+    flexGrow: 1,
+  },
+
+howtobar: {
+width: 1100,
+height: 178.27
+},
+landpgcal: {
+  width: 550,
+  height: 178.27,
+  zindex: 0,
+  },
+
+  landpgpeople: {
+    width: 550,
+    height: 178.27,
+    zindex: 100,
+    },
+
+// parent: {
+// width: 50,
+// height: 50,
+// position: "absolute",
+// zindex: -45
+// },
+
+// inner: {
+//   position: "absolute",
+//   zindex:1,
+//   bottom:0,
+//   right:25
+// },
+
     grow: {
       flexGrow: 1,
     },
+    
     menuButton: {
       marginRight: theme.spacing(2),
     },
@@ -113,23 +148,7 @@ const useStyles = makeStyles(theme => ({
         open={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
       >
-          
-        <MenuItem>
-        
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton aria-label="show 11 new notifications" color="inherit">
-            <Badge badgeContent={11} color="secondary">
-            </Badge>
-            
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem>
+
         <MenuItem onClick={handleProfileMenuOpen}>
           <IconButton
             aria-label="account of current user"
@@ -137,9 +156,11 @@ const useStyles = makeStyles(theme => ({
             aria-haspopup="true"
             color="inherit"
           >
+            
+          
           <AccountCircle/>
           </IconButton>
-          <p>Profile</p>
+          <p>Registration</p>
         </MenuItem>
       </Menu>
     );
@@ -171,15 +192,31 @@ const useStyles = makeStyles(theme => ({
                 onClick={handleMobileMenuOpen}
                 color="inherit"
               >
-                <MoreIcon />
               </IconButton>
             </div>
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
         {renderMenu}
+        <div>
+        {/* <img src={PicMeetup} alt="meetup picture" className={classes.picmeetup} /> */}
+        </div>
+        <div>
+        {/* <img src={Carousel} alt="carousel" className={classes.carousel} /> */}
+        </div>
+        <div>
+        <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       </div>
+      <div>
+      <div>
+      <img src={LandPgCal} alt="how to bar" className={classes.landpgcal} />
+      <img src={LandPgPeople} alt="how to bar" className={classes.landpgpeople} />
+      </div>
+      </div>
+      </div>
+      
     );
+
   }
 
 

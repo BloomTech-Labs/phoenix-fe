@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import {
-  BrowserRouter as Router, 
-  Switch, 
-  Route
-} from "react-router-dom";
-import Navbar from "./components/Navbar.js"
+// import {
+//   BrowserRouter as Router, 
+//   Switch, 
+//   Route
+// } from "react-router-dom";
+// import Navbar from "./components/Navbar.js"
 import LandingPage from './components/LandingPage.js'
 
 
