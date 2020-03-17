@@ -1,12 +1,8 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-
 import Navbar from "./components/Navbar.js";
 import Terms from "./components/Terms.js"
-
-
-
 
 function App() {
 
@@ -19,10 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-    
-        <Navbar /> 
-        
+        <Navbar />         
       </header>
       <div>
         <Terms /> 

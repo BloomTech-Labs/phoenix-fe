@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
-import axios from 'axios';
-// import Avatar from '@material-ui/core/Avatar';
-
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 import { makeStyles } from '@material-ui/core/styles';
-
-
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -45,17 +41,32 @@ function rand() {
       },
     }
   }));
-
-function Registration (props) {
-  const [ user, setUser ] = useState({
-    
+  const Registration = (props) => {
+    const [ credentials, setCredentials ] = useState({
+       
         username: '',
         password: '',
         name:'',
         email:'',
         age: '',
-  })
+        
+    })
 
+    const handleChange = (event) => {
+        setCredentials({
+            ...credentials, [event.target.name]: event.target.value
+        });
+    }
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      handleClose()
+      axiosWithAuth().post('/auth/register', credentials)
+      .then(res => {
+        console.log(res)
+        props.history.push('/login')
+      })
+  }
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -67,31 +78,7 @@ function Registration (props) {
       const handleClose = () => {
         setOpen(false);
       };
-
-      const handleSubmit = e => {
-        e.preventDefault();
-
-        
-        axios
-          .post("localhost:4000/auth/register", user)
-          
-          .then(function(response) {
-            console.log(response);
-            localStorage.setItem("user", response);
-            props.history.push("/login");
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      };
-      console.log(user)
-      const handleChange = (event) => {
-        console.log(event.target)
-        setUser({
-            ...user, [event.target.name]: event.target.value
-        });
-      }
-      return (
+      return ( 
           <>
         <div>
         <Button variant="outlined" onClick={handleOpen}>Register</Button>
@@ -112,7 +99,7 @@ function Registration (props) {
               
               <TextField
                   required
-                  id="filled-required"
+                  id="filled-required1"
                   name="username"
                   label="Username"
                   value={props.username} 
@@ -122,7 +109,7 @@ function Registration (props) {
                 
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required2"
                   name="password"
                   label="Password"
                   value={props.password} 
@@ -132,7 +119,7 @@ function Registration (props) {
                   />
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required3"
                   name="name"
                   label="Full Name"
                   value={props.name} 
@@ -143,7 +130,7 @@ function Registration (props) {
                     
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required4"
                   name="email"
                   label="Email"
                   value={props.email} 
@@ -154,7 +141,7 @@ function Registration (props) {
                    
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required5"
                   name="age"
                   label="Age"
                   value={props.age} 
@@ -171,6 +158,5 @@ function Registration (props) {
         </>
       );
       }
-    
 
-export default Registration;
+export default withRouter(Registration);
