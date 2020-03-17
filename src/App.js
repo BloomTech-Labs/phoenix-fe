@@ -1,15 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-// import {
-//   BrowserRouter as Router, 
-//   Switch, 
-//   Route
-// } from "react-router-dom";
-// import Navbar from "./components/Navbar.js"
-import LandingPage from './components/LandingPage.js'
-
-
+import Navbar from "./components/Navbar.js";
+import Terms from "./components/Terms.js";
+import LandingPage from './components/LandingPage.js';
 
 function App() {
 
@@ -22,16 +16,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-        {/* <Router>
-          <Switch>
-            <Route path="/one" > </Route>
-            <Route path="/two" > </Route>
-          </Switch>
-        </Router> */}
-        {/* <Navbar />  */}
-        <LandingPage/>
+        <Navbar />
       </header>
+        <LandingPage />    
+        <Terms /> 
     </div>
   );
 }

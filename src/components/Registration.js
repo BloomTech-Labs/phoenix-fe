@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
-import axios from 'axios';
-// import Avatar from '@material-ui/core/Avatar';
-
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 import { makeStyles } from '@material-ui/core/styles';
-
-
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -45,20 +41,32 @@ function rand() {
       },
     }
   }));
-
-
-
-function Registration (props) {
-  const [ user, setUser ] = useState({
-    
+  const Registration = (props) => {
+    const [ credentials, setCredentials ] = useState({
+       
         username: '',
         password: '',
         name:'',
         email:'',
         age: '',
-  })
+        
+    })
 
+    const handleChange = (event) => {
+        setCredentials({
+            ...credentials, [event.target.name]: event.target.value
+        });
+    }
 
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      handleClose()
+      axiosWithAuth().post('/auth/register', credentials)
+      .then(res => {
+        console.log(res)
+        props.history.push('/login')
+      })
+  }
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -70,33 +78,7 @@ function Registration (props) {
       const handleClose = () => {
         setOpen(false);
       };
-
-      const handleSubmit = e => {
-        e.preventDefault();
-        axios
-          .post("localhost:4000/auth/register", {
-            username: user.username,
-            password: user.password,
-            name: user.name,
-            email: user.email,
-            age: user.age
-
-          })
-          .then(function(response) {
-            console.log(response);
-            localStorage.setItem("user", response);
-            props.history.push("/login");
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      };
-      const handleChange = (event) => {
-        setUser({
-            ...user, [event.target.name]: event.target.value
-        });
-      }
-      return (
+      return ( 
           <>
         <div>
         <Button variant="outlined" onClick={handleOpen}>Register</Button>
@@ -107,63 +89,68 @@ function Registration (props) {
             open={open}
             onClose={handleClose}
           >
-            <div style={modalStyle} className={classes.paper}>
-              <h2 id="simple-modal-title">New Phoenix </h2>
-              <p id="simple-modal-description">
-              Start Your Journey As A Phoenix 
-              </p>
-              <div>
-                <form className={classes.root} onSubmit={handleSubmit}>
+              <div style={modalStyle} className={classes.paper}>
+                <h2 id="simple-modal-title">New Phoenix </h2>
+                <p id="simple-modal-description">
+                Start Your Journey As A Phoenix 
+                </p>
+                <div>
+                  <form className={classes.root} onSubmit={handleSubmit}>
               
-              {/* <Avatar src="/broken-image.jpg" /> */}
               <TextField
                   required
-                  id="filled-required"
+                  id="filled-required1"
+                  name="username"
                   label="Username"
                   value={props.username} 
                   onChange={handleChange}
                   placeholder="Username"
                   variant="outlined" />
-                  
-                 
+                
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required2"
+                  name="password"
                   label="Password"
-                  value={user.password} 
+                  value={props.password} 
                   onChange={handleChange}
                   placeholder="Must be 8 characters"
                   variant="outlined"
                   />
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required3"
+                  name="name"
                   label="Full Name"
-                  value={user.name} 
+                  value={props.name} 
                   onChange={handleChange}
                   placeholder='Letters are nice'
                   variant="outlined"
                   />
+                    
                     <TextField
                   required
-                  id="filled-required"
+                  id="filled-required4"
+                  name="email"
                   label="Email"
-                  value={user.email} 
+                  value={props.email} 
                   onChange={handleChange}
                   placeholder="@ required"
                   variant="outlined"
                   /> 
+                   
                    <TextField
                   required
-                  id="filled-required"
+                  id="filled-required5"
+                  name="age"
                   label="Age"
-                  value={user.age} 
+                  value={props.age} 
                   onChange={handleChange}
                   variant="outlined"
                   />
-                  
+                  <button onSubmit={handleSubmit}>Register</button>
                   </form>
-                  <Button variant="outlined">Register</Button>
+                  
               </div>
             </div>
           </Modal>
@@ -171,6 +158,5 @@ function Registration (props) {
         </>
       );
       }
-    
 
-export default Registration;
+export default withRouter(Registration);
