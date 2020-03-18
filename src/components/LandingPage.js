@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import HowToBar from "./images/howtobarphoenixlanding.png";
-import Peeps from './images/Peeps.svg';
+import HowToBar from "../images/howtobarphoenixlanding.png";
+import Peeps from '../images/Peeps.svg';
 import Calendar from '../images/Calendar.png';
 import { Typography } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
