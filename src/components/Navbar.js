@@ -13,7 +13,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Registration from "./Registration.js";
 import NavbarStyle from '../styles/NavbarStyles.js';
-import logo from './images/PhoenixLogo.png';
+import logo from '../images/PhoenixLogo.png';
 import { Typography } from '@material-ui/core';
 
 const useStyles = NavbarStyle;
@@ -107,7 +107,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <img src={logo} alt="logo" className={classes.logo} />
-          <Typography style={{ fontSize: '2rem' }} >Phoenix</Typography>
+          <Typography style={{ fontSize: '2rem' }} ><span className={classes.phoenix}>Phoenix</span></Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -121,7 +121,7 @@ export default function PrimarySearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <Registration />
+          <span className={classes.phoenix}><Registration /></span>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
