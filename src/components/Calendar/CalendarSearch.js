@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import CalendarEvents from './CalendarEvents'
 
 const CalendarSearch = () => {
 const [string, setString] = useState('')
@@ -9,10 +8,10 @@ const [result, setRes] = useState([])
 
 useEffect(()=> { 
         axios
-        .get(`https://reqres.in/api/users?page=2`)
+        .get(`https://phoenix-be-staging.herokuapp.com/api/calendar`)
         .then(res => {
-            console.log('card data', res.data.data)
-            const search = res.data.data.filter(item => {
+            console.log('card data', res.data)
+            const search = res.data.filter(item => {
                 return item.first_name.toLowerCase().includes(string.toLowerCase())
         })
         setRes(search);})
@@ -45,9 +44,9 @@ useEffect(()=> {
               />
              <button type='submit'>Submit</button>
          </form>
-         {result.map(data => (
+         {/* {result.map(data => (
              <CalendarEvents key={data.id} event={data}/>
-         ))}
+         ))} */}
       
     </div>
     )
