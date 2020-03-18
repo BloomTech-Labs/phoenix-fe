@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   }, 
   svg: {
     width: '60%',
-    paddingTop: '14rem',
+    paddingTop: '10rem',
     [theme.breakpoints.down('sm')]: {
 
     }
