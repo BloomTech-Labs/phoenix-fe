@@ -4,7 +4,7 @@ import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
-import { makeStyles } from '@material-ui/core/styles';
+import RegistrationStyles from '../styles/RegistrationStyles.js';
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -21,26 +21,8 @@ function rand() {
     };
   }
   
-  const useStyles = makeStyles(theme => ({
-  
-    paper: {
-      
-      position: 'absolute',
-      width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-    },
-    root: {
-      '& .MuiTextField-root': {
-        display:"flex", 
-        margin: theme.spacing(1),
-        width: 200,
-        
-      },
-    }
-  }));
+  const useStyles = RegistrationStyles;
+
   const Registration = (props) => {
     const [ credentials, setCredentials ] = useState({
        
