@@ -11,7 +11,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import Registration from "./Registration.js";
+import Registration from './Registration.js';
+import Login from './Login.js';
 import NavbarStyle from '../styles/NavbarStyles.js';
 import logo from '../images/PhoenixLogo.png';
 import { Typography } from '@material-ui/core';
@@ -122,6 +123,7 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           <span className={classes.phoenix}><Registration /></span>
+          <span className={classes.phoenix}><Login /></span>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
