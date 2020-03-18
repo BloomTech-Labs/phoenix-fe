@@ -59,6 +59,9 @@ const NavbarStyle = makeStyles(theme => ({
         display: 'none',
       },
     },
+    logo: {
+      height: '44px'
+    },
 }))
 
 export default NavbarStyle;

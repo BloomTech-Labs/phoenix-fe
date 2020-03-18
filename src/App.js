@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
-import Terms from "./components/Terms.js"
+import Terms from "./components/Terms.js";
+import LandingPage from './components/LandingPage.js';
 
 function App() {
 
@@ -14,12 +15,9 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar />         
-      </header>
-      <div>
+        <Navbar />
+        <LandingPage />    
         <Terms /> 
-      </div>
     </div>
   );
 }
