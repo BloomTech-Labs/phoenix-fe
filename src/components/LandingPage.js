@@ -8,13 +8,14 @@ const useStyles = makeStyles(theme => ({
 
   root: {
     flexGrow: 1,
-    margin: '0 auto',
-    width: '1000px'
+    margin: '2rem auto',
+    [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column'
+    }
   },
 
   howtobar: {
-  width: 1100,
-  height: 178.27
+  margin: '1rem'
   },
   banner: {
     display: 'flex',
@@ -24,7 +25,12 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${Calendar})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
-    backgroundPosition: 'center'    
+    backgroundPosition: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      backgroundImage: 'none',
+      margin: '0 auto',
+    },   
   },
   bannerDivLeft: {
     display: 'flex',
@@ -33,7 +39,12 @@ const useStyles = makeStyles(theme => ({
     width: '40%',
     fontSize: '1rem',
     fontWeight: '600',
-    transform: 'translate(2rem, -5rem)'
+    transform: 'translate(2rem, -5rem)',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      transform: 'none',
+      backgroundImage: 'none'
+  }
   }, 
   
   verbage: {
@@ -42,16 +53,21 @@ const useStyles = makeStyles(theme => ({
   },
 
   bannerDivRight: {
+  },
+  svg: {
+    width: '60%',
+    paddingTop: '10rem',
+    [theme.breakpoints.down('sm')]: {
 
+    }
   }
-
 }));
   
   export default function PrimarySearchAppBar() {
     const classes = useStyles();
   
     return (
-      <main className={classes.grow}>
+      <main className={classes.root}>
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>
         <Typography className={classes.bannerDivLeft}>
@@ -64,7 +80,7 @@ const useStyles = makeStyles(theme => ({
      </p>
         </Typography>
       <div className={classes.bannerDivRight}>
-        <img src={Peeps} alt="inclusive svg people" style={{ width: '60%', paddingTop: '14rem' }}/>
+        <img src={Peeps} alt="inclusive svg people" className={classes.svg}/>
       </div>
       </div>
       </main>

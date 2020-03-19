@@ -1,53 +1,90 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { ModalStyle, getModalStyle } from '../styles/ModalFormStyles.js';
+import { withRouter } from 'react-router-dom';
+import  Modal  from '@material-ui/core/Modal';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 
-const Login = () => {
-    const [ values, setValues ] = useState({
-        username: "",
-        password: ""
+const useStyles = ModalStyle;
+
+const Login = (props) => {
+    const [ credentials, setCredentials ] = useState({       
+        username: '',
+        password: '',        
     })
 
-    let handleChange = e => {
-        setValues({
-            ...values, [e.target.name]: e.target.value
-        })
+    const handleChange = (event) => {
+        setCredentials({
+            ...credentials, [event.target.name]: event.target.value
+        });
     }
 
-    let handleSubmit = e => {
-        e.preventDefault();
-        axiosWithAuth().post('/auth/login', values)
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        handleClose()
+        axiosWithAuth().post('/auth/login', credentials)
         .then(res => {
-            console.log('DATA: ', res.data)
-            localStorage.setItem('token', res.data.token);
+        console.log('DATA: ', res.data)
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/')
         })
         .catch(err => console.log('ERROR MESSAGE', err.response))
-
-        setValues({
-            username: '',
-            password: ''
-        })
     }
 
-
+    const classes = useStyles();
+    const [modalStyle] = useState(getModalStyle);
+    const [open, setOpen] = useState(false);
+    
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    
+    const handleClose = () => {
+       setOpen(false);
+    };
     return (
-    <form onSubmit={handleSubmit}>
-        <input
-        type="text"
-        name="username"
-        placeholder="username"
-        value={values.username}
-        onChange={handleChange}
-        />
-        <input
-        type="text"
-        name="password"
-        placeholder="you@yours.com"
-        value={values.password}
-        onChange={handleChange}
-        />
-        <button>Submit</button>
-    </form>
+        <>
+        <Button variant="outlined" style={{ marginLeft: '16px' }} onClick={handleOpen}>Login</Button>
+        <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={open}
+        onClose={handleClose}
+        >
+            <div style={modalStyle} className={classes.paper}>
+            <h2 id="simple-modal-title">Log in</h2>
+            <p id="simple-modal-description">
+                Log in to see what's out there
+            </p>
+                <div>
+                    <form className={classes.root} onSubmit={handleSubmit}>
+                        <TextField
+                        required
+                        id="filled-required1"
+                        name="username"
+                        label="Username"
+                        value={props.username} 
+                        onChange={handleChange}
+                        placeholder="Username"
+                        variant="outlined" />
+                        <TextField
+                        required
+                        id="filled-required2"
+                        name="password"
+                        label="Password"
+                        value={props.password} 
+                        onChange={handleChange}
+                        placeholder="Must be 8 characters"
+                        variant="outlined"
+                        />
+                        <button onSubmit={handleSubmit}>Register</button>
+                    </form>
+                </div>
+            </div>
+        </Modal>
+        </>
     )
 }
 
-export default Login;
+export default withRouter(Login);
