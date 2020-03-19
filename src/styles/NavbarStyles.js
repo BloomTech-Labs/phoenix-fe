@@ -59,6 +59,14 @@ const NavbarStyle = makeStyles(theme => ({
         display: 'none',
       },
     },
+    logo: {
+      height: '44px'
+    },
+    phoenix: {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none'
+      }
+    }
 }))
 
 export default NavbarStyle;
