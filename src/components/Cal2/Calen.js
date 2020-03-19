@@ -5,7 +5,9 @@
 import React from 'react'
 import moment from 'moment'
 import './Calen.css'
+import axios from 'axios'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Axios from 'axios';
 // const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 export default class Calendar extends React.Component {
@@ -16,7 +18,8 @@ export default class Calendar extends React.Component {
       selectedMonth: moment(),
       selectedDay: moment().startOf("day"),
       selectedMonthEvents: [],
-      showEvents: false
+      showEvents: false,
+      events: []
     };
 
     this.previous = this.previous.bind(this);
@@ -142,7 +145,10 @@ export default class Calendar extends React.Component {
         break;
       default:
         var newEvent = {
-          title: eventTitle,
+          summary: eventTitle,
+        //   description: eventDescription,
+        //   location: eventLocation,
+          startDate: '',
           date: currentSelectedDate,
           dynamic: true
         };
@@ -193,13 +199,24 @@ export default class Calendar extends React.Component {
 //     }
 //   }
 //perhaps this is the axios call that maps our events
+componentDidMount(){
+    Axios
+    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
+    .then(res => {
+        console.log('res', res.data)
+        this.setState({
+            events: res.data
+    })
+    })
+    .catch(err => console.log('axios err', err))
+}
+
   initialiseEvents() {
     const monthEvents = this.state.selectedMonthEvents;
 
-    let allEvents = [];
+    let allEvents = this.state.events;
 
-    //event objects 
-    //push into array
+    
 
     for (var i = 0; i < allEvents.length; i++) {
       monthEvents.push(allEvents[i]);
@@ -273,7 +290,7 @@ class Events extends React.Component {
     const currentSelectedDay = this.props.selectedDay;
     const monthEvents = this.props.selectedMonthEvents;
     const removeEvent = this.props.removeEvent;
-
+    
     const monthEventsRendered = monthEvents.map((event, i) => {
       return (
         <div
