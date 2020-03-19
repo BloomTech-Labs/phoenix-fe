@@ -1,6 +1,6 @@
 import React from "react";
 import  * as dateFns  from 'date-fns'
-import './Calendar.css'
+import './CalendarF.css'
 
 export default class Calendar extends React.Component {
   state = {
@@ -78,22 +78,24 @@ export default class Calendar extends React.Component {
         );
         day = dateFns.addDays(day, 1);
       }
+      console.log('days', days)
       rows.push(
         <div className="row" key={day}>
           {days}
         </div>
+      
       );
       days = [];
      
       }
-  console.log('days', days)
+ 
     
     return <div className="body">{rows}</div>;
   }
-  onDateClick = select => {
-      console.log('day', select)
+  onDateClick = day => {
+      console.log('day', day)
     this.setState({
-      selectedDate: select
+      selectedDate: day
     });
   };
 

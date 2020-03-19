@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import Calendar from './components/Calendar/CalendarF'
+import Calendar from './components/Cal2/Calen'
 import {
   BrowserRouter as Router, 
   Switch, 
