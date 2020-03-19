@@ -8,13 +8,14 @@ const useStyles = makeStyles(theme => ({
 
   root: {
     flexGrow: 1,
-    margin: '0 auto',
-    width: '1000px'
+    margin: '2rem auto',
+    [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column'
+    }
   },
 
   howtobar: {
-  width: 1100,
-  height: 178.27
+  margin: '1rem'
   },
   banner: {
     display: 'flex',
@@ -24,16 +25,30 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${Calendar})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
-    backgroundPosition: 'center'    
+    backgroundPosition: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      backgroundImage: 'none',
+      margin: '0 auto',
+    },   
   },
   bannerDivLeft: {
     width: '40%',
     fontSize: '1rem',
     fontWeight: '600',
-    transform: 'translate(2rem, -5rem)'
+    transform: 'translate(2rem, -5rem)',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      transform: 'none',
+      backgroundImage: 'none'
+  }
   }, 
-  bannerDivRight: {
+  svg: {
+    width: '60%',
+    paddingTop: '10rem',
+    [theme.breakpoints.down('sm')]: {
 
+    }
   }
 
 }));
@@ -42,14 +57,14 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles();
   
     return (
-      <main className={classes.grow}>
+      <main className={classes.root}>
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>
         <Typography className={classes.bannerDivLeft}>
         Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.
         </Typography>
       <div className={classes.bannerDivRight}>
-        <img src={Peeps} alt="inclusive svg people" style={{ width: '60%', paddingTop: '14rem' }}/>
+        <img src={Peeps} alt="inclusive svg people" className={classes.svg}/>
       </div>
       </div>
       </main>
