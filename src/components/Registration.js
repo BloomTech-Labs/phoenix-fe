@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import  Modal  from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 
-=======
-import { withRouter } from 'react-router-dom';
-import  Modal  from '@material-ui/core/Modal';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import {axiosWithAuth} from '../utils/axiosWithAuth.js';
-import { makeStyles } from '@material-ui/core/styles';
-
->>>>>>> 0b2637594c8bb4f41ea4f57df82491515d511140
 function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
