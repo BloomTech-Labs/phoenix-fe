@@ -3,8 +3,10 @@
 /* https://dribbble.com/shots/2335073-Calendar-App-Animation */
 /* https://stackoverflow.com/questions/16469548/overflowhidden-not-working-with-translation-in-positive-direction */
 import React from 'react'
-import moment from 'momentjs'
-const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+import moment from 'moment'
+import './Calen.css'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 export default class Calendar extends React.Component {
   constructor(props) {
@@ -165,7 +167,7 @@ export default class Calendar extends React.Component {
     if (currentSelectedDate.isAfter(isAfterDay)) {
       this.handleAdd();
     } else {
-      if (confirm("Are you sure you want to add an event in the past?")) {
+      if (window.confirm("Are you sure you want to add an event in the past?")) {
         this.handleAdd();
       } else {
       } // end confirm past
