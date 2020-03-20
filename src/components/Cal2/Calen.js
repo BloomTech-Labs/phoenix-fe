@@ -215,9 +215,7 @@ componentDidMount(){
     const monthEvents = this.state.selectedMonthEvents;
 
     let allEvents = this.state.events;
-
-    
-
+    console.log('allEvents', allEvents)
     for (var i = 0; i < allEvents.length; i++) {
       monthEvents.push(allEvents[i]);
     }
@@ -231,7 +229,7 @@ componentDidMount(){
     const currentMonthView = this.state.selectedMonth;
     const currentSelectedDay = this.state.selectedDay;
     const showEvents = this.state.showEvents;
-
+    console.log(showEvents)
     if (showEvents) {
       return (
         <section className="main-calendar">
