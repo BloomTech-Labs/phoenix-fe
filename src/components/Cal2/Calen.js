@@ -7,8 +7,7 @@ import moment from 'moment'
 import './Calen.css'
 import axios from 'axios'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Axios from 'axios';
-// const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 
 export default class Calendar extends React.Component {
   constructor(props) {
@@ -180,27 +179,27 @@ export default class Calendar extends React.Component {
     } //end is in the past
   }
 //not sure we need this part dont eant to allow deletion through user
-//   removeEvent(i) {
-//     const monthEvents = this.state.selectedMonthEvents.slice();
-//     const currentSelectedDate = this.state.selectedDay;
+  removeEvent(i) {
+    const monthEvents = this.state.selectedMonthEvents.slice();
+    const currentSelectedDate = this.state.selectedDay;
 
-//     if (confirm("Are you sure you want to remove this event?")) {
-//       let index = i;
+    if (window.confirm("Are you sure you want to remove this event?")) {
+      let index = i;
 
-//       if (index != -1) {
-//         monthEvents.splice(index, 1);
-//       } else {
-//         alert("No events to remove on this day!");
-//       }
+      if (index !== -1) {
+        monthEvents.splice(index, 1);
+      } else {
+        alert("No events to remove on this day!");
+      }
 
-//       this.setState({
-//         selectedMonthEvents: monthEvents
-//       });
-//     }
-//   }
+      this.setState({
+        selectedMonthEvents: monthEvents
+      });
+    }
+  }
 //perhaps this is the axios call that maps our events
 componentDidMount(){
-    Axios
+    axios
     .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
     .then(res => {
         console.log('res', res.data)
@@ -307,6 +306,11 @@ class Events extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
+
+
+
+
+{/* below this is where we need to specify the time for the scheduled events.             */}
             <div className="event-time event-attribute">
               {event.date.format("HH:mm")}
             </div>

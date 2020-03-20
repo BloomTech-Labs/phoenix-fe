@@ -65,13 +65,13 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.main-calendar .calendar-header {
+/* .main-calendar .calendar-header {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: 30%;
   color: #f8060663;
-}
+} */
 .main-calendar .calendar-header .title-header {
   width: 100%;
   height: 70%;
@@ -112,19 +112,26 @@ body {
   background-color: #f7f4f4dc;
 }
 .main-calendar .calendar-header .button-container {
-  width: 100%;
+  
+  
+  width: 50%;
   height: 30%;
   background-color: #f39821c0;
+  align-items: center;
+  justify-content: center;
 }
 .main-calendar .calendar-header .button-container .event-button {
-  flex-grow: 1;
+  
   display: flex;
   height: 100%;
+ 
+  border: 2px solid #f39821c0;
+  border-radius:5px;
   align-items: center;
   justify-content: center;
 }
 .main-calendar .calendar-header .button-container .event-button:hover {
-  background-color: rgb(68, 68, 68);
+  background-color: #f3214f;
   color: #f3214f;
 }
 .main-calendar .days-container {
@@ -139,7 +146,8 @@ body {
   position: relative;
   width: 100%;
   height: 70%;
-  background-color: #f3214f;
+  color:white;
+  background-color: #f3214f ;
   font-size: 1.2em;
 }
 .main-calendar .day-events .event-container {
@@ -154,6 +162,8 @@ body {
   width: 30%;
 }
 .main-calendar .day-events .event-container .animated-title {
+  
+  
   width: 70%;
 }
 .main-calendar .day-events .event-container .event-attribute {
@@ -164,6 +174,7 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   padding: 5px;
+  
 }
 
 .row {
