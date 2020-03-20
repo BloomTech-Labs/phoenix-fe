@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis");
 body {
   font-size: 16px;
 }
 
 .calendar-rectangle {
   width: 100%;
-  height: 70%;
+  height: 90%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -17,33 +16,30 @@ body {
 }
 @media (min-width: 576px) {
   .calendar-rectangle {
-      height: 25%;
     width: 70%;
   }
 }
 @media (min-width: 768px) {
   .calendar-rectangle {
-      height: 50%;
-    width: 70%;
+    width: 50%;
     font-size: 1em;
   }
 }
 @media (min-width: 992px) {
   .calendar-rectangle {
-      height: 60%;
-    width: 90%;
+    width: 40%;
     font-size: 1em;
   }
 }
 @media (min-width: 1200px) {
   .calendar-rectangle {
-    width: 90%;
+    width: 30%;
     font-size: 1em;
   }
 }
 @media (min-width: 1300px) {
   .calendar-rectangle {
-    width: 90%;
+    width: 20%;
   }
 }
 .calendar-rectangle:before {
@@ -54,6 +50,7 @@ body {
 
 .calendar-content {
   position: absolute;
+  height: 90%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -70,14 +67,14 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: 30%;
-  color: #f8060663;
+  color: #f3214f;
 }
 .main-calendar .calendar-header .title-header {
   width: 100%;
   height: 70%;
   white-space: nowrap;
   font-size: 1.2em;
-  background-color: #f7f4f4dc;
+  background-color: #ffffff;
 }
 @media (min-width: 992px) {
   .main-calendar .calendar-header .title-header {
@@ -100,8 +97,8 @@ body {
 }
 .main-calendar .calendar-header .title-header .header-text .today-label:hover {
   cursor: pointer;
-  color: #4b4a4a;
-  background-color: #d88a8a;
+  color: #f3214f;
+  background-color: #fc9856;
 }
 .main-calendar .calendar-header .title-header .header-text .month-label {
   flex: 3;
@@ -109,12 +106,12 @@ body {
 .main-calendar .calendar-header .days-header {
   width: 100%;
   height: 30%;
-  background-color: #f7f4f4dc;
+  background-color: #ffffff;
 }
 .main-calendar .calendar-header .button-container {
   width: 100%;
   height: 30%;
-  background-color: #f39821c0;
+  background-color: #f3214f;
 }
 .main-calendar .calendar-header .button-container .event-button {
   flex-grow: 1;
@@ -124,12 +121,12 @@ body {
   justify-content: center;
 }
 .main-calendar .calendar-header .button-container .event-button:hover {
-  background-color: rgb(68, 68, 68);
+  background-color: #fff;
   color: #f3214f;
 }
 .main-calendar .days-container {
   width: 100%;
-  height: 100%;
+  height: 70%;
   background: #fc9856;
 }
 .main-calendar .days-container .week {
@@ -139,12 +136,12 @@ body {
   position: relative;
   width: 100%;
   height: 70%;
-  background-color: #f3214f;
+  background-color: #fc9856;
   font-size: 1.2em;
 }
 .main-calendar .day-events .event-container {
   width: 100%;
-  text-align: right;
+  text-align: center;
   display: flex;
 }
 .main-calendar .day-events .event-container:hover {
@@ -167,14 +164,13 @@ body {
 }
 
 .row {
-    height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .box {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,7 +181,7 @@ body {
 .box.arrow:hover {
   background-color: white;
   cursor: pointer;
-  color: #fa4646;
+  color: #fc9856;
   transition: all 0.2s ease-in-out 0s;
 }
 
@@ -198,25 +194,25 @@ body {
 }
 .day .day-number {
   width: 80%;
-  height: 100%;
+  height: 90%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #f7040450;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border: 1px solid #f3214f81;
   box-sizing: border-box;
   border-radius: 5%;
 }
 .day:hover .day-number {
   cursor: default;
-  background-color: #f99790;
+  background-color: #f3214f9a;
   color: #ffffff;
   transition: background-color 0.2s ease-in-out 0s;
 }
 .day.today .day-number {
-  border: 1px solid #f9a590;
+  border: 1px solid #750019a6;
 }
 .day.has-events .day-number {
-  color: #330303;
+  color: #f3214f;
   font-weight: bold;
 }
 .day.different-month {
