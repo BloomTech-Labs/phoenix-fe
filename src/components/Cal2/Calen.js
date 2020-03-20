@@ -27,7 +27,7 @@ export default class Calendar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
     this.goToCurrentMonthView = this.goToCurrentMonthView.bind(this);
 
-    this.initialiseEvents();
+    
   }
 
   previous() {
@@ -206,29 +206,37 @@ componentDidMount(){
         this.setState({
             events: res.data
     })
-    })
+ })
     .catch(err => console.log('axios err', err))
+    .then(() => {
+      if(this.state.events.length > 0){
+        const monthEvents = this.state.selectedMonthEvents;
+    
+        let allEvents = this.state.events;
+    
+        console.log('allEvents', allEvents)
+        for (var i = 0; i < allEvents.length; i++) {
+          monthEvents.push(allEvents[i]);
+        }
+    
+        this.setState({
+          selectedMonthEvents: monthEvents
+        });
+      }
+
+    })
+    
+    
 }
 
-  initialiseEvents() {
-    const monthEvents = this.state.selectedMonthEvents;
-
-    let allEvents = this.state.events;
-    console.log('allEvents', allEvents)
-    for (var i = 0; i < allEvents.length; i++) {
-      monthEvents.push(allEvents[i]);
-    }
-
-    this.setState({
-      selectedMonthEvents: monthEvents
-    });
-  }
+  
+  
 
   render() {
     const currentMonthView = this.state.selectedMonth;
     const currentSelectedDay = this.state.selectedDay;
     const showEvents = this.state.showEvents;
-    console.log(showEvents)
+    console.log('event to render', showEvents)
     if (showEvents) {
       return (
         <section className="main-calendar">
