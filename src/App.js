@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import Calendar from './components/Cal2/Calen'
-import {
-  BrowserRouter as Router, 
-  Switch, 
-  Route
-} from "react-router-dom"
+import Calendar from './components/Cal2/Calen';
+
+
 
 
 function App() {
@@ -19,17 +16,19 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <Calendar />
-        {/* <Router>
-          <Switch>
-            <Route path="/one" > </Route>
-            <Route path="/two" > </Route>
-          </Switch>
-        </Router> */}
       
-      </header>
+        
+      {/* <i class="fab fa-facebook"></i>  */}
+        <div class="calendar-rectangle">
+  <div id="calendar-content" class="calendar-content">
+  <Calendar />
+  </div>
+  <div>
+  <i class="fab fa-facebook"></i> 
+  </div>
+</div>
+      
+      
     </div>
   );
 }
