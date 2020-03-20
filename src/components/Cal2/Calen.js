@@ -27,7 +27,7 @@ export default class Calendar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
     this.goToCurrentMonthView = this.goToCurrentMonthView.bind(this);
 
-    this.initialiseEvents();
+    // this.initialiseEvents = this.initialiseEvents(this);
   }
 
   previous() {
@@ -198,31 +198,38 @@ export default class Calendar extends React.Component {
     }
   }
 //perhaps this is the axios call that maps our events
+
 componentDidMount(){
-    axios
-    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
-    .then(res => {
-        console.log('res', res.data)
+  axios
+  .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
+  .then(res => {
+
         this.setState({
-            events: res.data
+          events: res.data
     })
-    })
-    .catch(err => console.log('axios err', err))
+  }).then(res => {
+        this.initialiseEvents()
+      }).then(res => {
+        const monthEvents = this.initialiseEvents()
+
+        this.setState({
+          selectedMonthEvents: monthEvents
+        });
+
+      })
+  .catch(err => console.log('axios err', err))
 }
 
-  initialiseEvents() {
-    const monthEvents = this.state.selectedMonthEvents;
+initialiseEvents() {
+  const monthEvents = this.state.selectedMonthEvents;
 
-    let allEvents = this.state.events;
-    console.log('allEvents', allEvents)
-    for (var i = 0; i < allEvents.length; i++) {
-      monthEvents.push(allEvents[i]);
-    }
+  let allEvents = this.state.events;
 
-    this.setState({
-      selectedMonthEvents: monthEvents
-    });
+  for (var i = 0; i < allEvents.length; i++) {
+    monthEvents.push(allEvents[i]);
   }
+  return monthEvents
+}
 
   render() {
     const currentMonthView = this.state.selectedMonth;
