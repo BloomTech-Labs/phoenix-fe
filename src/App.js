@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
-import Calendar from './components/Cal2/Calen';
-
-
-
+import Navbar from "./components/Navbar.js";
+import LandingPage from './components/LandingPage.js';
+import Footer from './components/Footer.js';
 
 function App() {
 
@@ -16,19 +15,11 @@ function App() {
 }, [])
   return (
     <div className="App">
-      
-        
-      {/* <i class="fab fa-facebook"></i>  */}
-        <div class="calendar-rectangle">
-  <div id="calendar-content" class="calendar-content">
-  <Calendar />
-  </div>
-  <div>
-  <i class="fab fa-facebook"></i> 
-  </div>
-</div>
-      
-      
+      <div className="content">
+        <Navbar />
+        <LandingPage />    
+      </div>
+        <Footer /> 
     </div>
   );
 }
