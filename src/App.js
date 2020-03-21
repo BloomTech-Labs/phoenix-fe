@@ -4,6 +4,7 @@ import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
 import LandingPage from './components/LandingPage.js';
 import Footer from './components/Footer.js';
+import Calendar from './components/Cal2/Calen'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 }, [])
   return (
     <div className="App">
+      
       <div className="content">
         <Navbar />
         <LandingPage />    
