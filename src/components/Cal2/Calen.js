@@ -203,7 +203,7 @@ componentDidMount(){
   axios
   .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
   .then(res => {
-
+      console.log('res', res.data)
         this.setState({
           events: res.data
     })
@@ -294,11 +294,17 @@ class Events extends React.Component {
     const currentSelectedDay = this.props.selectedDay;
     const monthEvents = this.props.selectedMonthEvents;
     const removeEvent = this.props.removeEvent;
-    
-    const monthEventsRendered = monthEvents.map((event, i) => {
+    let rendTemp = moment(monthEvents)
+    console.log('monthEvents rend', rendTemp)
+
+    const monthEventsRendered = rendTemp._i.map((event, i) => {
+      // console.log('render', event)
+      let events = moment(event)
+      // console.log('events', events)
       return (
+       
         <div
-          key={event.title}
+          key={events.event_id}
           className="event-container"
           onClick={() => removeEvent(i)}
         >
@@ -312,12 +318,9 @@ class Events extends React.Component {
             transitionLeaveTimeout={500}
           >
 
-
-
-
 {/* below this is where we need to specify the time for the scheduled events.             */}
             <div className="event-time event-attribute">
-              {event.date.format("HH:mm")}
+              {event.start_time}
             </div>
           </ReactCSSTransitionGroup>
           <ReactCSSTransitionGroup
@@ -329,16 +332,16 @@ class Events extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
-            <div className="event-title event-attribute">{event.title}</div>
+            <div className="event-title event-attribute">{event.summary}</div>
           </ReactCSSTransitionGroup>
         </div>
       );
     });
 
     const dayEventsRendered = [];
-
+    console.log('da', da)
     for (var i = 0; i < monthEventsRendered.length; i++) {
-      if (monthEvents[i].date.isSame(currentSelectedDay, "day")) {
+      if (rendTemp._i[i].start_date.isSame(currentSelectedDay, "day")) {
         dayEventsRendered.push(monthEventsRendered[i]);
       }
     }
@@ -375,11 +378,12 @@ class Week extends React.Component {
     let selected = this.props.selected;
     let select = this.props.select;
     let monthEvents = this.props.monthEvents;
-
+    let tempEvent = moment(monthEvents)
+    console.log('monthEvents', monthEvents)
     for (var i = 0; i < 7; i++) {
       var dayHasEvents = false;
 
-      for (var j = 0; j < monthEvents.length; j++) {
+      for (var j = 0; j < tempEvent.length; j++) {
         if (monthEvents[j].date.isSame(date, "day")) {
           dayHasEvents = true;
         }
