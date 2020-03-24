@@ -1,13 +1,8 @@
-/* Based on https://www.codementor.io/chrisharrington/building-a-calendar-using-react-js--less-css-and-font-awesome-du107z6nt */
-/* similar solution https://codepen.io/nickjvm/pen/bERraX */
-/* https://dribbble.com/shots/2335073-Calendar-App-Animation */
-/* https://stackoverflow.com/questions/16469548/overflowhidden-not-working-with-translation-in-positive-direction */
 import React from 'react'
 import moment from 'moment'
 import './Calen.css'
 import axios from 'axios'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
 
 export default class Calendar extends React.Component {
   constructor(props) {
@@ -231,7 +226,7 @@ initialiseEvents() {
     const showEvents = this.state.showEvents;
     if (showEvents) {
       return (
-        <section className="main-calendar">
+        <section className="main-calendar content">
           <header className="calendar-header">
             <div className="row title-header">
               {this.renderDayLabel()}
@@ -240,11 +235,15 @@ initialiseEvents() {
               <i
                 className="box arrow fa fa-angle-left"
                 onClick={this.showCalendar}
-              />
+              >
+                Back
+              </i>
               <i
                 className="box event-button fa fa-plus-square"
                 onClick={this.addEvent}
-              />
+              >
+                Add event
+              </i>
             </div>
           </header>
           <Events
@@ -417,5 +416,3 @@ class Day extends React.Component {
     );
   }
 }
-
-// ReactDOM.render(<Calendar />, document.getElementById("calendar-content"));

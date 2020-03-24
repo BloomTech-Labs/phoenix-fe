@@ -58,17 +58,10 @@ body {
 }
 
 .main-calendar {
+  flex: 1 0 auto;
   height: 100%;
-  display: flex;
   flex-wrap: wrap;
 }
-/* .main-calendar .calendar-header {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 30%;
-  color: #f8060663;
-} */
 .main-calendar .calendar-header .title-header {
   width: 100%;
   height: 70%;
@@ -103,16 +96,19 @@ body {
 .main-calendar .calendar-header .title-header .header-text .month-label {
   flex: 3;
 }
+.title-header {
+  padding-top: 1rem;
+}
+i {
+  color: white;
+}
 .main-calendar .calendar-header .days-header {
   width: 100%;
   height: 30%;
   background-color: #ffffff;
 }
 .main-calendar .calendar-header .button-container {
-  
-  
-  width: 50%;
-  height: 30%;
+    height: 44px;
   background-color: #f39821c0;
   align-items: center;
   justify-content: center;
@@ -140,12 +136,12 @@ body {
   height: 15%;
 }
 .main-calendar .day-events {
-  position: relative;
-  width: 100%;
-  height: 70%;
-  color:white;
-  background-color: #f3214f ;
-  font-size: 1.2em;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f3214f;
+  color: white;
+  font-weight: bold;
+  border-radius: 2px;
 }
 .main-calendar .day-events .event-container {
   width: 100%;
