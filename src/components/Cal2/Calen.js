@@ -203,14 +203,15 @@ componentDidMount(){
   axios
   .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
   .then(res => {
-      console.log('res', res.data)
+
         this.setState({
           events: res.data
     })
   }).then(res => {
-        this.initialiseEvents()
-      }).then(res => {
         const monthEvents = this.initialiseEvents()
+        return monthEvents
+      }).then(res => {
+        const monthEvents = res
 
         this.setState({
           selectedMonthEvents: monthEvents
@@ -235,7 +236,7 @@ initialiseEvents() {
     const currentMonthView = this.state.selectedMonth;
     const currentSelectedDay = this.state.selectedDay;
     const showEvents = this.state.showEvents;
-    console.log('event to render', showEvents)
+
     if (showEvents) {
       return (
         <section className="main-calendar">
@@ -295,12 +296,9 @@ class Events extends React.Component {
     const monthEvents = this.props.selectedMonthEvents;
     const removeEvent = this.props.removeEvent;
     let rendTemp = moment(monthEvents)
-    // console.log('monthEvents rend', rendTemp)
 
     const monthEventsRendered = rendTemp._i.map((event, i) => {
-      // console.log('render', event)
       let events = moment(event)
-      // console.log('events', events)
       return (
        
         <div
@@ -339,8 +337,6 @@ class Events extends React.Component {
     });
 
     const dayEventsRendered = [];
-    console.log('monthEventsRendered', monthEvents)
-    console.log('currentSelectedDay', typeof currentSelectedDay._d)
     for (var i = 0; i < monthEventsRendered.length; i++) {
       if (moment(monthEvents[i].start_date).isSame(currentSelectedDay, "day")) {
         dayEventsRendered.push(monthEventsRendered[i]);
@@ -380,7 +376,7 @@ class Week extends React.Component {
     let select = this.props.select;
     let monthEvents = this.props.monthEvents;
     let tempEvent = moment(monthEvents)
-    // console.log('monthEvents', monthEvents)
+
     for (var i = 0; i < 7; i++) {
       var dayHasEvents = false;
 
