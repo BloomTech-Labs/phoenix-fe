@@ -5,7 +5,6 @@ import './index.css';
 import App from './App';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import { red, grey } from '@material-ui/core/colors'
-import routes from './components/routes.js';
 
 const theme = createMuiTheme({
     palette: {
@@ -37,7 +36,6 @@ ReactDOM.render(
 <MuiThemeProvider theme={theme}>
 <Router>
 <App />
-{routes}
 </Router>
 </MuiThemeProvider>,
 document.getElementById('root'));
