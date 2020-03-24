@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     width: '40%',
     fontSize: '1rem',
     fontWeight: '600',
-    transform: 'translate(2rem, -5rem)',
+    margin: '0 0 auto 5rem',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       transform: 'none',
@@ -70,15 +70,15 @@ const useStyles = makeStyles(theme => ({
       <main className={classes.root}>
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Typography className={classes.bannerDivLeft}>
-     <p className={classes.verbage}>CONNECT</p>
-<p className={classes.verbage}>
-     Make real connections
-     Meet people who love what you
-     love, and stay in touch after the 
-     event. 
-     </p>
+          CONNECT<br/>
+          Make real connections
+          Meet people who love what you
+          love, and stay in touch after the 
+          event.
         </Typography>
+        </div>
       <div className={classes.bannerDivRight}>
         <img src={Peeps} alt="inclusive svg people" className={classes.svg}/>
       </div>

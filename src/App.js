@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import './App.css';
 import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
-import LandingPage from './components/LandingPage.js';
 import Footer from './components/Footer.js';
+import Routes from './components/routes.js';
 
 function App() {
 
@@ -15,11 +15,9 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <div className="content">
-        <Navbar />
-        <LandingPage />    
-      </div>
-        <Footer /> 
+      <Navbar />
+      {Routes}
+      <Footer />
     </div>
   );
 }
