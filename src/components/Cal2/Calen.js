@@ -27,7 +27,6 @@ export default class Calendar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
     this.goToCurrentMonthView = this.goToCurrentMonthView.bind(this);
 
-    // this.initialiseEvents = this.initialiseEvents(this);
   }
 
   previous() {
@@ -230,7 +229,6 @@ initialiseEvents() {
 
   render() {
     const showEvents = this.state.showEvents;
-    
     if (showEvents) {
       return (
         <section className="main-calendar">
@@ -289,12 +287,9 @@ class Events extends React.Component {
     const monthEvents = this.props.selectedMonthEvents;
     const removeEvent = this.props.removeEvent;
     let rendTemp = moment(monthEvents)
-    
-    console.log('selectedMonths', monthEvents)
+
     const monthEventsRendered = rendTemp._i.map((event, i) => {
-      
       let events = moment(event)
-      
       return (
        
         <div
@@ -331,7 +326,6 @@ class Events extends React.Component {
     });
 
     const dayEventsRendered = [];
- 
     for (var i = 0; i < monthEventsRendered.length; i++) {
       if (moment(monthEvents[i].start_date).isSame(currentSelectedDay, "day")) {
         dayEventsRendered.push(monthEventsRendered[i]);
@@ -371,7 +365,6 @@ class Week extends React.Component {
     let select = this.props.select;
     let monthEvents = this.props.monthEvents;
     let tempEvent = moment(monthEvents)
-   
     for (var i = 0; i < 7; i++) {
       var dayHasEvents = false;
 
