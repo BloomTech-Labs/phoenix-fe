@@ -33,6 +33,9 @@ const useStyles = makeStyles(theme => ({
     },   
   },
   bannerDivLeft: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'left',
     width: '40%',
     fontSize: '1rem',
     fontWeight: '600',
@@ -43,6 +46,14 @@ const useStyles = makeStyles(theme => ({
       backgroundImage: 'none'
   }
   }, 
+  
+  verbage: {
+    alignSelf: 'flex-start',
+    textAlign: 'left'
+  },
+
+  bannerDivRight: {
+  },
   svg: {
     width: '60%',
     paddingTop: '10rem',
@@ -50,7 +61,6 @@ const useStyles = makeStyles(theme => ({
 
     }
   }
-
 }));
   
   export default function PrimarySearchAppBar() {
@@ -62,10 +72,11 @@ const useStyles = makeStyles(theme => ({
       <div className={classes.banner}>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Typography className={classes.bannerDivLeft}>
+          CONNECT<br/>
           Make real connections
           Meet people who love what you
           love, and stay in touch after the 
-          event. 
+          event.
         </Typography>
         </div>
       <div className={classes.bannerDivRight}>
