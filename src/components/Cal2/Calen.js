@@ -290,7 +290,7 @@ class Events extends React.Component {
     const removeEvent = this.props.removeEvent;
     let rendTemp = moment(monthEvents)
     
-
+    console.log('selectedMonths', monthEvents)
     const monthEventsRendered = rendTemp._i.map((event, i) => {
       
       let events = moment(event)
@@ -333,7 +333,6 @@ class Events extends React.Component {
     const dayEventsRendered = [];
  
     for (var i = 0; i < monthEventsRendered.length; i++) {
-      console.log('currentSelectedDay', currentSelectedDay)
       if (moment(monthEvents[i].start_date).isSame(currentSelectedDay, "day")) {
         dayEventsRendered.push(monthEventsRendered[i]);
       }
