@@ -27,7 +27,6 @@ export default class Calendar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
     this.goToCurrentMonthView = this.goToCurrentMonthView.bind(this);
 
-    // this.initialiseEvents = this.initialiseEvents(this);
   }
 
   previous() {
@@ -54,7 +53,6 @@ export default class Calendar extends React.Component {
   }
 
   goToCurrentMonthView(){
-    const currentMonthView = this.state.selectedMonth;
     this.setState({
       selectedMonth: moment()
     });
@@ -87,7 +85,7 @@ export default class Calendar extends React.Component {
   }
   
   renderTodayLabel() {
-    const currentSelectedDay = this.state.selectedDay;
+
     return (
       <span className="box today-label" onClick={this.goToCurrentMonthView}>
         Today
@@ -181,8 +179,7 @@ export default class Calendar extends React.Component {
 //not sure we need this part dont eant to allow deletion through user
   removeEvent(i) {
     const monthEvents = this.state.selectedMonthEvents.slice();
-    const currentSelectedDate = this.state.selectedDay;
-
+    
     if (window.confirm("Are you sure you want to remove this event?")) {
       let index = i;
 
@@ -203,7 +200,6 @@ componentDidMount(){
   axios
   .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
   .then(res => {
-
         this.setState({
           events: res.data
     })
@@ -212,12 +208,11 @@ componentDidMount(){
         return monthEvents
       }).then(res => {
         const monthEvents = res
-
         this.setState({
-          selectedMonthEvents: monthEvents
-        });
-
+          selectedMonthEvents:monthEvents
+        })
       })
+
   .catch(err => console.log('axios err', err))
 }
 
@@ -225,7 +220,7 @@ initialiseEvents() {
   const monthEvents = this.state.selectedMonthEvents;
 
   let allEvents = this.state.events;
-
+  
   for (var i = 0; i < allEvents.length; i++) {
     monthEvents.push(allEvents[i]);
   }
@@ -233,10 +228,7 @@ initialiseEvents() {
 }
 
   render() {
-    const currentMonthView = this.state.selectedMonth;
-    const currentSelectedDay = this.state.selectedDay;
     const showEvents = this.state.showEvents;
-
     if (showEvents) {
       return (
         <section className="main-calendar">
@@ -291,7 +283,6 @@ initialiseEvents() {
 
 class Events extends React.Component {
   render() {
-    const currentMonthView = this.props.selectedMonth;
     const currentSelectedDay = this.props.selectedDay;
     const monthEvents = this.props.selectedMonthEvents;
     const removeEvent = this.props.removeEvent;
@@ -315,8 +306,6 @@ class Events extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
-
-{/* below this is where we need to specify the time for the scheduled events.             */}
             <div className="event-time event-attribute">
               {event.start_time}
             </div>
@@ -330,7 +319,7 @@ class Events extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
-            <div className="event-title event-attribute">{event.summary}</div>
+            <div className="event-title event-attribute">Summary: {event.summary}, Description: {event.description}</div>
           </ReactCSSTransitionGroup>
         </div>
       );
@@ -376,7 +365,6 @@ class Week extends React.Component {
     let select = this.props.select;
     let monthEvents = this.props.monthEvents;
     let tempEvent = moment(monthEvents)
-
     for (var i = 0; i < 7; i++) {
       var dayHasEvents = false;
 
