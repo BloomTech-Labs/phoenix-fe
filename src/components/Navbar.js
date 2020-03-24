@@ -1,4 +1,5 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,6 +17,7 @@ import Login from './Login.js';
 import NavbarStyle from '../styles/NavbarStyles.js';
 import logo from '../images/PhoenixLogo.png';
 import { Typography } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 const useStyles = NavbarStyle;
 
@@ -107,8 +109,9 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <img src={logo} alt="logo" className={classes.logo} />
-          <Typography style={{ fontSize: '2rem' }} ><span className={classes.phoenix}>Phoenix</span></Typography>
+          <Link to='/' style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}><img src={logo} alt="logo" className={classes.logo} />
+            <Typography style={{ fontSize: '2rem' }} ><span className={classes.phoenix}>Phoenix</span></Typography>
+          </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -124,6 +127,7 @@ export default function PrimarySearchAppBar() {
           </div>
           <span className={classes.phoenix}><Registration /></span>
           <span className={classes.phoenix}><Login /></span>
+          <Link to="/events" ><Button variant="outlined" style={{ marginLeft: '16px' }} >Calendar</Button></Link>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">

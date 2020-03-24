@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
+  },
+  button: {
+    backgroundColor: '#f4f0f0'
   }
 }));
 
@@ -53,7 +56,7 @@ function Terms(props) {
 
   return (
     <div className="fullTerms">
-      <Button variant="outlined" onClick={handleOpen}>
+      <Button variant="outlined" style={{ backgroundColor: '#f4f0f0' }} onClick={handleOpen}>
         Terms Of Service
       </Button>
       <Modal
