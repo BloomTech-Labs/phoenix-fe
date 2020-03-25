@@ -1,12 +1,14 @@
 import React from 'react'
 
-export const Event = (props) => {
+const Event = (props) => {
     return (
         <div>
-            <p>{props.data.summary}</p>
-             <p>{props.data.description}</p>
-    <p>{props.data.start_date}</p>
-    <span>{props.data.start_time} - {props.data.end_time}</span>
+               <p>{props.event.summary}</p>
+             <p>{props.event.description}</p>
+    <p>{props.event.start_date}</p>
+    <span>{props.event.start_time} - {props.event.end_time}</span>
         </div>
     )
 }
+
+export default Event

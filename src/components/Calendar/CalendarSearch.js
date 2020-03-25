@@ -11,15 +11,12 @@ useEffect(()=> {
         axios
         .get(`https://phoenix-be-staging.herokuapp.com/api/calendar`)
         .then(res => {
-            console.log('card data', res.data)
             const search = res.data.filter(item => {
-                return item.first_name.toLowerCase().includes(string.toLowerCase())
+                return item.summary.toLowerCase().includes(string.toLowerCase())
         })
         setRes(search);})
         .catch(err => console.log('err', err))
     }, [string])
-
-    //in return change to what we want to filter
 
     const handleChange = e => {
         setString(e.target.value)
@@ -29,7 +26,6 @@ useEffect(()=> {
         e.preventDefault()
         setRes(e.target.value)
     }
-
     
     return (
         <div>
@@ -52,6 +48,5 @@ useEffect(()=> {
     </div>
     )
 }
-
 
 export default CalendarSearch
