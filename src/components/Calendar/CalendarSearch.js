@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Event from './Event'
 
 const CalendarSearch = () => {
 const [string, setString] = useState('')
@@ -44,9 +45,9 @@ useEffect(()=> {
               />
              <button type='submit'>Submit</button>
          </form>
-         {/* {result.map(data => (
-             <CalendarEvents key={data.id} event={data}/>
-         ))} */}
+         {result.map(data => (
+             <Event key={data.id} event={data}/>
+         ))}
       
     </div>
     )
