@@ -11,7 +11,7 @@ function App() {
    ReactGa.initialize('UA-158783725-1')
 
   ReactGa.pageview(window.location.pathname + window.location.search)
-//pathway to connect the routes and search
+
 }, [])
   return (
     <div className="App">
