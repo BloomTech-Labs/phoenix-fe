@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.js";
 import LandingPage from './components/LandingPage.js';
 import Footer from './components/Footer.js';
 import Calendar from './components/Cal2/Calen'
+import Search from './components/Calendar/CalendarSearch'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <Calendar />
+      <Search />
     </div>
   );
 }

@@ -13,7 +13,7 @@ useEffect(()=> {
         .then(res => {
             console.log('card data', res.data)
             const search = res.data.filter(item => {
-                return item.first_name.toLowerCase().includes(string.toLowerCase())
+                return item.summary.toLowerCase().includes(string.toLowerCase())
         })
         setRes(search);})
         .catch(err => console.log('err', err))
