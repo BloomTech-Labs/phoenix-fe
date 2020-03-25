@@ -17,7 +17,7 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <Search />
+      <Calendar />
     </div>
   );
 }
