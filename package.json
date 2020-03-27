@@ -25,10 +25,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watchAll --runInBand",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "coverage": "jest --coverage --detectOpenHandles --forceExit || true"
+    "coverage": "@cypress/code-coverage"
   },
   "nyc": {
     "require": [
