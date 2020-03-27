@@ -1,0 +1,6 @@
+version: "3"
+exclude_patterns:
+- "**/node_modules/"
+- "coverage/"
+- "public/"
+- "**/Terms.js"
