@@ -78,7 +78,7 @@ const Login = (props) => {
                         placeholder="Must be 8 characters"
                         variant="outlined"
                         />
-                        <button onSubmit={handleSubmit}>Register</button>
+                        <button onSubmit={handleSubmit}>Log in</button>
                     </form>
                 </div>
             </div>
