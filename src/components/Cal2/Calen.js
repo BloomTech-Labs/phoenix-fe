@@ -5,6 +5,7 @@ import axios from 'axios';
 import Week from './CalComponents/Week.js';
 import DayNames from './CalComponents/DayNames.js';
 import Events from './CalComponents/Events.js';
+import { RenderTodayLabel, RenderDayLabel, RenderMonthLabel } from './CalFuncs.js';
 
 export default class Calendar extends React.Component {
   constructor(props) {
@@ -63,33 +64,6 @@ export default class Calendar extends React.Component {
     });
   }
 
-  renderMonthLabel() {
-    const currentMonthView = this.state.selectedMonth;
-    return (
-      <span className="box month-label">
-        {currentMonthView.format("MMMM YYYY")}
-      </span>
-    );
-  }
-
-  renderDayLabel() {
-    const currentSelectedDay = this.state.selectedDay;
-    return (
-      <span className="box month-label">
-        {currentSelectedDay.format("DD MMMM YYYY")}
-      </span>
-    );
-  }
-  
-  renderTodayLabel() {
-
-    return (
-      <span className="box today-label" onClick={this.goToCurrentMonthView}>
-        Today
-      </span>
-    );
-  }
-  
   renderWeeks() {
     const currentMonthView = this.state.selectedMonth;
     const currentSelectedDay = this.state.selectedDay;
@@ -231,7 +205,7 @@ initialiseEvents() {
         <section className="main-calendar content">
           <header className="calendar-header">
             <div className="row title-header">
-              {this.renderDayLabel()}
+              <RenderDayLabel selectedDay={this.state.selectedDay}/>
             </div>
             <div className="row button-container">
               <i
@@ -266,8 +240,8 @@ initialiseEvents() {
                 onClick={this.previous}
               />
               <div className="box header-text">
-              {this.renderTodayLabel()}
-              {this.renderMonthLabel()}
+              <RenderTodayLabel goToCurrentMonthView={this.goToCurrentMonthView}/>
+              <RenderMonthLabel selectedMonth={this.state.selectedMonth}/>
               </div>
               <i className="box arrow fa fa-angle-right" onClick={this.next} />
             </div>
