@@ -15,7 +15,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   howtobar: {
-  margin: '1rem'
+  margin: '1rem',
+  width: '80%'
   },
   banner: {
     display: 'flex',
