@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,12 +13,14 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Button from '@material-ui/core/Button';
+import { Typography } from '@material-ui/core';
+import logo from '../images/PhoenixLogo.png';
+import NavbarStyle from '../styles/NavbarStyles.js';
 import Registration from './Registration.js';
 import Login from './Login.js';
-import NavbarStyle from '../styles/NavbarStyles.js';
-import logo from '../images/PhoenixLogo.png';
-import { Typography } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
+import Event from './Calendar/Event.js';
+import RenderMobileMenu from '../components/RenderMobileMenu.js';
 
 const useStyles = NavbarStyle;
 
@@ -25,9 +28,29 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+  const [string, setString] = useState('')
+  const [result, setRes] = useState([])
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleChange = e => {
+    setString(e.target.value)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    axios
+    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
+    .then(res => {
+      let results = res.data.filter(item => {
+        return item.summary.toLowerCase().includes(string.toLocaleLowerCase())
+      })
+      setRes(results)
+    })
+    .then( _=> setString('') )
+    .catch( err => console.log(err) )    
+  }
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
@@ -63,48 +86,7 @@ export default function PrimarySearchAppBar() {
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-        
-      <MenuItem>
-      
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
+    
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -123,11 +105,17 @@ export default function PrimarySearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange={handleChange}
+              type='text'
+              name='search'
+              autoComplete='off'
+              value={string}
             />
           </div>
+          <Button onClick={handleSubmit}>Submit</Button>
           <span className={classes.phoenix}><Registration /></span>
           <span className={classes.phoenix}><Login /></span>
-          <Link to="/events" ><Button variant="outlined" style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -164,8 +152,17 @@ export default function PrimarySearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
+      <RenderMobileMenu 
+        mobileMoreAnchorEl={mobileMoreAnchorEl}
+        mobileMenuId={mobileMenuId}
+        isMobileMenuOpen={isMobileMenuOpen}
+        handleMobileMenuClose={handleMobileMenuClose}
+        handleProfileMenuOpen={handleProfileMenuOpen}
+      />
       {renderMenu}
+      {result.map(data => (
+             <Event key={data.id} event={data}/>
+         ))}
     </div>
   );
 }
