@@ -56,7 +56,7 @@ function Terms(props) {
 
   return (
     <div className="fullTerms">
-      <Button variant="outlined" style={{ backgroundColor: '#f4f0f0' }} onClick={handleOpen}>
+      <Button variant="outlined" style={{ color: '#f4f0f0', border: 'none' }} onClick={handleOpen}>
         Terms Of Service
       </Button>
       <Modal
