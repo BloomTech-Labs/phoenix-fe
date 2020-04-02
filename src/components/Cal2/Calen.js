@@ -235,15 +235,16 @@ initialiseEvents() {
         <section className="main-calendar">
           <header className="calendar-header">
             <div className="row title-header">
-              <i
-                className="box arrow fa fa-angle-left"
-                onClick={this.previous}
-              />
+              <div className="arrow" onClick={this.previous}>
+                <i className="box arrow fa fa-angle-left"/>
+              </div>
               <div className="box header-text">
               <RenderTodayLabel goToCurrentMonthView={this.goToCurrentMonthView}/>
               <RenderMonthLabel selectedMonth={this.state.selectedMonth}/>
               </div>
-              <i className="box arrow fa fa-angle-right" onClick={this.next} />
+              <div className="arrow" onClick={this.next}>
+                <i className="box arrow fa fa-angle-right"/>
+              </div>
             </div>
             <DayNames />
           </header>
