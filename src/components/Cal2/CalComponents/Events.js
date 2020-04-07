@@ -7,6 +7,7 @@ export default class Events extends React.Component {
       const currentSelectedDay = this.props.selectedDay;
       const monthEvents = this.props.selectedMonthEvents;
       const removeEvent = this.props.removeEvent;
+    
       let rendTemp = moment(monthEvents)
   
       const monthEventsRendered = rendTemp._i.map((event, i) => {
@@ -49,10 +50,11 @@ export default class Events extends React.Component {
       const dayEventsRendered = [];
       for (var i = 0; i < monthEventsRendered.length; i++) {
         if (moment(monthEvents[i].start_date).isSame(currentSelectedDay, "day")) {
+          console.log('dayEventsRendered', dayEventsRendered)
           dayEventsRendered.push(monthEventsRendered[i]);
         }
       }
-  
+     
       return (
         <div className="day-events">
           {dayEventsRendered}
