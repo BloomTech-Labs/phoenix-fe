@@ -5,7 +5,7 @@ const MockEventsStyles = makeStyles((theme) => ({
         width: '40%',
         display: 'flex',
         flexDirection: 'column',
-         margin: '5% 2% 5% 54% ',
+         margin: '5% 2% 5% 53% ',
       
         },
       heading: {
