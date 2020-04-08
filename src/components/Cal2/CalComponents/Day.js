@@ -15,8 +15,8 @@ export default class Day extends React.Component {
        if(day.date._d === event._d) {
          day.hasEvents= true
        }
-       console.log('event', typeof(event._d))
-      console.log('day.date._d', day.date._d === event._d)
+      //  console.log('event', typeof(event._d))
+      // console.log('day.date._d', day.date._d === event._d)
       }
    
       // console.log('props', this.props)

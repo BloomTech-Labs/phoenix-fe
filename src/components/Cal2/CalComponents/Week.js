@@ -12,11 +12,14 @@ export default class Week extends React.Component {
       let monthEvents = this.props.monthEvents;
       let allEvents = this.props.item
       let tempEvent = moment(monthEvents)
+
+      console.log('tempEvent', tempEvent)
       for (var i = 0; i < 7; i++) {
         var dayHasEvents = false;
   
-        for (var j = 0; j < tempEvent.length; j++) {
-          if (monthEvents[j].date.isSame(date, "day")) {
+        for (var j = 0; j < monthEvents.length; j++) {
+
+          if (moment(monthEvents[j].start_date).isSame(date, "day")) {
             dayHasEvents = true;
           }
         }
