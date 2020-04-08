@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import { withRouter } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
+import { ModalStyle, getModalStyle } from '../../styles/ModalFormStyles.js';
+import Modal from '@material-ui/core/Modal';
 
+const useStyles = ModalStyle;
 
 const EReg = props => {
 
@@ -9,11 +14,16 @@ const EReg = props => {
 
     })
 
+    // const something = props[0]
+
+    console.log(props, 'there are props here')
+
+
+    const eventID = props.event.event_id
+
     let usetToken
 
     const token1 = localStorage.getItem('token')
-
-    console.log(token1)
 
     function parseJwt (token) {
         var base64Url = token.split('.')[1];
@@ -23,21 +33,52 @@ const EReg = props => {
         }).join(''));
 
         usetToken = JSON.parse(jsonPayload)
-
-        console.log(usetToken, 'look at me, im a parsed json payload')
     
         return usetToken;
     };
 
     parseJwt(token1)
 
-    //    /api/user/:user_id/event/:event_id
+    const userID = usetToken.id
 
-    console.log(usetToken, 'look at me, im a parsed json payload')
+    console.log(usetToken)
+
+    const onSubmit = async event => {
+        event.preventDefault()
+        axiosWithAuth()
+            .post(`/api/calendar/user/${userID}/event/${eventID}`)
+            .then(res => {
+                console.log(res)
+
+            })
+            .catch(err => console.log(err, "there was an error here"))
+    }
+
+    const classes = useStyles();
+    const [modalStyle] = useState(getModalStyle);
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return(
         <>
-        <a>A Thing! A button!</a>
+        <Button onClick={onSubmit, handleOpen} variant='outlined' style={{ marginBottom: '16px' }} color='red'>Register me!</Button>
+        <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={open}
+        onClose={handleClose}
+      >
+        <div style={modalStyle} className={classes.paper}>
+            <h2>Congratulations</h2>
+        </div>
+      </Modal>
         </>
     )
 
