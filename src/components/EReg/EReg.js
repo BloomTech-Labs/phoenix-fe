@@ -68,7 +68,7 @@ const EReg = props => {
 
     return(
         <>
-        <Button onClick={onSubmit, handleOpen} variant='outlined' style={{ marginBottom: '16px' }} color='red'>Register me!</Button>
+        <Button onClick={onSubmit} variant='outlined' style={{ marginBottom: '16px' }} color='red'>Register me!</Button>
         <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
