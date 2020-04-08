@@ -2,8 +2,12 @@ import {  makeStyles } from '@material-ui/core/styles';
 
 const MockEventsStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
-      },
+        width: '40%',
+        display: 'flex',
+        flexDirection: 'column',
+         margin: '5% 2% 5% 54% ',
+      
+        },
       heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
