@@ -10,10 +10,8 @@ export default class Week extends React.Component {
       let selected = this.props.selected;
       let select = this.props.select;
       let monthEvents = this.props.monthEvents;
-      let allEvents = this.props.item
-      let tempEvent = moment(monthEvents)
+      
 
-      console.log('tempEvent', tempEvent)
       for (var i = 0; i < 7; i++) {
         var dayHasEvents = false;
   
@@ -33,7 +31,7 @@ export default class Week extends React.Component {
           hasEvents: dayHasEvents
         };
   
-        days.push(<Day day={day} selected={selected} select={select} allEvents={allEvents} />);
+        days.push(<Day day={day} selected={selected} select={select} />);
 
         date = date.clone();
         date.add(1, "d");

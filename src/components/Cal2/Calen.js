@@ -87,7 +87,6 @@ export default class Calendar extends React.Component {
           monthEvents={monthEvents}
           selected={currentSelectedDay}
           select={day => this.select(day)}
-          item={this.state.events}
         />
       );
       previousCurrentNextView.add(1, "w");
