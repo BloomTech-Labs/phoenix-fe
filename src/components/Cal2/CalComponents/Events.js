@@ -50,7 +50,6 @@ export default class Events extends React.Component {
       const dayEventsRendered = [];
       for (var i = 0; i < monthEventsRendered.length; i++) {
         if (moment(monthEvents[i].start_date).isSame(currentSelectedDay, "day")) {
-          console.log('dayEventsRendered', dayEventsRendered)
           dayEventsRendered.push(monthEventsRendered[i]);
         }
       }
