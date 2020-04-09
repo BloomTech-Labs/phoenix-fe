@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default class Day extends React.Component {
+  
     render() {
       let day = this.props.day;
       let selected = this.props.selected;
       let select = this.props.select;
-  
+   
       return (
         <div
           className={

@@ -172,7 +172,8 @@ componentDidMount(){
   .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
   .then(res => {
         this.setState({
-          events: res.data
+          events: res.data,
+          
     })
   }).then(res => {
         const monthEvents = this.initialiseEvents()
@@ -191,8 +192,10 @@ initialiseEvents() {
   const monthEvents = this.state.selectedMonthEvents;
 
   let allEvents = this.state.events;
-  
+
   for (var i = 0; i < allEvents.length; i++) {
+
+    allEvents[i].hasEvents = true
     monthEvents.push(allEvents[i]);
   }
   return monthEvents
@@ -200,6 +203,7 @@ initialiseEvents() {
 
   render() {
     const showEvents = this.state.showEvents;
+  
     if (showEvents) {
       return (
         <section className="main-calendar content">
@@ -216,6 +220,7 @@ initialiseEvents() {
                 </span>
             </div>
           </header>
+          
           <Events
             selectedMonth={this.state.selectedMonth}
             selectedDay={this.state.selectedDay}
