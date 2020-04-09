@@ -219,8 +219,15 @@ i {
   border: 1px solid #750019a6;
 }
 .day.has-events .day-number {
-  color: #f3214f;
+  color: #580215;
   font-weight: bold;
+}
+.day.has-events .day-number .event {
+  max-width: 40%;
+  max-height: 80%;
+  float: left;
+  margin: auto;
+  overflow: hidden;
 }
 .day.different-month {
   opacity: 0.5;
