@@ -43,13 +43,19 @@ const EReg = props => {
 
     console.log(usetToken)
 
+    let push = () => {
+        window.location.reload()
+        props.history.push(`/events`)
+        
+    }
+
     const onSubmit = async event => {
-        event.preventDefault()
+        
         axiosWithAuth()
             .post(`/api/calendar/user/${userID}/event/${eventID}`)
             .then(res => {
                 console.log(res)
-
+                setTimeout(push, 5000)
             })
             .catch(err => console.log(err, "there was an error here"))
     }
@@ -59,7 +65,7 @@ const EReg = props => {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
-        setOpen(true);
+        setOpen(true)
     };
 
     const handleClose = () => {
@@ -68,7 +74,11 @@ const EReg = props => {
 
     return(
         <>
-        <Button onClick={onSubmit} variant='outlined' style={{ marginBottom: '16px' }} color='red'>Register me!</Button>
+        <Button onClick={() => {
+            onSubmit(); 
+            setTimeout(handleOpen, 1500)
+            }
+        } variant='outlined' style={{ marginBottom: '16px' }} color='red'>Register me!</Button>
         <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
