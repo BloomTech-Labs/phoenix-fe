@@ -7,6 +7,7 @@ export default class Events extends React.Component {
       const currentSelectedDay = this.props.selectedDay;
       const monthEvents = this.props.selectedMonthEvents;
       const removeEvent = this.props.removeEvent;
+    
       let rendTemp = moment(monthEvents)
   
       const monthEventsRendered = rendTemp._i.map((event, i) => {
@@ -52,7 +53,7 @@ export default class Events extends React.Component {
           dayEventsRendered.push(monthEventsRendered[i]);
         }
       }
-  
+     
       return (
         <div className="day-events">
           {dayEventsRendered}
