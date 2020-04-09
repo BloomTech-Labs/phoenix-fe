@@ -4,6 +4,7 @@ import LandingPage from './LandingPage.js';
 import Login from './Login.js';
 import Calendar from './Cal2/Calen.js';
 import CalendarSearch from './Calendar/CalendarSearch.js';
+import EReg from './EReg/EReg.js';
 
 const routes = [
         <Switch>
@@ -19,6 +20,9 @@ const routes = [
             <Route key={3} path='/eventsearch'>
                 <CalendarSearch />
             </Route>
+            {/* <Route key={4} path='/events'>
+                <EReg/>
+            </Route> */}
         </Switch>
     ]
 
