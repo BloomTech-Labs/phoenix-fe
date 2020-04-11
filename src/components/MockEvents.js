@@ -6,23 +6,28 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import axios from 'axios';
-const useStyles = MockEventStyles;
+
+
 
 export default function MockEvents(){ 
-
+  const useStyles = MockEventStyles;
   const [ event, setEvent ] = useState([]);
+  const classes = useStyles();
+
   useEffect(()=> {
     axios
-    .get('https://phoenix-be-staging.herokuapp.com/api/events')
+    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
     .then( res => {
-      setEvent(res.data)
+      setEvent({
+    events: res.data
+  })
     })
     .catch(err => {
-      console.log(err.res.data)
+      console.log(err.res)
   })
   }, [setEvent])
 
-    const classes = useStyles();
+    
     return(
        <div className={classes.root}>
            <ExpansionPanel>
@@ -65,8 +70,7 @@ export default function MockEvents(){
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+            This is the 3rd event I will make it dynamic. 
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
