@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MockEventStyles from '../styles/MockEventsStyles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
+import axios from 'axios';
 const useStyles = MockEventStyles;
 
 export default function MockEvents(){ 
+
+  const [ event, setEvent ] = useState([]);
+  useEffect(()=> {
+    axios
+    .get('https://phoenix-be-staging.herokuapp.com/api/events')
+    .then( res => {
+      setEvent(res.data)
+    })
+    .catch(err => {
+      console.log(err.res.data)
+  })
+  }, [setEvent])
+
     const classes = useStyles();
     return(
        <div className={classes.root}>
