@@ -4,6 +4,7 @@ import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
+import EReg from './components/EReg/EReg';
 
 function App() {
 

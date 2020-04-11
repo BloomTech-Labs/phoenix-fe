@@ -3,7 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from './LandingPage.js';
 import Login from './Login.js';
 import Calendar from './Cal2/Calen.js';
+<<<<<<< HEAD
 
+=======
+import CalendarSearch from './Calendar/CalendarSearch.js';
+import EReg from './EReg/EReg.js';
+>>>>>>> ee09fd5a3f5443aa5df53f7abf360b2433761c41
 
 const routes = [
         <Switch>
@@ -16,6 +21,9 @@ const routes = [
             <Route key={2} path='/events'>
                 <Calendar />
             </Route>
+            {/* <Route key={4} path='/events'>
+                <EReg/>
+            </Route> */}
         </Switch>
     ]
 
