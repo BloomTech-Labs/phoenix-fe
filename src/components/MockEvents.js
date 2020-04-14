@@ -5,23 +5,12 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import axios from 'axios';
+
 const useStyles = MockEventStyles;
 
 export default function MockEvents(){ 
 
-  const [ event, setEvent ] = useState([]);
-  useEffect(()=> {
-    axios
-    .get('https://phoenix-be-staging.herokuapp.com/api/events')
-    .then( res => {
-      setEvent(res.data)
-    })
-    .catch(err => {
-      console.log(err.res.data)
-  })
-  }, [setEvent])
-
+  
     const classes = useStyles();
     return(
        <div className={classes.root}>
@@ -31,12 +20,11 @@ export default function MockEvents(){
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Event 1</Typography>
+          <Typography className={classes.heading}>Wine And Beer Aficionados</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+           Whether you are new to wine tasting or beer sampling or a long time connoisseur, please join us for a fun filled night of connecting with new friends or reuniting with past friends sampling local varieties and enjoying a live local band. Click the "Register" button below.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -46,12 +34,11 @@ export default function MockEvents(){
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Event 2</Typography>
+          <Typography className={classes.heading}>Marathon And New Runner Enthusiasts</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          Whether you are new to marathons or running as a sport or a long time member, please join us for a fun filled night of connecting with new friends or reuniting with past friends sampling nutrition supplements, trying out new training equipment.Click the "Register" button below.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -61,12 +48,11 @@ export default function MockEvents(){
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Event 3</Typography>
+          <Typography className={classes.heading}>Movies, Parks, Museums, OH MY!</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          Whether you are new to attending Movie Premiers, Specialty Parks or Museums  or you are a long time fan, please join us for a fun filled night. Connect with new friends or reunite with past friends by watching new movie trailers, video tours of the best parks and museums while enjoying light  snacks and beverages. Click the "Register" button below.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
