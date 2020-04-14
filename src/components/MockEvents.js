@@ -5,13 +5,29 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import axios from 'axios';
 
-const useStyles = MockEventStyles;
+
 
 export default function MockEvents(){ 
+  const useStyles = MockEventStyles;
+  const [ event, setEvent ] = useState([]);
+  const classes = useStyles();
 
-  
-    const classes = useStyles();
+  useEffect(()=> {
+    axios
+    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
+    .then( res => {
+      setEvent({
+    events: res.data
+  })
+    })
+    .catch(err => {
+      console.log(err.res)
+  })
+  }, [setEvent])
+
+    
     return(
        <div className={classes.root}>
            <ExpansionPanel>
