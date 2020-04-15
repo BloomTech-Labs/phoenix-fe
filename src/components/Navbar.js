@@ -22,6 +22,7 @@ import Login from './Login.js';
 import Event from './Cal2/CalComponents/Event.js';
 import RenderMobileMenu from '../components/RenderMobileMenu.js';
 import Grid from '@material-ui/core/Grid';
+import { useLocation } from "react-router-dom";
 
 const useStyles = NavbarStyle;
 
@@ -31,6 +32,10 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [string, setString] = useState('')
   const [result, setRes] = useState([])
+  
+  let location = useLocation();
+
+  const isBase = "/" === location.pathname;
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -121,8 +126,11 @@ export default function PrimarySearchAppBar() {
           </div>
           <Button onClick={handleSubmit}>Submit</Button>
           <span className={classes.phoenix}><Registration /></span>
-          <span className={classes.phoenix}><Login /></span>
+          <span className={classes.phoenix}><Login />
+          </span>
+          {!isBase && (
           <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
