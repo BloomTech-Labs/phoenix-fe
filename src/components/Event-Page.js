@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-// import NavbarStyle from '../styles/NavbarStyles.js';
-
-// const useStyles = NavbarStyle;
-
 const EventPage = (props) => {
   const [string, setString] = useState('');
   const [result, setRes] = useState([]);
@@ -15,6 +11,7 @@ const EventPage = (props) => {
     startDate: '',
     endDate: '',
   });
+
   const eventID = Number(props.match.params.id);
 
   useEffect(() => {
@@ -30,43 +27,59 @@ const EventPage = (props) => {
         let event = await results.filter((item) => {
           return item.event_id === eventID;
         })[0];
-        setTimeout(console.log('event:', event), 2000);
 
         setRes(event);
-        console.log('taimu', event.end_time);
 
-        //convert time
+        //convert start time
+        let smol = Number(event.start_time.substr(0, 2));
+        let smol30 = event.start_time.substr(3, 2);
+
+        let startT;
+        if (smol < 12) {
+          startT = `${smol}:${smol30} AM`;
+        }
+        if (smol > 12) {
+          startT = `${(smol -= 12)}:${smol30} PM`;
+        }
+        if (smol === 12) {
+          startT = `${smol}:${smol30} PM`;
+        }
+
+        // convert end time
         let shorty = Number(event.end_time.substr(0, 2));
-        let shorty30 = Number(event.end_time.substr(4, 6));
+        let shorty30 = event.end_time.substr(3, 2);
+
         let endT;
+        if (shorty < 12) {
+          endT = `${shorty}:${shorty30} AM`;
+        }
         if (shorty > 12) {
-          endT = `${shorty - 12}:${shorty30} PM`;
+          endT = `${(shorty -= 12)}:${shorty30} PM`;
         }
         if (shorty === 12) {
-          endT = `${shorty}: ${shorty30} PM`;
-        } else {
-          endT = `${shorty}: ${shorty30} AM`;
+          endT = `${shorty}:${shorty30} PM`;
         }
-        setTime({ endTime: endT });
+
         // convert date
         let start = event.start_date;
-        let startD = new Date(start);
+        let startD = start.substr(0, 10);
         let end = event.end_date;
-        let endD = new Date(end);
+        let endD = end.substr(0, 10);
+
+        setTime({
+          startTime: startT,
+          endTime: endT,
+          startDate: startD,
+          endDate: endD,
+        });
       })
       .then((_) => setString(''))
       .catch((err) => console.log('Problem retrieving events', 'Error: ', err));
-
-    // result.eventtime do something
 
     if (result.start_time > '12:00:00') {
       let startO = result.start_time - 12 + 'pm';
       setTime({ startTime: startO });
     }
-    // if time > 12, subtract 12 and add PM
-    // else add AM
-    // date rearrange
-    // save as new variable
   }, [eventID]);
 
   return (
