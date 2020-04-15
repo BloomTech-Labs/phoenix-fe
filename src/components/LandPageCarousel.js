@@ -28,13 +28,17 @@ export default function LandPageCarousel() {
   return (
     <div className={classes.root}>
       <div className={classes.carousel}>
-        <button onClick={handleBackImage}>Back</button>
+        <span className={classes.buttonCarousel}>
+          <button onClick={handleBackImage}>Back</button>
+        </span>
         <img
           src={images[selectedImage]}
           alt="blurred party people"
           className={classes.carousel}
         />
-        <button onClick={handleNextImage}>Next</button>
+        <span className={classes.buttonCarousel}>
+          <button onClick={handleNextImage}>Next</button>
+        </span>
       </div>
     </div>
   );
