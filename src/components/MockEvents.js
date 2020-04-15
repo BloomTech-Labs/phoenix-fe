@@ -18,9 +18,8 @@ export default function MockEvents(){
     axios
     .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
     .then( res => {
-      setEvent({
-    events: res.data
-  })
+      setEvent(res.data)
+      console.log(res.data)
     })
     .catch(err => {
       console.log(err.res)
