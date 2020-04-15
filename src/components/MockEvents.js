@@ -11,9 +11,10 @@ import Button from '@material-ui/core/Button';
 
 export default function MockEvents(){ 
   const useStyles = MockEventStyles;
-  const [ event, setEvent ] = useState([]);
   const classes = useStyles();
-
+  
+  const [ event, setEvent ] = useState([]);
+  
   useEffect(()=> {
     axios
     .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
