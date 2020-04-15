@@ -133,16 +133,20 @@ export default function PrimarySearchAppBar() {
           )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          {!isBase && (
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
+          )}
+           {!isBase && (
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+          )}
             <IconButton
               edge="end"
               aria-label="account of current user"
