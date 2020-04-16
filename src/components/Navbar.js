@@ -32,6 +32,7 @@ export default function PrimarySearchAppBar() {
   const [string, setString] = useState('')
   const [result, setRes] = useState([])
 
+  
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
