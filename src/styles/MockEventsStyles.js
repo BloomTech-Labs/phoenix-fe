@@ -3,6 +3,7 @@ import {  makeStyles } from '@material-ui/core/styles';
 const MockEventsStyles = makeStyles((theme) => ({
     root: {
         width: '40%',
+
         display: 'flex', 
         flexDirection: 'row',
         // flexFlow: 'row nowrap',
@@ -17,6 +18,7 @@ const MockEventsStyles = makeStyles((theme) => ({
           alignSelf: 'flex-start',
           margin: '5% 40% 5% 5%'
         },
+
       heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,

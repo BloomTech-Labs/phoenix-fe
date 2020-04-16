@@ -1,10 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import HowToBar from "../images/howtobarphoenixlanding.png";
+
 import Peeps from "../images/Peeps.svg";
 import Calendar from "../images/Calendar.png";
 import { Typography } from "@material-ui/core";
 import LandPageCarousel from "../components/LandPageCarousel";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,6 +71,7 @@ export default function PrimarySearchAppBar() {
     <main className={classes.root}>
       <LandPageCarousel />
       <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
+
       <div className={classes.banner}>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <Typography className={classes.bannerDivLeft}>
@@ -82,6 +85,8 @@ export default function PrimarySearchAppBar() {
           <img src={Peeps} alt="inclusive svg people" className={classes.svg} />
         </div>
       </div>
+
     </main>
   );
 }
+
