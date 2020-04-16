@@ -1,22 +1,21 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import HowToBar from "../images/howtobarphoenixlanding.png";
+import HowToBar from '../images/howtobarphoenixlanding.png';
 import Peeps from '../images/Peeps.svg';
 import Calendar from '../images/Calendar.png';
 import { Typography } from '@material-ui/core';
-const useStyles = makeStyles(theme => ({
-
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     margin: '2rem auto',
     [theme.breakpoints.down('xs')]: {
-        flexDirection: 'column'
-    }
+      flexDirection: 'column',
+    },
   },
 
   howtobar: {
-  margin: '1rem',
-  width: '80%'
+    margin: '1rem',
+    width: '80%',
   },
   banner: {
     display: 'flex',
@@ -31,7 +30,7 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'column',
       backgroundImage: 'none',
       margin: '0 auto',
-    },   
+    },
   },
   bannerDivLeft: {
     display: 'flex',
@@ -44,47 +43,42 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
       transform: 'none',
-      backgroundImage: 'none'
-  }
-  }, 
-  
-  verbage: {
-    alignSelf: 'flex-start',
-    textAlign: 'left'
+      backgroundImage: 'none',
+    },
   },
 
-  bannerDivRight: {
+  verbage: {
+    alignSelf: 'flex-start',
+    textAlign: 'left',
   },
+
+  bannerDivRight: {},
   svg: {
     width: '60%',
     paddingTop: '10rem',
-    [theme.breakpoints.down('sm')]: {
-
-    }
-  }
+    [theme.breakpoints.down('sm')]: {},
+  },
 }));
-  
-  export default function PrimarySearchAppBar() {
-    const classes = useStyles();
-  
-    return (
-      <main className={classes.root}>
-        <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
+
+export default function PrimarySearchAppBar() {
+  const classes = useStyles();
+
+  return (
+    <main className={classes.root}>
+      <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Typography className={classes.bannerDivLeft}>
-          CONNECT<br/>
-          Make real connections
-          Meet people who love what you
-          love, and stay in touch after the 
-          event.
-        </Typography>
+          <Typography className={classes.bannerDivLeft}>
+            CONNECT
+            <br />
+            Make real connections Meet people who love what you love, and stay
+            in touch after the event.
+          </Typography>
         </div>
-      <div className={classes.bannerDivRight}>
-        <img src={Peeps} alt="inclusive svg people" className={classes.svg}/>
+        <div className={classes.bannerDivRight}>
+          <img src={Peeps} alt="inclusive svg people" className={classes.svg} />
+        </div>
       </div>
-      </div>
-      </main>
-    );
-
-  }
+    </main>
+  );
+}

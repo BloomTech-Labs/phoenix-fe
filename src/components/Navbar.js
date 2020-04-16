@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,47 +20,63 @@ import logo from '../images/PhoenixLogo.png';
 import NavbarStyle from '../styles/NavbarStyles.js';
 import Registration from './Registration.js';
 import Login from './Login.js';
-import Event from './Cal2/CalComponents/Event.js';
+import Event from './Calendar/CalComponents/Event.js';
 import RenderMobileMenu from '../components/RenderMobileMenu.js';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = NavbarStyle;
 
-export default function PrimarySearchAppBar() {
+function PrimarySearchAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const [string, setString] = useState('')
-  const [result, setRes] = useState([])
+  const [string, setString] = useState('');
+  const [result, setRes] = useState([]);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleChange = e => {
-    setString(e.target.value)
-  }
+  const handleChange = (e) => {
+    setString(e.target.value);
+  };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    axios
-    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
-    .then(res => {
-      let results = res.data.filter(item => {
-        return item.summary.toLowerCase().includes(string.toLocaleLowerCase())
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axiosWithAuth()
+      .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
+      .then((res) => {
+        console.log('response:', res);
+        let token = localStorage.getItem('token');
+
+        if (token) {
+          let results = res.data.filter((item) => {
+            return item.summary
+              .toLowerCase()
+              .includes(string.toLocaleLowerCase());
+          });
+
+          for (let i = 0; i < results.length; i++) {
+            results[i].start_time = new Date(
+              results[i].start_date
+            ).toLocaleTimeString();
+            results[i].end_time = new Date(
+              results[i].end_date
+            ).toLocaleTimeString();
+            results[i].start_date = new Date(
+              results[i].start_date
+            ).toDateString();
+          }
+          setRes(results);
+        } else {
+          props.history.push('/login');
+          window.alert('You need to log in to search for events!');
+        }
       })
+      .then((_) => setString(''))
+      .catch((err) => console.log('Problem retrieving events', 'Error: ', err));
+  };
 
-      for(let i = 0; i < results.length; i++) {
-        results[i].start_time = new Date(results[i].start_date).toLocaleTimeString()
-        results[i].end_time = new Date(results[i].end_date).toLocaleTimeString()
-        results[i].start_date = new Date(results[i].start_date).toDateString()
-      }
-      setRes(results)
-    })
-    .then( _=> setString('') )
-    .catch( err => console.log('Problem retrieving events', 'Error: ', err) )    
-  }
-
-  const handleProfileMenuOpen = event => {
+  const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -72,7 +89,7 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = event => {
+  const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -98,8 +115,18 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <Link to='/' style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}><img src={logo} alt="logo" className={classes.logo} />
-            <Typography style={{ fontSize: '2rem' }} ><span className={classes.phoenix}>Phoenix</span></Typography>
+          <Link
+            to="/"
+            style={{
+              display: 'flex',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            <img src={logo} alt="logo" className={classes.logo} />
+            <Typography style={{ fontSize: '2rem' }}>
+              <span className={classes.phoenix}>Phoenix</span>
+            </Typography>
           </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -113,16 +140,22 @@ export default function PrimarySearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleChange}
-              type='text'
-              name='search'
-              autoComplete='off'
+              type="text"
+              name="search"
+              autoComplete="off"
               value={string}
             />
           </div>
           <Button onClick={handleSubmit}>Submit</Button>
-          <span className={classes.phoenix}><Registration /></span>
-          <span className={classes.phoenix}><Login /></span>
-          <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          <span className={classes.phoenix}>
+            <Registration />
+          </span>
+          <span className={classes.phoenix}>
+            <Login />
+          </span>
+          <Link to="/events">
+            <Button style={{ marginLeft: '16px' }}>Calendar</Button>
+          </Link>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -159,7 +192,7 @@ export default function PrimarySearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-      <RenderMobileMenu 
+      <RenderMobileMenu
         mobileMoreAnchorEl={mobileMoreAnchorEl}
         mobileMenuId={mobileMenuId}
         isMobileMenuOpen={isMobileMenuOpen}
@@ -168,10 +201,12 @@ export default function PrimarySearchAppBar() {
       />
       {renderMenu}
       <Grid container spacing={1}>
-      {result.map(data => (
-             <Event key={data.id} event={data}/>
-         ))}
+        {result.map((data) => (
+          <Event key={data.id} event={data} />
+        ))}
       </Grid>
     </div>
   );
 }
+
+export default withRouter(PrimarySearchAppBar);

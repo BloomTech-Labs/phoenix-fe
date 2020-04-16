@@ -1,41 +1,24 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter,
-} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      fakeAuth.isAuthenticated === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to="/login" />
-      )
-    }
-  />
-);
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  console.log('component:', Component);
 
-export default function AuthExample() {
   return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/public">Public Page</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </ul>
-        <Route path="/public" component={Public} />
-        <Route path="/login" component={Login} />
-        <PrivateRoute path="/protected" component={Protected} />
-      </div>
-    </Router>
+    <Route
+      {...rest}
+      render={(props) => {
+        console.log('propsB4IF', props);
+        if (localStorage.getItem('token')) {
+          console.log('propsIF', props);
+          return <Component {...props} />;
+        } else {
+          console.log('propsELSE', props);
+          return <Redirect to="/login" />;
+        }
+      }}
+    />
   );
-}
+};
+
+export default PrivateRoute;
