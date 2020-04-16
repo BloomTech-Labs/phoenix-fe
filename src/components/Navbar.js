@@ -37,6 +37,7 @@ export default function PrimarySearchAppBar() {
 
   const isBase = "/" === location.pathname;
 
+  
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 

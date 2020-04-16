@@ -4,6 +4,8 @@ import HowToBar from "../images/howtobarphoenixlanding.png";
 import Peeps from '../images/Peeps.svg';
 import Calendar from '../images/Calendar.png';
 import { Typography } from '@material-ui/core';
+import MockEvents from './MockEvents';
+
 const useStyles = makeStyles(theme => ({
 
   root: {
@@ -68,7 +70,10 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles();
   
     return (
+    
+     
       <main className={classes.root}>
+        <MockEvents />
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -85,6 +90,7 @@ const useStyles = makeStyles(theme => ({
       </div>
       </div>
       </main>
+      
     );
 
   }
