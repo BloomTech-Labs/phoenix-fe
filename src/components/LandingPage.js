@@ -1,12 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import HowToBar from "../images/howtobarphoenixlanding.png";
-
 import Peeps from "../images/Peeps.svg";
 import Calendar from "../images/Calendar.png";
 import { Typography } from "@material-ui/core";
 import LandPageCarousel from "../components/LandPageCarousel";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     width: "60%",
     paddingTop: "10rem",
     [theme.breakpoints.down("sm")]: {},
+
   },
 }));
 
@@ -89,4 +88,3 @@ export default function PrimarySearchAppBar() {
     </main>
   );
 }
-
