@@ -18,15 +18,13 @@
     "react-ga": "^2.7.0",
     "react-hook-form": "^5.1.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "cypress:open": "cypress open",
-    "coverage": "jest --coverage --detectOpenHandles --forceExit || true"
+    "eject": "react-scripts eject"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -51,8 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+
   },
-  "devDependencies": {
-    "jest": "^25.2.7"
-  }
+  "devDependencies": {}
+
 }

@@ -23,16 +23,23 @@ import Login from './Login.js';
 import Event from './Calendar/CalComponents/Event.js';
 import RenderMobileMenu from '../components/RenderMobileMenu.js';
 import Grid from '@material-ui/core/Grid';
+import { useLocation } from "react-router-dom";
 
 const useStyles = NavbarStyle;
 
 function PrimarySearchAppBar(props) {
+  
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [string, setString] = useState('');
   const [result, setRes] = useState([]);
+  
+  let location = useLocation();
 
+  const isBase = "/" === location.pathname;
+
+  
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -147,27 +154,27 @@ function PrimarySearchAppBar(props) {
             />
           </div>
           <Button onClick={handleSubmit}>Submit</Button>
-          <span className={classes.phoenix}>
-            <Registration />
-          </span>
-          <span className={classes.phoenix}>
-            <Login />
-          </span>
-          <Link to="/events">
-            <Button style={{ marginLeft: '16px' }}>Calendar</Button>
-          </Link>
+          <span className={classes.phoenix}><Registration /></span>
+          <span className={classes.phoenix}><Login /></span>
+          {!isBase && (
+          <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          {!isBase && (
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
+          )}
+           {!isBase && (
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+          )}
             <IconButton
               edge="end"
               aria-label="account of current user"

@@ -1,62 +1,65 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import HowToBar from '../images/howtobarphoenixlanding.png';
-import Peeps from '../images/Peeps.svg';
-import Calendar from '../images/Calendar.png';
-import { Typography } from '@material-ui/core';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import HowToBar from "../images/howtobarphoenixlanding.png";
+import Peeps from "../images/Peeps.svg";
+import Calendar from "../images/Calendar.png";
+import { Typography } from "@material-ui/core";
+import LandPageCarousel from "../components/LandPageCarousel";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: '2rem auto',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
+    margin: "2rem auto",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
     },
   },
 
   howtobar: {
-    margin: '1rem',
-    width: '80%',
+    margin: "1rem",
+    width: "80%",
   },
   banner: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: '0 10rem 0 10rem',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 10rem 0 10rem",
     backgroundImage: `url(${Calendar})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'contain',
-    backgroundPosition: 'center',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-      backgroundImage: 'none',
-      margin: '0 auto',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      backgroundImage: "none",
+      margin: "0 auto",
     },
   },
   bannerDivLeft: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'left',
-    width: '40%',
-    fontSize: '1rem',
-    fontWeight: '600',
-    margin: '0 0 auto 5rem',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-      transform: 'none',
-      backgroundImage: 'none',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "left",
+    width: "40%",
+    fontSize: "1rem",
+    fontWeight: "600",
+    margin: "0 0 auto 5rem",
+    [theme.breakpoints.down("sm")]: {
+      width: "auto",
+      transform: "none",
+      backgroundImage: "none",
     },
   },
 
   verbage: {
-    alignSelf: 'flex-start',
-    textAlign: 'left',
+    alignSelf: "flex-start",
+    textAlign: "left",
   },
 
   bannerDivRight: {},
   svg: {
-    width: '60%',
-    paddingTop: '10rem',
-    [theme.breakpoints.down('sm')]: {},
+    width: "60%",
+    paddingTop: "10rem",
+    [theme.breakpoints.down("sm")]: {},
+
   },
 }));
 
@@ -65,9 +68,11 @@ export default function PrimarySearchAppBar() {
 
   return (
     <main className={classes.root}>
+      <LandPageCarousel />
       <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
+
       <div className={classes.banner}>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <Typography className={classes.bannerDivLeft}>
             CONNECT
             <br />
@@ -79,6 +84,7 @@ export default function PrimarySearchAppBar() {
           <img src={Peeps} alt="inclusive svg people" className={classes.svg} />
         </div>
       </div>
+
     </main>
   );
 }
