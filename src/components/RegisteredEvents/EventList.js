@@ -28,7 +28,7 @@ const EventList = () => {
 
     useEffect(()=> {
         axios
-        .get('http://localhost:4400/api/attendees/spec2')
+        .get('https://phoenix-be-production.herokuapp.com/api/attendees/spec2')
         .then(res => {
             console.log('res', res)
         })
