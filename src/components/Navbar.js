@@ -20,13 +20,8 @@ import logo from '../images/PhoenixLogo.png';
 import NavbarStyle from '../styles/NavbarStyles.js';
 import Registration from './Registration.js';
 import Login from './Login.js';
-<<<<<<< HEAD
-import Event from './Cal2/CalComponents/Event.js';
-import RenderMobileMenu from './RenderMobileMenu.js';
-=======
 import Event from './Calendar/CalComponents/Event.js';
 import RenderMobileMenu from '../components/RenderMobileMenu.js';
->>>>>>> 9d90e76beb316fce007038b1b9c6cd78286f6c59
 import Grid from '@material-ui/core/Grid';
 import { useLocation } from "react-router-dom";
 

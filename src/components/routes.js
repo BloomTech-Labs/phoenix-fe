@@ -1,30 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-<<<<<<< HEAD
-import LandingPage from './LandingPage';
-=======
 import PrivateRoute from './PrivateRoute.js';
 import LandingPage from './LandingPage.js';
->>>>>>> 9d90e76beb316fce007038b1b9c6cd78286f6c59
 import Login from './Login.js';
 import Calendar from './Calendar/Calen.js';
 import EventPage from './Event-Page.js';
 
 const routes = [
-<<<<<<< HEAD
-        <Switch>
-            <Route key={0} exact path='/'>
-                <LandingPage />
-            </Route>
-            <Route key={1} path='/login'>
-                <Login />
-            </Route>,
-            <Route key={2} path='/events'>
-                <Calendar />
-            </Route>
-        </Switch>
-    ]
-=======
   <Switch>
     <Route key={0} exact path="/">
       <LandingPage />
@@ -40,6 +22,5 @@ const routes = [
     ></PrivateRoute>
   </Switch>,
 ];
->>>>>>> 9d90e76beb316fce007038b1b9c6cd78286f6c59
 
 export default routes;

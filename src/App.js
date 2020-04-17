@@ -5,10 +5,7 @@ import ReactGa from 'react-ga';
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
-<<<<<<< HEAD
-import Event from './components/RegisteredEvents/EventList'
-=======
->>>>>>> 9d90e76beb316fce007038b1b9c6cd78286f6c59
+import EventList from './components/RegisteredEvents/EventList'
 
 function App() {
   useEffect(() => {
@@ -19,7 +16,7 @@ function App() {
   return (
     <div className="App">
       CHECK
-      {Event}
+      <EventList/>
       {/* <Navbar />
       {Routes} 
       <Footer /> */}
