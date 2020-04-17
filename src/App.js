@@ -4,7 +4,7 @@ import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
-
+import Event from './components/RegisteredEvents/EventList'
 
 function App() {
 
@@ -16,9 +16,11 @@ function App() {
 }, [])
   return (
     <div className="App">
-      <Navbar />
+      CHECK
+      {Event}
+      {/* <Navbar />
       {Routes} 
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

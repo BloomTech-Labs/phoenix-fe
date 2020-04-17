@@ -20,7 +20,7 @@ import NavbarStyle from '../styles/NavbarStyles.js';
 import Registration from './Registration.js';
 import Login from './Login.js';
 import Event from './Cal2/CalComponents/Event.js';
-import RenderMobileMenu from '../components/RenderMobileMenu.js';
+import RenderMobileMenu from './RenderMobileMenu.js';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = NavbarStyle;
