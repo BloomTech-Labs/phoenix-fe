@@ -25,14 +25,14 @@ const useStyles = makeStyles({
   });
 
 
-const ElseRender = () => {
+const ElseRender = (props) => {
     const classes = useStyles();
     return (
         <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             Hmm, Looks like you aren't regitered for anything yet. Try looking over some events.
-            <Button size="small">BACK TO CALENDAR</Button>
+            <Button size="small" onClick={props.history.push}>Find an Event</Button>
           </Typography>
         </CardContent>
       </Card>

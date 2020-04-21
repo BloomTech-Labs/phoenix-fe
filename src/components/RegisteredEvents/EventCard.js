@@ -25,23 +25,22 @@ const useStyles = makeStyles({
 
 
 const EventCard = (props) => {
+  console.log('props', props)
     const classes = useStyles();
     return (
         <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            EVENTTITLE
+          {props.active.summary}
           </Typography>
           <Typography variant="h5" component="h2">
-            DESCRIPTION
+            {props.active.description}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            STARTDATE
+            {props.active.start_date}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">BACK TO CALENDAR</Button>
-        </CardActions>
+     
       </Card>
     )
 }

@@ -15,7 +15,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      CHECK
+
       <EventList/>
       {/* <Navbar />
       {Routes} 

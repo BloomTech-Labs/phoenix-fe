@@ -5,9 +5,10 @@ import Cardr from './EventCard'
 import Elser from './ElseRender'
 const EventList = () => {
     const [eventData, setEventData] = useState([])
-    
     let usetToken
+    // let usetToken = 'ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98'
     const token1 = localStorage.getItem('token')
+    console.log('token1', token1)
     function parseJwt (token) {
         var base64Url = token.split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -33,7 +34,7 @@ const EventList = () => {
     }, [])
 
     return (
-        <>
+        <>{
        (userID === eventData.user_id)
         ? <div>
             {eventData.map(active => (
@@ -41,8 +42,8 @@ const EventList = () => {
             ))}
         </div>
         : <Elser/>
-        </>
-    )
+             } </>
+            )
 }
 
 export default EventList
