@@ -6,22 +6,29 @@ import Elser from './ElseRender'
 const EventList = () => {
     const [eventData, setEventData] = useState([])
     let usetToken
-    // let usetToken = 'ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98'
+    
     const token1 = localStorage.getItem('token')
-    console.log('token1', token1)
-    function parseJwt (token) {
+
+    function parseJwt(token) {
         var base64Url = token.split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-
-        usetToken = JSON.parse(jsonPayload)
+        var jsonPayload = decodeURIComponent(
+          atob(base64)
+            .split('')
+            .map(function (c) {
+              return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join('')
+        );
+    
+        usetToken = JSON.parse(jsonPayload);
     
         return usetToken;
-    };
-    parseJwt(token1)
-    const userID = usetToken.id
+      }
+    
+      parseJwt(token1);
+    
+      const userID = usetToken.id;
 
     useEffect(()=> {
         axios
@@ -32,7 +39,7 @@ const EventList = () => {
         })
         .catch(err => console.log('err', err))
     }, [])
-
+    console.log('eventData', eventData)
     return (
         <>{
        (userID === eventData.user_id)

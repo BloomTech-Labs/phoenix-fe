@@ -32,7 +32,7 @@ const ElseRender = (props) => {
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             Hmm, Looks like you aren't regitered for anything yet. Try looking over some events.
-            <Button size="small" onClick={props.history.push('/events')}>Find an Event</Button>
+            <Button size="small" >Find an Event</Button>
           </Typography>
         </CardContent>
       </Card>
@@ -40,3 +40,4 @@ const ElseRender = (props) => {
 }
 
 export default ElseRender
+// onClick={props.history.push('/events')}
