@@ -5,7 +5,7 @@ import ReactGa from 'react-ga';
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
-import EventList from './components/RegisteredEvents/EventList'
+
 
 function App() {
   useEffect(() => {
@@ -15,11 +15,10 @@ function App() {
   }, []);
   return (
     <div className="App">
- 
-      <EventList/>
-      {/* <Navbar />
+
+      <Navbar />
       {Routes} 
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
