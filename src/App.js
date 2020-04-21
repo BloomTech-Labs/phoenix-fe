@@ -19,8 +19,7 @@ function App() {
     <div className="App">
       <Navbar />
       <CTA/>
-      
-      {Routes} 
+       {Routes} 
       <Footer />
     </div>
   );
