@@ -4,6 +4,7 @@ import ReactGa from 'react-ga';
 import Navbar from "./components/Navbar.js";
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
+import CTA from './components/CTA.js';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <CTA/>
+      
       {Routes} 
       <Footer />
     </div>
