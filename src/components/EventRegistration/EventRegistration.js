@@ -7,7 +7,7 @@ import Modal from '@material-ui/core/Modal';
 
 const useStyles = ModalStyle;
 
-const EReg = (props) => {
+const EventRegistration = (props) => {
   const eventID = props.event.event_id;
 
   let usetToken;
@@ -88,4 +88,4 @@ const EReg = (props) => {
   );
 };
 
-export default withRouter(EReg);
+export default withRouter(EventRegistration);

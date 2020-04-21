@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import ShareIcon from '@material-ui/icons/Share';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import EventCardStyle from '../../../styles/EventStyle.js';
-import EReg from '../../EReg/EReg.js';
-import Deets from '../../EReg/DeetsButton.js';
+import EventRegistration from '../../EventRegistration/EventRegistration.js';
+import DetailBtn from '../../EventRegistration/DetailBtn.js';
 import yawn from '../../yawn.gif';
 
 const useStyles = EventCardStyle;
@@ -66,8 +66,8 @@ const Event = (props) => {
             <ShareIcon />
           </IconButton>
         </CardActions>
-        <EReg {...props} />
-        <Deets {...props} />
+        <EventRegistration {...props} />
+        <DetailBtn {...props} />
       </Card>
     </Grid>
   );
