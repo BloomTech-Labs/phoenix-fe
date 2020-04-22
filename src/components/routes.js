@@ -12,9 +12,7 @@ const routes = [
     <Route key={0} exact path="/">
       <LandingPage />
     </Route>
-    <Route key={4} path="/dashboard">
-      <Dashboard />
-    </Route>
+    <PrivateRoute key={4} path="/dashboard" component={Dashboard} />
     <Route key={1} path="/login">
       <Login />
     </Route>

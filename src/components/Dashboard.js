@@ -1,5 +1,6 @@
 import React from 'react'
-import Calendar from './Calendar/Calen.js'
+import Calendar from './Calendar/Calen.js';
+import EventList from './RegisteredEvents/EventList.js';
 import DashboardStyles from '../styles/dashboardstyle.js';
 
 const Dashboard = () => {
@@ -9,12 +10,13 @@ const Dashboard = () => {
     return (
         <div className={classes.dashboard}>
         <div className={classes.eventlist}>
-            Coming Soon!
+            <EventList />
         </div>
         <div className={classes.dashcal}>
             <Calendar/>
         </div>         
-        <div className={classes.chat}></div>   
+        <div className={classes.chat}></div> 
+            Coming soon!  
         </div>
     )
 }
