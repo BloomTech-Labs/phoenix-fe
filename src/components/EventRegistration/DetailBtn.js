@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-const Deets = (props) => {
+const DetailBtn = (props) => {
   const eventID = props.event.event_id;
 
   console.log(eventID);
@@ -25,4 +25,4 @@ const Deets = (props) => {
   );
 };
 
-export default withRouter(Deets);
+export default withRouter(DetailBtn);

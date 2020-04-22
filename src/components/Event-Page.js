@@ -31,33 +31,33 @@ const EventPage = (props) => {
         setRes(event);
 
         //convert start time
-        let smol = Number(event.start_time.substr(0, 2));
-        let smol30 = event.start_time.substr(3, 2);
+        let startHour = Number(event.start_time.substr(0, 2));
+        let startMin = event.start_time.substr(3, 2);
 
         let startT;
-        if (smol < 12) {
-          startT = `${smol}:${smol30} AM`;
+        if (startHour < 12) {
+          startT = `${startHour}:${startMin} AM`;
         }
-        if (smol > 12) {
-          startT = `${(smol -= 12)}:${smol30} PM`;
+        if (startHour > 12) {
+          startT = `${(startHour -= 12)}:${startMin} PM`;
         }
-        if (smol === 12) {
-          startT = `${smol}:${smol30} PM`;
+        if (startHour === 12) {
+          startT = `${startHour}:${startMin} PM`;
         }
 
         // convert end time
-        let shorty = Number(event.end_time.substr(0, 2));
-        let shorty30 = event.end_time.substr(3, 2);
+        let endHour = Number(event.end_time.substr(0, 2));
+        let endMin = event.end_time.substr(3, 2);
 
         let endT;
-        if (shorty < 12) {
-          endT = `${shorty}:${shorty30} AM`;
+        if (endHour < 12) {
+          endT = `${endHour}:${endMin} AM`;
         }
-        if (shorty > 12) {
-          endT = `${(shorty -= 12)}:${shorty30} PM`;
+        if (endHour > 12) {
+          endT = `${(endHour -= 12)}:${endMin} PM`;
         }
-        if (shorty === 12) {
-          endT = `${shorty}:${shorty30} PM`;
+        if (endHour === 12) {
+          endT = `${endHour}:${endMin} PM`;
         }
 
         // convert date

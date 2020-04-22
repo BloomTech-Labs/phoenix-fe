@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
 
+
 function App() {
   useEffect(() => {
     ReactGa.initialize('UA-158783725-1');
@@ -14,6 +15,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+
       <Navbar />
       {Routes} 
       <Footer />
