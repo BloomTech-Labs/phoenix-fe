@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -28,10 +29,11 @@ const tiers = [
       title: 'Step 2',
       subheader: 'Find Events',
       description: [
-        '20 users included',
-        '10 GB of storage',
-        'Help center access',
-        'Priority email support',
+        'Search through events.',
+        'Find things you like.',
+        'RSVP for events.',
+        'Host your own events.',
+        
       ],
       buttonText: 'Find Events',
       buttonVariant: 'contained',
@@ -40,10 +42,10 @@ const tiers = [
       title: 'Step 3',
       subheader: 'Meet People',
       description: [
-        '50 users included',
-        '30 GB of storage',
-        'Help center access',
-        'Phone & email support',
+        'Meet like minded people. ',
+        'Do activities. ',
+        'Choice to meet with individuals or a group. ',
+        
       ],
       buttonText: 'Rsvp to and event',
       buttonVariant: 'contained',
@@ -57,6 +59,7 @@ const classes = useStyles();
 return(
     <>
     <CssBaseline />
+    <Navbar/>
     <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
           Phoenix 
@@ -90,15 +93,20 @@ return(
               </ul>
             </CardContent>
             <CardActions>
-              <Button fullWidth variant={tier.buttonVariant} color="primary">
+                
+            <Button fullWidth variant={tier.buttonVariant} color="primary">
                 {tier.buttonText}
               </Button>
+              
             </CardActions>
           </Card>
+         
         </Grid>
       ))}
     </Grid>
+    
   </Container>
+  
   </>
 )
 
