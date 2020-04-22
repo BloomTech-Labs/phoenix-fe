@@ -5,6 +5,9 @@ import Peeps from '../images/Peeps.svg';
 import Calendar from '../images/Calendar.png';
 import { Typography } from '@material-ui/core';
 import MockEvents from './MockEvents';
+import CTAbutton from './CTAbutton';
+
+
 
 const useStyles = makeStyles(theme => ({
 
@@ -73,6 +76,7 @@ const useStyles = makeStyles(theme => ({
     
      
       <main className={classes.root}>
+        <CTAbutton/>
         <MockEvents />
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.banner}>

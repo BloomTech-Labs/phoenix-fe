@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from './LandingPage.js';
 import Login from './Login.js';
 import Calendar from './Cal2/Calen.js';
+import CTApage from './CTApage';
 
 
 const routes = [
@@ -15,6 +16,9 @@ const routes = [
             </Route>,
             <Route key={2} path='/events'>
                 <Calendar />
+            </Route>
+            <Route key={3} path='/cta'>
+                <CTApage />
             </Route>
             {/* <Route key={4} path='/events'>
                 <EReg/>
