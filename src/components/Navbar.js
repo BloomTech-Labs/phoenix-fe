@@ -61,14 +61,32 @@ function PrimarySearchAppBar(props) {
               .toLowerCase()
               .includes(string.toLocaleLowerCase());
           });
-
+          function standardTime(time1){
+            var time = time1.split(':');
+            var hours = Number(time[0]);
+            var minutes = Number(time[1]);
+            var seconds = Number(time[2]);
+            var timevalue;
+            if(hours > 0 && hours <=12) {
+              timevalue= "" + hours;
+            } else if(hours > 12) {
+              timevalue= "" + (hours - 12);
+            } else if(hours === 0) {
+              timevalue= "12";
+            }
+            console.log('hi guys')
+            console.log('its me ian')
+    
+            timevalue += (minutes < 10) ? ":0" + minutes : ":" + minutes;
+            //timevalue += (seconds < 10) ? ":0" + seconds : ":" + seconds;
+            timevalue += (hours >=12) ? "P.M." : "A.M.";
+    
+            console.log(timevalue)
+            return(timevalue)
+          }
           for (let i = 0; i < results.length; i++) {
-            results[i].start_time = new Date(
-              results[i].start_date
-            ).toLocaleTimeString();
-            results[i].end_time = new Date(
-              results[i].end_date
-            ).toLocaleTimeString();
+            results[i].start_time = standardTime(results[i].start_time);
+            results[i].end_time = standardTime(results[i].end_time);
             results[i].start_date = new Date(
               results[i].start_date
             ).toDateString();
@@ -87,8 +105,10 @@ function PrimarySearchAppBar(props) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
+  const handleMobileMenuClose = (e) => {
     setMobileMoreAnchorEl(null);
+    console.log(e)
+    
   };
 
   const handleMenuClose = () => {
@@ -111,7 +131,9 @@ function PrimarySearchAppBar(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem >
+        <Link to='/dashboard'>Profile</Link>
+      </MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
