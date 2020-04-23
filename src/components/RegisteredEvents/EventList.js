@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { auth } from '../../utils/axiosWithAuth'
+import { auth, axiosWithAuth } from '../../utils/axiosWithAuth'
 import axios from 'axios'
 import Cardr from './EventCard'
 import Elser from './ElseRender'
@@ -31,25 +31,33 @@ const EventList = () => {
       const userID = usetToken.id;
 
     useEffect(()=> {
-        axios
-        .get('https://phoenix-be-production.herokuapp.com/api/attendees/spec2')
+        axiosWithAuth()
+        .get('/api/attendees/spec2')
         .then(res => {
-            // console.log('res', res.data)
+            // console.log('res', res)
             setEventData(res.data)
         })
         .catch(err => console.log('err', err))
     }, [])
-    console.log('eventData', eventData)
+    //console.log('eventData', eventData)
+    console.log("userID",userID)
+    const Events = [];
+    for(let i=0; i<eventData.length; i++) {
+        if(eventData[i].user_id === userID) {
+          Events.push(eventData[i])
+        }
+    }
+    console.log('Events',Events)
     return (
         <>{
-       (userID === eventData.user_id)
+          (Events.length > 0)
         ? <div>
-            {eventData.map(active => (
+            {Events.map(active => (
                 <Cardr id={active.event_id} active={active} /> 
             ))}
         </div>
-        : <Elser/>
-             } </>
+      : <Elser />
+          } </>
             )
 }
 

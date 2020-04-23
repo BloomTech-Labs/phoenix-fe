@@ -5,12 +5,14 @@ import LandingPage from './LandingPage.js';
 import Login from './Login.js';
 import Calendar from './Calendar/Calen.js';
 import EventPage from './Event-Page.js';
+import Dashboard from './Dashboard.js';
 
 const routes = [
   <Switch>
     <Route key={0} exact path="/">
       <LandingPage />
     </Route>
+    <PrivateRoute key={4} path="/dashboard" component={Dashboard} />
     <Route key={1} path="/login">
       <Login />
     </Route>
