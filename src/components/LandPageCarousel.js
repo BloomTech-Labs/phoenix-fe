@@ -11,7 +11,6 @@ export default function LandPageCarousel() {
   const classes = useStyles();
 
   const [selectedImage, setSelecedImage] = useState(0);
-  console.log(images[selectedImage]);
 
   const handleBackImage = () => {
     if (selectedImage > 0) {
