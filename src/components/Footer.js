@@ -1,6 +1,10 @@
 import React from 'react';
 import Terms from './Terms.js';
 import '../styles/Footer.css';
+import Facebook from '../images/facebook.png';
+import Twitter from '../images/twitter.png';
+import YouTube from '../images/youtube.png';
+import Instagram from '../images/instagram.png';
 
 const Footer = () => {
 
@@ -33,16 +37,18 @@ const Footer = () => {
                         <li>Blog</li>
                     </ul>
                 </div>
-                <div>
+                <div className="follow">
                     Follow us
                     <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>YouTube</li>
-                        <li>Instagram</li>
+                        <li>
+                    <img src= {Facebook}alt="facebook app badges" />
+                    </li>
+                        <li><img src= {Twitter}alt="twitter app badges" /></li>
+                        <li><img src= {YouTube}alt="youtube app badges" /></li>
+                        <li><img src= {Instagram}alt="instagram app badges" /></li> 
                     </ul>
+                    </div>
                 </div>
-            </div>
         </section>
         <section className="terms-section">
             <div>
