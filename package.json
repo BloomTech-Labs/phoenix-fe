@@ -34,11 +34,24 @@
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     },
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      },
+      "./src/App.js": {
+        "lines": 100
+      }
+    },
     "collectCoverageFrom": [
+      "./src/*.js",
       "**/*.{js}",
       "!**/node_modules/**",
       "!**/vendor/**",
-      "!**/coverage/**"
+      "!**/coverage/**",
+      "!**__tests__"
     ]
   },
   "eslintConfig": {
