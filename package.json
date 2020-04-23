@@ -26,16 +26,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "CI=true npm run test -- --coverage || true"
+    "coverage": "CI=true npm test -- --coverage --watchAll=false || true"
   },
   "jest": {
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     },
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
+      "**/*.{js}",
       "!**/node_modules/**",
       "!**/vendor/**",
       "!**/__tests__/**"
