@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { auth, axiosWithAuth } from '../../utils/axiosWithAuth'
-import axios from 'axios'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 import Cardr from './EventCard'
 import Elser from './ElseRender'
 const EventList = () => {
