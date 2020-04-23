@@ -9,9 +9,11 @@ import Routes from './components/routes.js';
 
 function App() {
   useEffect(() => {
-    ReactGa.initialize('UA-158783725-1');
-
-    ReactGa.pageview(window.location.pathname + window.location.search);
+    window.onload = function() {
+      ReactGa.set({ username: "Phoenix App" });
+      ReactGa.initialize('UA-158783725-1');
+      ReactGa.pageview(window.location.pathname + window.location.search);
+    }
   }, []);
   return (
     <div className="App">
