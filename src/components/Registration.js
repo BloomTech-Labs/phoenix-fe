@@ -31,7 +31,7 @@ const Registration = props => {
       .post('/auth/register', credentials)
       .then(res => {
         console.log(res);
-        props.history.push('/events');
+        props.history.push('/dashboard');
       })
       .catch(err => console.log('ERROR MESSAGE', err.response));
   };

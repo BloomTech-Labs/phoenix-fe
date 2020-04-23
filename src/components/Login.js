@@ -29,7 +29,7 @@ const Login = props => {
       .then(res => {
         console.log('DATA: ', res.data);
         localStorage.setItem('token', res.data.token);
-        props.history.push('/');
+        props.history.push('/dashboard');
       })
       .catch(err => console.log('ERROR MESSAGE', err.response));
   };
