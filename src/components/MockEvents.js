@@ -1,33 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import MockEventStyles from '../styles/MockEventsStyles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import axios from 'axios';
 import Button from '@material-ui/core/Button';
 
 
 export default function MockEvents(){ 
   const useStyles = MockEventStyles;
   const classes = useStyles();
-  
-  const [ event, setEvent ] = useState([]);
-  
-  useEffect(()=> {
-    axios
-    .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
-    .then( res => {
-      setEvent(res.data)
-      console.log(res.data)
-    })
-    .catch(err => {
-      console.log(err.res)
-  })
-  }, [setEvent])
-
-    
+      
     return(
        <div className={classes.root}>
            <ExpansionPanel>
