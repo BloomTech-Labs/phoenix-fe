@@ -6,6 +6,7 @@ import Footer from './components/Footer.js';
 import Routes from './components/routes.js';
 
 
+
 function App() {
   // useEffect(() => {
 
@@ -17,7 +18,7 @@ function App() {
     <div className="App">
 
       <Navbar />
-      {Routes} 
+       {Routes} 
       <Footer />
     </div>
   );

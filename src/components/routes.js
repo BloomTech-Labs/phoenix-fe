@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute.js';
 import LandingPage from './LandingPage.js';
 import Login from './Login.js';
+import CTApage from './CTApage';
 import Calendar from './Calendar/Calen.js';
 import EventPage from './Event-Page.js';
 import Dashboard from './Dashboard.js';
@@ -21,6 +22,9 @@ const routes = [
       path="/event/:id"
       component={EventPage}
     ></PrivateRoute>
+     <Route path='/cta'>
+        <CTApage />
+     </Route>
   </Switch>
 ];
 
