@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import HowToBar from "../images/howtobarphoenixlanding.png";
 import LandingPagePeople from "../images/LandingPagePeople.jpg";
+import Calendar from '../images/Calendar.png';
+import CTAbutton from './CTAbutton';
 import LandPageCarousel from "../components/LandPageCarousel";
 import MockEvents from "../components/MockEvents";
 import LandingPageTestimony from "../components/LandingPageTestimony";
@@ -54,17 +56,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {},
   },
 }));
-
-export default function PrimarySearchAppBar() {
-  const classes = useStyles();
-
-  return (
+  
+  export default function PrimarySearchAppBar() {
+    const classes = useStyles();
+  
+    return (
     <main className={classes.root}>
       <div className={classes.firstthird}>
         <LandPageCarousel />
         <MockEvents />
-      </div>
-      <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
+        </div>
+        <div>
+        <CTAbutton/>
+        </div>
+        <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
+
       <div className={classes.banner}>
         <div style={{ display: "flex", justifyContent: "flex-center" }}>
           <LandingPageTestimony />

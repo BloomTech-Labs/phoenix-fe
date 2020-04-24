@@ -51,7 +51,7 @@ const Registration = props => {
   return (
     <>
       <Button variant="outlined" onClick={handleOpen}>
-        Register
+        {props.title} 
       </Button>
 
       <Modal

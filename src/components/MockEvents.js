@@ -11,8 +11,7 @@ import Button from '@material-ui/core/Button';
 export default function MockEvents(){ 
   const useStyles = MockEventStyles;
   const classes = useStyles();
-  
-    
+      
     return(
        <div className={classes.root}>
        

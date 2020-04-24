@@ -7,6 +7,7 @@ import Routes from './components/routes.js';
 import MockEvents from './components/MockEvents';
 
 
+
 function App() {
   // useEffect(() => {
 
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
 
       <Navbar />
-      {Routes} 
+       {Routes} 
       <Footer />
     </div>
   );
