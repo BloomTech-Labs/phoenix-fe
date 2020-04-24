@@ -176,7 +176,7 @@ function PrimarySearchAppBar(props) {
             />
           </div>
           <Button onClick={handleSubmit}>Submit</Button>
-          <span className={classes.phoenix}><Registration /></span>
+          <span className={classes.phoenix}><Registration title="Register" /></span>
           <span className={classes.phoenix}><Login /></span>
           {!isBase && (
           <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
