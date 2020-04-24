@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   cta: {
     display: "flex",
     flexDirection: "row",
-    margin: "0 0 0 10rem",
+    margin: "0 0 0 13.5rem",
     [theme.breakpoints.up('md')]: {},
   },
   firstthird: {
