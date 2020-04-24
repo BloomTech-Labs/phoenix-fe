@@ -1,28 +1,17 @@
-import {  makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const MockEventsStyles = makeStyles((theme) => ({
-    root: {
-        width: '40%',
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    // justifyContent: "center",
+    width: "50%",
+  },
 
-        display: 'flex', 
-        flexDirection: 'row',
-        // flexFlow: 'row nowrap',
-        // alignItems: 'center',
-        // justifyContent: 'space-evenly',
-         margin: '5% 2% 5% 40%'
-      
-        },
-        carousel: {
-          width: '50%',
-          display: 'flex',
-          alignSelf: 'flex-start',
-          margin: '5% 40% 5% 5%'
-        },
-
-      heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-      },
-    }));
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
+}));
 
 export default MockEventsStyles;

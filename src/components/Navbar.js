@@ -221,6 +221,7 @@ function PrimarySearchAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
+      {!isBase && (
       <RenderMobileMenu
         mobileMoreAnchorEl={mobileMoreAnchorEl}
         mobileMenuId={mobileMenuId}
@@ -228,6 +229,7 @@ function PrimarySearchAppBar(props) {
         handleMobileMenuClose={handleMobileMenuClose}
         handleProfileMenuOpen={handleProfileMenuOpen}
       />
+      )}
       {renderMenu}
       <Grid container spacing={1}>
         {result.map((data) => (

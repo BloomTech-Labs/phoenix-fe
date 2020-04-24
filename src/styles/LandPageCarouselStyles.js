@@ -4,22 +4,18 @@ const LandPageCarouselStyles = makeStyles((theme) => ({
   root: {
     width: "40%",
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   carousel: {
-    width: "75%",
+    width: "55%",
     display: "flex",
-    alignSelf: "flex-start",
+    // alignSelf: "flex-start",
     margin: "2rem",
   },
   buttonCarousel: {
     display: "flex",
     alignItems: "center",
     margin: "1rem",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
   },
 }));
 

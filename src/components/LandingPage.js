@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import HowToBar from "../images/howtobarphoenixlanding.png";
-import Peeps from '../images/Peeps.svg';
+import LandingPagePeople from "../images/LandingPagePeople.jpg";
 import Calendar from '../images/Calendar.png';
-import { Typography } from '@material-ui/core';
-import MockEvents from './MockEvents';
 import CTAbutton from './CTAbutton';
 import LandPageCarousel from "../components/LandPageCarousel";
+import MockEvents from "../components/MockEvents";
+import LandingPageTestimony from "../components/LandingPageTestimony";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,9 +16,12 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
     },
   },
-
+  firstthird: {
+    display: "flex",
+    flexDirection: "row",
+  },
   howtobar: {
-    margin: "1rem",
+    margin: "2rem",
     width: "80%",
   },
   banner: {
@@ -26,24 +29,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     margin: "0 10rem 0 10rem",
-    backgroundImage: `url(${Calendar})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
-    backgroundPosition: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
-      backgroundImage: "none",
       margin: "0 auto",
     },
   },
   bannerDivLeft: {
     display: "flex",
+    alignItems: "center",
     flexDirection: "column",
-    justifyContent: "left",
     width: "40%",
     fontSize: "1rem",
     fontWeight: "600",
-    margin: "0 0 auto 5rem",
+    margin: "1rem 0 auto 5rem",
     [theme.breakpoints.down("sm")]: {
       width: "auto",
       transform: "none",
@@ -51,17 +49,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  verbage: {
-    alignSelf: "flex-start",
-    textAlign: "left",
-  },
-
   bannerDivRight: {},
   svg: {
-    width: "60%",
-    paddingTop: "10rem",
+    width: "45%",
+    paddingTop: "3rem",
     [theme.breakpoints.down("sm")]: {},
-
   },
 }));
   
@@ -70,25 +62,27 @@ const useStyles = makeStyles((theme) => ({
   
     return (
     <main className={classes.root}>
+      <div className={classes.firstthird}>
         <LandPageCarousel />
-        <CTAbutton/>
         <MockEvents />
+        </div>
+        <div>
+        <CTAbutton/>
+        </div>
         <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
 
       <div className={classes.banner}>
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Typography className={classes.bannerDivLeft}>
-            CONNECT
-            <br />
-            Make real connections Meet people who love what you love, and stay
-            in touch after the event.
-          </Typography>
+        <div style={{ display: "flex", justifyContent: "flex-center" }}>
+          <LandingPageTestimony />
         </div>
         <div className={classes.bannerDivRight}>
-          <img src={Peeps} alt="inclusive svg people" className={classes.svg} />
+          <img
+            src={LandingPagePeople}
+            alt="inclusive svg people"
+            className={classes.svg}
+          />
         </div>
       </div>
-
     </main>
   );
 }
