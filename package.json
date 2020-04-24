@@ -53,7 +53,7 @@
       "!**/coverage/**",
       "!**__tests__",
       "!**/**/Terms/*.js",
-      "!/../components/Terms.js"
+      "!/../components/Terms/*.js"
     ]
   },
   "eslintConfig": {
