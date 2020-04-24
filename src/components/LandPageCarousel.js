@@ -3,6 +3,8 @@ import LandPageCarouselStyles from "../styles/LandPageCarouselStyles";
 import carousel1blurrparty from "../images/carousel1blurrparty.jpg";
 import carousel2marathon from "../images/carousel2marathon.jpg";
 import carousel3couplepark from "../images/carousel3couplepark.jpg";
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const images = [carousel1blurrparty, carousel2marathon, carousel3couplepark];
 
@@ -28,7 +30,10 @@ export default function LandPageCarousel() {
     <div className={classes.root}>
       <div className={classes.carousel}>
         <span className={classes.buttonCarousel}>
-          <button onClick={handleBackImage}>Back</button>
+        <Typography className={classes.heading}>
+        <Button  variant="outlined" 
+         onClick={handleBackImage}>Back</Button>
+          </Typography>
         </span>
         <img
           src={images[selectedImage]}
@@ -36,7 +41,10 @@ export default function LandPageCarousel() {
           className={classes.carousel}
         />
         <span className={classes.buttonCarousel}>
-          <button onClick={handleNextImage}>Next</button>
+        <Typography className={classes.heading}>
+        <Button  variant="outlined" 
+           onClick={handleNextImage}>Next</Button>
+           </Typography>
         </span>
       </div>
     </div>
