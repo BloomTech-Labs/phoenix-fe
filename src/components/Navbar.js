@@ -197,6 +197,7 @@ function PrimarySearchAppBar(props) {
               </Badge>
             </IconButton>
           )}
+          {!isBase && (
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -207,6 +208,7 @@ function PrimarySearchAppBar(props) {
             >
               <AccountCircle />
             </IconButton>
+          )}
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
