@@ -7,10 +7,12 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 
+
 export default function MockEvents(){ 
   const useStyles = MockEventStyles;
   const classes = useStyles();
 
+  
     return(
        <div className={classes.root}>
        
