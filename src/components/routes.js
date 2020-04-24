@@ -9,20 +9,19 @@ import Dashboard from './Dashboard.js';
 
 const routes = [
   <Switch>
-    <Route key={0} exact path="/">
+    <Route exact path="/">
       <LandingPage />
-    </Route>
-    <PrivateRoute key={4} path="/dashboard" component={Dashboard} />
-    <Route key={1} path="/login">
+    </Route>,
+    <PrivateRoute path="/dashboard" component={Dashboard} />,
+    <Route path="/login">
       <Login />
-    </Route>
-    ,<PrivateRoute key={2} path="/events" component={Calendar}></PrivateRoute>,
+    </Route>,
+    <PrivateRoute path="/events" component={Calendar}></PrivateRoute>,
     <PrivateRoute
-      key={3}
       path="/event/:id"
       component={EventPage}
     ></PrivateRoute>
-  </Switch>,
+  </Switch>
 ];
 
 export default routes;

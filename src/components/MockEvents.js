@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import MockEventStyles from '../styles/MockEventsStyles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -11,13 +11,8 @@ import Button from '@material-ui/core/Button';
 export default function MockEvents(){ 
   const useStyles = MockEventStyles;
   const classes = useStyles();
-
-
-
-
-
-
   
+    
     return(
        <div className={classes.root}>
        

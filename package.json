@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/user-event": "^10.0.2",
     "@types/react-transition-group": "^4.2.4",
     "axios": "^0.19.2",
+    "babel-jest": "^24.7.0",
+    "jest": "^24.9.0",
+    "jest-dom": "^4.0.0",
     "moment": "^2.24.0",
-    "react": "^16.12.0",
+    "react": "^16.13.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
@@ -24,15 +27,31 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "CI=true npm test -- --coverage --watchAll=false || true"
   },
   "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      },
+      "./src/App.js": {
+        "lines": 100
+      }
+    },
     "collectCoverageFrom": [
-      "**/*.js",
-      "!**/cypress/**",
+      "./src/*.js",
+      "**/*.{js}",
       "!**/node_modules/**",
       "!**/vendor/**",
-      "!**/__tests__/**"
+      "!**/coverage/**",
+      "!**__tests__"
     ]
   },
   "eslintConfig": {
@@ -50,5 +69,9 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0"
+  }
 }
