@@ -52,7 +52,7 @@
       "!**/vendor/**",
       "!**/coverage/**",
       "!**__tests__",
-      "!**Terms/**"
+      "!**/Terms/**"
     ]
   },
   "eslintConfig": {
