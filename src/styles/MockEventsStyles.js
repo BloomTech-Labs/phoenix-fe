@@ -4,7 +4,7 @@ const MockEventsStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "center",
+    margin: "5rem 0 0 0",
     width: "50%",
   },
 
