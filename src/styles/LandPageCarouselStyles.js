@@ -8,7 +8,7 @@ const LandPageCarouselStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {},
   },
   carousel: {
-    width: "55%",
+    width: "65%",
     display: "flex",
     margin: "2rem",
     [theme.breakpoints.up('md')]: {},
