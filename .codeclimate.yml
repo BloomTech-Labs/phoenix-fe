@@ -5,12 +5,12 @@ checks:
   identical-code:
     enabled: true
     config:
-      threshold: 3
+      threshold: 50
   method-lines:
     enabled: true
     config:
       threshold: 65
-      
+
 exclude_patterns:
   - "**/__tests__/"
   - "tests/"
