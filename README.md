@@ -42,13 +42,15 @@ type atmosphere to make connections less awkard and easier to make.
 
 ## Key Features
 
-- Registration as a User or Host
-
 - Terms of service - Clearly Organized
 - Meetup/Calendar based on location
 - Real time event data detailed in calendar
-- Upload pictures
-- Silhouette Guideline for Profile Pictures
+
+### Features coming with v2.0
+
+- Upload profile photos
+- Guidelines for taking profile pictures
+- Add 'host' role
 - Users match via a built in personality test
 
 ## Tech Stack
