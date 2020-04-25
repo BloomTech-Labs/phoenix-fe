@@ -5,3 +5,4 @@ exclude_patterns:
   - "**/vendor/"
   - "**/node_modules/"
   - "**/*.test.js"
+  - "**/Terms/"
