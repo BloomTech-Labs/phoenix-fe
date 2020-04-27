@@ -7,7 +7,6 @@ import Routes from './components/routes.js';
 import MockEvents from './components/MockEvents';
 
 
-
 function App() {
   // useEffect(() => {
 
