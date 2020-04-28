@@ -33,7 +33,6 @@ const EventList = () => {
         axiosWithAuth()
         .get('/api/attendees/spec2')
         .then(res => {
-            // console.log('res', res)
             setEventData(res.data)
         })
         .catch(err => console.log('err', err))
@@ -42,6 +41,7 @@ const EventList = () => {
     console.log("userID",userID)
     const Events = [];
     for(let i=0; i<eventData.length; i++) {
+
         if(eventData[i].user_id === userID) {
           Events.push(eventData[i])
         }
