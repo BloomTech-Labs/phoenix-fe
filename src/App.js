@@ -6,7 +6,6 @@ import Footer from './components/Footer.js';
 import Routes from './components/Routes.js';
 import MockEvents from './components/MockEvents';
 
-
 function App() {
   // useEffect(() => {
 
