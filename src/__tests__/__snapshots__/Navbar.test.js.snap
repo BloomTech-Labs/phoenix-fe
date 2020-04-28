@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Navbar correctly 1`] = `
+<div>
+  <h2>
+    Something went wrong.
+  </h2>
+  <details
+    style={
+      Object {
+        "whiteSpace": "pre-wrap",
+      }
+    }
+  >
+    Error: Invariant failed: You should not use &lt;withRouter(PrimarySearchAppBar) /&gt; outside a &lt;Router&gt;
+    <br />
+    
+    in withRouter(PrimarySearchAppBar) (at Navbar.test.js:9)
+    in ErrorBoundary (at Navbar.test.js:8)
+  </details>
+</div>
+`;
