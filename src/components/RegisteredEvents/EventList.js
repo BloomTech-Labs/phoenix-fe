@@ -46,7 +46,7 @@ const EventList = () => {
           Events.push(eventData[i])
         }
     }
-    console.log('Events',Events)
+    
     return (
         <>{
           (Events.length > 0)
