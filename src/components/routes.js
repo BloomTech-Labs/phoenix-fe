@@ -8,24 +8,27 @@ import Calendar from './Calendar/Calen.js';
 import EventPage from './Event-Page.js';
 import Dashboard from './Dashboard.js';
 
-const routes = [
-  <Switch>
-    <Route exact path="/">
-      <LandingPage />
-    </Route>,
-    <PrivateRoute path="/dashboard" component={Dashboard} />,
-    <Route path="/login">
-      <Login />
-    </Route>,
-    <PrivateRoute path="/events" component={Calendar}></PrivateRoute>,
-    <PrivateRoute
-      path="/event/:id"
-      component={EventPage}
-    ></PrivateRoute>
-     <Route path='/cta'>
-        <CTApage />
-     </Route>
-  </Switch>
-];
+function Routes() {
+  return (
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>,
+        <PrivateRoute path="/dashboard" component={Dashboard} />,
+        <Route path="/login">
+          <Login />
+        </Route>,
+        <PrivateRoute path="/events" component={Calendar}></PrivateRoute>,
+        <PrivateRoute
+          path="/event/:id"
+          component={EventPage}
+        ></PrivateRoute>
+        <Route path='/cta'>
+            <CTApage />
+        </Route>
+      </Switch>
+  )
+}
 
-export default routes;
+
+export default Routes;
