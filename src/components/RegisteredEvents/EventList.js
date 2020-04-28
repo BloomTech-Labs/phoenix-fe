@@ -4,6 +4,7 @@ import Cardr from './EventCard';
 import Elser from './ElseRender';
 const EventList = () => {
   const [eventData, setEventData] = useState([]);
+
   let usetToken;
 
   const token1 = localStorage.getItem('token');
@@ -33,25 +34,47 @@ const EventList = () => {
     axiosWithAuth()
       .get(`/api/calendar/user/${userID}`)
       .then((res) => {
-        // console.log('res', res)
         setEventData(res.data);
+        let theEvents = res.data.events;
+        console.log('theEvents', theEvents);
+        setTimeout(
+          theEvents.forEach((event) => {
+            eventData.push(event);
+          }),
+          1000
+        );
       })
       .catch((err) => console.log('err', err));
   }, []);
-  //console.log('eventData', eventData)
+  console.log('eventData dot events', Date.now(), eventData.events);
+  console.log('eventData just plain', Date.now(), eventData.events);
   console.log('userID', userID);
-  const Events = [];
-  for (let i = 0; i < eventData.length; i++) {
-    if (eventData[i].user_id === userID) {
-      Events.push(eventData[i]);
-    }
-  }
-  console.log('Events', Events);
+
+  // let Events = [];
+  // let getEvents = () => {
+  //   console.log('time passes', eventData);
+  //   if (eventData == undefined) {
+  //     Events.push([]);
+  //     console.log('events pushing empty arr');
+  //   }
+  //   if (eventData) {
+  //     eventData.forEach((event) => {
+  //       Events.push(event);
+  //       console.log('events pushing ACTUAL EVENTS');
+  //     });
+  //     console.log(Events);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   setTimeout(getEvents, 10000);
+  // }, []);
+
   return (
     <>
-      {Events.length > 0 ? (
+      {eventData.length > 0 ? (
         <div>
-          {Events.map((active) => (
+          {eventData.map((active) => (
             <Cardr id={active.event_id} active={active} />
           ))}
         </div>
