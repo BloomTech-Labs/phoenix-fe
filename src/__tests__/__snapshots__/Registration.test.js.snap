@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Footer correctly 1`] = `
+<div>
+  <h2>
+    Something went wrong.
+  </h2>
+  <details
+    style={
+      Object {
+        "whiteSpace": "pre-wrap",
+      }
+    }
+  >
+    Error: Invariant failed: You should not use &lt;withRouter(Registration) /&gt; outside a &lt;Router&gt;
+    <br />
+    
+    in withRouter(Registration) (at Registration.test.js:9)
+    in ErrorBoundary (at Registration.test.js:8)
+  </details>
+</div>
+`;
