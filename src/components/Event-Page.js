@@ -12,6 +12,8 @@ const EventPage = (props) => {
     endDate: '',
   });
 
+  console.log(props)
+
   const eventID = Number(props.match.params.id);
 
   useEffect(() => {
