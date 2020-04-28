@@ -3,10 +3,8 @@ import './App.css';
 // import ReactGa from 'react-ga';
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
-import Routes from './components/routes.js';
+import Routes from './components/Routes.js';
 import MockEvents from './components/MockEvents';
-
-
 
 function App() {
   // useEffect(() => {
@@ -19,7 +17,7 @@ function App() {
     <div className="App">
 
       <Navbar />
-       {Routes} 
+       <Routes /> 
       <Footer />
     </div>
   );
