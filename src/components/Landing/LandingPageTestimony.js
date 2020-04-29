@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import LandingPageTestimonyStyles from "../styles/LandingPageTestimonyStyles";
+import LandingPageTestimonyStyles from "../../styles/LandingPageTestimonyStyles";
 
 
 export default function LandingPageTestimony() {

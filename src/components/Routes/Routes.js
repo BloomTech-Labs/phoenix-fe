@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute.js';
-import LandingPage from './LandingPage.js';
-import Login from './Login.js';
-import CTApage from './CTApage';
-import Calendar from './Calendar/Calen.js';
-import EventPage from './Event-Page.js';
-import Dashboard from './Dashboard.js';
-import Event from './RegisteredEvents/AllEvents'
+import LandingPage from '../Landing/LandingPage.js';
+import Login from '../Authorized/Login.js';
+import CTApage from '../Landing/CTApage';
+import Calendar from '../Calendar/Calen.js';
+import EventPage from '../Nav/Event-Page.js';
+import Dashboard from '../RegisteredDash/Dashboard.js';
+import Event from '../RegisteredEvents/AllEvents'
 
 function Routes() {
   return (

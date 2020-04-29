@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import HowToBar from "../images/howtobarphoenixlanding.png";
-import LandingPagePeople from "../images/LandingPagePeople.jpg";
-import Calendar from "../images/Calendar.png";
+import HowToBar from "../../images/howtobarphoenixlanding.png";
+import LandingPagePeople from "../../images/LandingPagePeople.jpg";
+import Calendar from "../../images/Calendar.png";
 import CTAbutton from "./CTAbutton";
-import LandPageCarousel from "../components/LandPageCarousel";
-import MockEvents from "../components/MockEvents";
-import LandingPageTestimony from "../components/LandingPageTestimony";
+import LandPageCarousel from "../LandPageCarousel";
+import MockEvents from "../MockEvents";
+import LandingPageTestimony from "./LandingPageTestimony";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
-import { ModalStyle, getModalStyle } from '../styles/ModalFormStyles.js';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
+import { ModalStyle, getModalStyle } from '../../styles/ModalFormStyles.js';
 
 const useStyles = ModalStyle;
 

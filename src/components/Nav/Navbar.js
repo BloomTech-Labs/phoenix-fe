@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -16,12 +16,12 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
-import logo from '../images/PhoenixLogo.png';
-import NavbarStyle from '../styles/NavbarStyles.js';
-import Registration from './Registration.js';
-import Login from './Login.js';
-import Event from './Calendar/CalComponents/Event.js';
-import RenderMobileMenu from '../components/RenderMobileMenu.js';
+import logo from '../../images/PhoenixLogo.png';
+import NavbarStyle from '../../styles/NavbarStyles.js';
+import Registration from '../Authorized/Registration.js';
+import Login from '../Authorized/Login.js';
+import Event from '../Calendar/CalComponents/Event.js';
+import RenderMobileMenu from './RenderMobileMenu';
 import Grid from '@material-ui/core/Grid';
 import { useLocation } from "react-router-dom";
 

@@ -4,14 +4,14 @@ import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm, Controller } from "react-hook-form";
-import Section1 from './Terms/Section1.js';
-import Section2 from './Terms/Section2.js';
-import Section3 from './Terms/Section3.js';
-import Section4 from './Terms/Section4.js';
-import Section5 from './Terms/Section5.js';
-import Section6 from './Terms/Section6.js';
-import Section7 from './Terms/Section7.js';
-import Section8 from './Terms/Section8.js';
+import Section1 from '../Terms/Section1.js';
+import Section2 from '../Terms/Section2.js';
+import Section3 from '../Terms/Section3.js';
+import Section4 from '../Terms/Section4.js';
+import Section5 from '../Terms/Section5.js';
+import Section6 from '../Terms/Section6.js';
+import Section7 from '../Terms/Section7.js';
+import Section8 from '../Terms/Section8.js';
 
 function rand() {
   return Math.round(Math.random() * 10);
