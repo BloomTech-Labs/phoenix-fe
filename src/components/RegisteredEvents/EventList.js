@@ -34,41 +34,11 @@ const EventList = () => {
     axiosWithAuth()
       .get(`/api/calendar/user/${userID}`)
       .then((res) => {
-        setEventData(res.data);
-        let theEvents = res.data.events;
-        console.log('theEvents', theEvents);
-        setTimeout(
-          theEvents.forEach((event) => {
-            eventData.push(event);
-          }),
-          1000
-        );
+        setEventData(res.data.events);
       })
       .catch((err) => console.log('err', err));
   }, []);
-  console.log('eventData dot events', Date.now(), eventData.events);
-  console.log('eventData just plain', Date.now(), eventData.events);
-  console.log('userID', userID);
 
-  // let Events = [];
-  // let getEvents = () => {
-  //   console.log('time passes', eventData);
-  //   if (eventData == undefined) {
-  //     Events.push([]);
-  //     console.log('events pushing empty arr');
-  //   }
-  //   if (eventData) {
-  //     eventData.forEach((event) => {
-  //       Events.push(event);
-  //       console.log('events pushing ACTUAL EVENTS');
-  //     });
-  //     console.log(Events);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   setTimeout(getEvents, 10000);
-  // }, []);
 
   return (
     <>

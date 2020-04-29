@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {withRouter} from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -35,12 +36,12 @@ const ElseRender = (props) => {
         >
           Hmm, Looks like you aren't registered for anything yet. Try looking
           over some events.
-          <Button size="small">Find an Event</Button>
+          <Button size="small" onClick={props.history.push('/events')}>Find an Event</Button>
         </Typography>
       </CardContent>
     </Card>
   );
 };
 
-export default ElseRender;
-// onClick={props.history.push('/events')}
+export default withRouter(ElseRender);
+// 
