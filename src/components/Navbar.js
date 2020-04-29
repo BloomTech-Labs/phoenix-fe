@@ -52,7 +52,7 @@ function PrimarySearchAppBar(props) {
     axiosWithAuth()
       .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
       .then((res) => {
-        console.log('response:', res);
+        // console.log('response:', res);
         let token = localStorage.getItem('token');
 
         if (token) {
@@ -74,14 +74,13 @@ function PrimarySearchAppBar(props) {
             } else if(hours === 0) {
               timevalue= "12";
             }
-            console.log('hi guys')
-            console.log('its me ian')
+           
     
             timevalue += (minutes < 10) ? ":0" + minutes : ":" + minutes;
             //timevalue += (seconds < 10) ? ":0" + seconds : ":" + seconds;
             timevalue += (hours >=12) ? "P.M." : "A.M.";
     
-            console.log(timevalue)
+      
             return(timevalue)
           }
           for (let i = 0; i < results.length; i++) {

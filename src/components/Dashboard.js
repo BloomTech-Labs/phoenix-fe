@@ -10,7 +10,7 @@ const Dashboard = () => {
     return (
         <div className={classes.dashboard}>
         <div className={classes.eventlist}>
-            <EventList />
+            <EventList  />
         </div>
         <div className={classes.dashcal}>
             <Calendar/>

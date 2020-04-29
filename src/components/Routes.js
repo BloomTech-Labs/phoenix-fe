@@ -7,6 +7,7 @@ import CTApage from './CTApage';
 import Calendar from './Calendar/Calen.js';
 import EventPage from './Event-Page.js';
 import Dashboard from './Dashboard.js';
+import Event from './Calendar/CalComponents/Event.js'
 
 function Routes() {
   return (
@@ -26,6 +27,7 @@ function Routes() {
         <Route path='/cta'>
             <CTApage />
         </Route>
+        {/* <Route path='/list' component={Event}></Route> */}
       </Switch>
   )
 }
