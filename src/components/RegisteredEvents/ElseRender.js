@@ -36,7 +36,7 @@ const ElseRender = (props) => {
         >
           Hmm, Looks like you aren't registered for anything yet. Try looking
           over some events.
-          <Button size="small" >Find an Event</Button>
+          <Button size="small" onClick={props.history.push('/list')}>Find an Event</Button>
         </Typography>
       </CardContent>
     </Card>

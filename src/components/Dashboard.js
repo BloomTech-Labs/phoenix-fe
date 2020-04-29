@@ -16,7 +16,7 @@ const Dashboard = () => {
             <Calendar/>
         </div>         
         <div className={classes.chat}></div> 
-            Coming soon!  
+            Chat is Coming soon!  
         </div>
     )
 }

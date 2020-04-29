@@ -174,7 +174,7 @@ function PrimarySearchAppBar(props) {
               value={string}
             />
           </div>
-          <Button onClick={handleSubmit}>Submit</Button>
+          <Button classname={classes.submit} onClick={handleSubmit}>Submit</Button>
           <span className={classes.phoenix}><Registration title="Register" /></span>
           <span className={classes.phoenix}><Login /></span>
           {!isBase && (
@@ -234,7 +234,7 @@ function PrimarySearchAppBar(props) {
       {renderMenu}
       <Grid container spacing={1}>
         {result.map((data) => (
-          <Event key={data.id} event={data} />
+          <Event key={data.id} event={data} sm={6} md={4} xs={12}/>
         ))}
       </Grid>
     </div>
