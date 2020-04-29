@@ -178,7 +178,7 @@ function PrimarySearchAppBar(props) {
           <span className={classes.phoenix2}><Registration title="Register" /></span>
           <span className={classes.phoenix2}><Login /></span>
           {!isBase && (
-          <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          <Link to="/events" ><Button style={{ marginLeft: '150px' }} >Calendar</Button></Link>
           )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
