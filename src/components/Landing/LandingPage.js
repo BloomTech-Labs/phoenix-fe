@@ -7,6 +7,7 @@ import CTAbutton from "./CTAbutton";
 import LandPageCarousel from "../LandPageCarousel";
 import MockEvents from "../MockEvents";
 import LandingPageTestimony from "./LandingPageTestimony";
+import Panels from '../Landing/Carosel/Panels'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,11 +20,14 @@ const useStyles = makeStyles((theme) => ({
   cta: {
     display: "flex",
     flexDirection: "row",
-    margin: "0 0 0 13.5rem",
+    justifyContent: "center",
+    margin: "50px 0 0 13.5rem",
     [theme.breakpoints.up('md')]: {},
   },
   firstthird: {
+    maxWidth: "80%",
     display: "flex",
+    justifyContent: "center",
     flexDirection: "row",
     [theme.breakpoints.up('md')]: {},
   },
@@ -71,8 +75,7 @@ export default function PrimarySearchAppBar() {
   return (
     <main className={classes.root}>
       <div className={classes.firstthird}>
-        <LandPageCarousel />
-        <MockEvents />
+        <Panels/>
       </div>
       <div className={classes.cta}>
         <CTAbutton />
