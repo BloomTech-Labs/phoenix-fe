@@ -28,6 +28,7 @@ const DashboardStyles = makeStyles((theme) => ({
   chat: {
     maxHeight: "45%",
     width: "25%",
+    margin: "200px 0",
     [theme.breakpoints.down('sm')]: {
       width: "80%",
       margin: "0, auto"

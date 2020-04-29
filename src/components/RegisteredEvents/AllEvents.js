@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react' 
-import Event from './EventCard'
+import Event from '../Calendar/CalComponents/Event'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
 
@@ -17,18 +17,13 @@ const AllEvents = () => {
     }, [])
 
     return (
-        <div style={{display: "flex",
-            flexFlow: "column wrap",
-            maxHeight: "100%",
-            width: "100%",
-            overflow: "auto",
-            alignContent: "flex-start"
-          }}>
-            {list.map(item => (
-                <Event id={item.event_id} active={item} />
-            ))}
+       <Grid container spacing={1}>
+           {list.map(item => (
+               <Event id={item.event_id} event={item} sm={6} md={4} xs={12}/>
+           ))}
 
-        </div>
+       </Grid>
+
             
     )
 }

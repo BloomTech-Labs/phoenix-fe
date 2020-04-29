@@ -26,6 +26,10 @@ const useStyles = makeStyles({
 
 const ElseRender = (props) => {
   const classes = useStyles();
+  const handleSubmit=  e => {
+    e.preventDefault();
+    props.history.push('/list')
+  }
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -36,7 +40,7 @@ const ElseRender = (props) => {
         >
           Hmm, Looks like you aren't registered for anything yet. Try looking
           over some events.
-          <Button size="small" onClick={props.history.push('/list')}>Find an Event</Button>
+          <Button size="small" onClick={handleSubmit}>Find an Event</Button>
         </Typography>
       </CardContent>
     </Card>

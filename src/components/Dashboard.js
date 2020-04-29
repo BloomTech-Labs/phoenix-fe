@@ -2,6 +2,7 @@ import React from 'react'
 import Calendar from './Calendar/Calen.js';
 import EventList from './RegisteredEvents/EventList.js';
 import DashboardStyles from '../styles/dashboardstyle.js';
+import Paper from '@material-ui/core'
 
 const Dashboard = () => {
     const dashStyles = DashboardStyles;
@@ -15,9 +16,11 @@ const Dashboard = () => {
         <div className={classes.dashcal}>
             <Calendar/>
         </div>         
-        <div className={classes.chat}></div> 
-            Chat is Coming soon!  
+        <div className={classes.chat}>Chat is Coming soon!  
         </div>
+        </div>
+        
+            
     )
 }
 

@@ -50,7 +50,7 @@ const EventList = () => {
           ))}
         </div>
       ) : (
-        <Events />
+        <Elser />
       )}{' '}
     </>
   );
