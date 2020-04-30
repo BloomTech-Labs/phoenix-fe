@@ -1,12 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import HowToBar from "../images/howtobarphoenixlanding.png";
-import LandingPagePeople from "../images/LandingPagePeople.jpg";
-import Calendar from "../images/Calendar.png";
+import HowToBar from "../../images/howtobarphoenixlanding.png";
+import LandingPagePeople from "../../images/LandingPagePeople.jpg";
+import Calendar from "../../images/calTrans.png";
 import CTAbutton from "./CTAbutton";
-import LandPageCarousel from "../components/LandPageCarousel";
-import MockEvents from "../components/MockEvents";
-import LandingPageTestimony from "../components/LandingPageTestimony";
+import LandPageCarousel from "../LandPageCarousel";
+import MockEvents from "../MockEvents";
+import LandingPageTestimony from "./LandingPageTestimony";
+import Panels from '../Landing/Carosel/Panels'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,11 +20,14 @@ const useStyles = makeStyles((theme) => ({
   cta: {
     display: "flex",
     flexDirection: "row",
-    margin: "0 0 0 13.5rem",
+    justifyContent: "center",
+    margin: "50px 0 0 13.5rem",
     [theme.breakpoints.up('md')]: {},
   },
   firstthird: {
+    maxWidth: "80%",
     display: "flex",
+    justifyContent: "center",
     flexDirection: "row",
     [theme.breakpoints.up('md')]: {},
   },
@@ -57,12 +61,23 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  bannerDivRight: {},
+  bannerDivRight: {
+    margin: "100px 0",
+    alignItems: "center",
+  },
   svg: {
-    width: "45%",
+    width: "20%",
+    height: "150px",
+    maxWidth: "25%",
+    maxHeight: "10%",
     paddingTop: "3rem",
+    // opacity: "0.5",
     [theme.breakpoints.down("sm")]: {},
   },
+  caltrans: {
+    maxWidth: "80%",
+  }
+  
 }));
 
 export default function PrimarySearchAppBar() {
@@ -70,25 +85,32 @@ export default function PrimarySearchAppBar() {
 
   return (
     <main className={classes.root}>
+      <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.firstthird}>
-        <LandPageCarousel />
-        <MockEvents />
+        <Panels/>
       </div>
       <div className={classes.cta}>
         <CTAbutton />
       </div>
-      <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
-
+      <div>
+      </div>
       <div className={classes.banner}>
         <div style={{ display: "flex", justifyContent: "flex-center" }}>
           <LandingPageTestimony />
-        </div>
-        <div className={classes.bannerDivRight}>
+          <div>
           <img
             src={LandingPagePeople}
             alt="inclusive svg people"
             className={classes.svg}
           />
+          {/* <img
+                src={Calendar}
+                alt="inclusive svg people"
+                className={classes.caltrans}
+              /> */}
+          </div>
+        </div>
+        <div className={classes.bannerDivRight}>
         </div>
       </div>
     </main>

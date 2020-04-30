@@ -1,10 +1,10 @@
 import React from 'react';
 import Terms from './Terms.js';
-import '../styles/Footer.css';
-import Facebook from '../images/facebook.png';
-import Twitter from '../images/twitter.png';
-import YouTube from '../images/youtube.png';
-import Instagram from '../images/instagram.png';
+import '../../styles/Footer.css';
+import Facebook from '../../images/facebook.png';
+import Twitter from '../../images/twitter.png';
+import YouTube from '../../images/youtube.png';
+import Instagram from '../../images/instagram.png';
 
 const Footer = () => {
 

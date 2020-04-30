@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import Cardr from './EventCard';
 import Elser from './ElseRender';
+import Events from './AllEvents'
 const EventList = () => {
   const [eventData, setEventData] = useState([]);
 

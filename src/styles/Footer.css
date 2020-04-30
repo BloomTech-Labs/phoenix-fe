@@ -12,6 +12,7 @@ section {
 
 .info {
   display: flex;
+  max-width: 100%;
   justify-content: space-evenly;
   width: 1000px;
   color: #f4f0f0;
@@ -43,10 +44,20 @@ section {
 
 @media (max-width: 768px) {
   .info {
+    max-width: 90%;
+    max-height: 5%;
     display: none;
   }
 
   .terms-section div {
     width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .info {
+    max-width: 90%;
+    max-height: 1%;
+    display: none;
   }
 }

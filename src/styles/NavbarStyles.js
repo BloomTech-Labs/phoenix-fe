@@ -10,10 +10,13 @@ const NavbarStyle = makeStyles(theme => ({
       display: 'none',
       [theme.breakpoints.up('sm')]: {
         display: 'block',
-      },
+      },position: 'relative',
+    },
+    submit: {
+      marginReft: theme.spacing(6),
     },
     search: {
-      position: 'relative',
+      
       borderRadius: theme.shape.borderRadius,
       backgroundColor: fade(theme.palette.common.black, 0.15),
       '&:hover': {
@@ -61,6 +64,13 @@ const NavbarStyle = makeStyles(theme => ({
     },
     logo: {
       height: '44px'
+    },
+    phoenix2: {
+      position: "relative",
+      left: "100px",
+      [theme.breakpoints.down('sm')]: {
+        display: 'none'
+      }
     },
     phoenix: {
       [theme.breakpoints.down('sm')]: {

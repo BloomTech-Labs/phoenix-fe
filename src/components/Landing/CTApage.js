@@ -8,8 +8,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import CTAStyles from '../styles/CTAStyles';
-import Registration from './Registration.js';
+import CTAStyles from '../../styles/CTAStyles';
+import Registration from '../Authorized/Registration.js';
 
 
 const tiers = [

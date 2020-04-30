@@ -21,7 +21,7 @@ const Event = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={6} md={4} className={classes.grid}>
+    <Grid item xs={props.xs} sm={props.sm} md={props.md} className={classes.grid}>
       <Card className={classes.root}>
         <CardHeader
           avatar={

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth.js';
+import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -16,12 +16,12 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
-import logo from '../images/PhoenixLogo.png';
-import NavbarStyle from '../styles/NavbarStyles.js';
-import Registration from './Registration.js';
-import Login from './Login.js';
-import Event from './Calendar/CalComponents/Event.js';
-import RenderMobileMenu from '../components/RenderMobileMenu.js';
+import logo from '../../images/PhoenixLogo.png';
+import NavbarStyle from '../../styles/NavbarStyles.js';
+import Registration from '../Authorized/Registration.js';
+import Login from '../Authorized/Login.js';
+import Event from '../Calendar/CalComponents/Event.js';
+import RenderMobileMenu from './RenderMobileMenu';
 import Grid from '@material-ui/core/Grid';
 import { useLocation } from "react-router-dom";
 
@@ -174,11 +174,11 @@ function PrimarySearchAppBar(props) {
               value={string}
             />
           </div>
-          <Button onClick={handleSubmit}>Submit</Button>
-          <span className={classes.phoenix}><Registration title="Register" /></span>
-          <span className={classes.phoenix}><Login /></span>
+          <Button classname={classes.submit} onClick={handleSubmit}>Submit</Button>
+          <span className={classes.phoenix2}><Registration title="Register" /></span>
+          <span className={classes.phoenix2}><Login /></span>
           {!isBase && (
-          <Link to="/events" ><Button style={{ marginLeft: '16px' }} >Calendar</Button></Link>
+          <Link to="/events" ><Button style={{ marginLeft: '150px' }} >Calendar</Button></Link>
           )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -234,7 +234,7 @@ function PrimarySearchAppBar(props) {
       {renderMenu}
       <Grid container spacing={1}>
         {result.map((data) => (
-          <Event key={data.id} event={data} />
+          <Event key={data.id} event={data} sm={6} md={4} xs={12}/>
         ))}
       </Grid>
     </div>

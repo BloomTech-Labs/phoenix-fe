@@ -12,6 +12,11 @@ const MockEventsStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+
+  media: {
+    height: 200,
+    backgroundPosition: 'top'
+  },
 }));
 
 export default MockEventsStyles;
