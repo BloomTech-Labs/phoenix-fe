@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme)=> ({
     socialIcons: {
-        color: theme.palette.primary.dark
+        color: theme.palette.secondary.contrastText
     },
     copyright: {
         backgroundColor: theme.palette.secondary.dark
@@ -51,7 +51,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="follow">
-                    <ul className={classes.socialIcons}>
+                    <ul className={classes.socialIcons} >
                     <span style={{ color: "white" }}>Follow us</span>
                         <li><FacebookIcon /></li>
                         <li><TwitterIcon/></li>
