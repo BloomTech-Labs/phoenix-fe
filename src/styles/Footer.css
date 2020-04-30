@@ -23,9 +23,6 @@ section {
   line-height: 3rem;
   padding: 0;
 }
-.info div {
-  margin: 3rem;
-}
 .follow img {
     width: 25px;
     height: 25px;
@@ -40,6 +37,17 @@ section {
 .terms-section div {
   padding: 1rem 3rem;
   margin: 0 auto;
+}
+.copyright-text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

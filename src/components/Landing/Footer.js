@@ -1,36 +1,49 @@
 import React from 'react';
 import Terms from './Terms.js';
-import '../../styles/Footer.css';
-import Facebook from '../../images/facebook.png';
-import Twitter from '../../images/twitter.png';
-import YouTube from '../../images/youtube.png';
-import Instagram from '../../images/instagram.png';
+import './../../styles/Footer.css';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme)=> ({
+    socialIcons: {
+        color: theme.palette.secondary.contrastText
+    },
+    copyright: {
+        backgroundColor: theme.palette.secondary.dark
+    }
+}))
 
 const Footer = () => {
+    const classes = useStyles();
 
     return (
         <footer>
-        <section>
+        <section className="top-footer">
             <div className="info">
                 <div>
-                    Your Account
+                    
                     <ul>
+                    Your Account
                         <li>Sign up</li>
                         <li>Log in</li>
                         <li>Help</li>
+                        <li><Terms/></li>
                     </ul>
                 </div>
                 <div>
-                    Discover
                     <ul>
+                    Discover
                         <li>Calendar</li>
                         <li>Topics</li>
                         <li>Cities</li>
                     </ul>
                 </div>
                 <div>
-                    Phoenix
                     <ul>
+                    Phoenix
                         <li>About</li>
                         <li>Phoenix Premium</li>
                         <li>Apps</li>
@@ -38,21 +51,19 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="follow">
-                    Follow us
-                    <ul>
-                        <li>
-                    <img src= {Facebook}alt="facebook app badges" />
-                    </li>
-                        <li><img src= {Twitter}alt="twitter app badges" /></li>
-                        <li><img src= {YouTube}alt="youtube app badges" /></li>
-                        <li><img src= {Instagram}alt="instagram app badges" /></li> 
+                    <ul className={classes.socialIcons} >
+                    <span style={{ color: "white" }}>Follow us</span>
+                        <li><FacebookIcon /></li>
+                        <li><TwitterIcon/></li>
+                        <li><YouTubeIcon/></li>
+                        <li><InstagramIcon/></li> 
                     </ul>
                     </div>
                 </div>
         </section>
-        <section className="terms-section">
-            <div>
-            <Terms />
+        <section className={classes.copyright}>
+            <div className="copyright-text">
+            <p>Made with ❤ © Lambda School 2020</p>
             </div>         
         </section>
         </footer>
