@@ -16,22 +16,22 @@ const NavbarStyle = makeStyles(theme => ({
       marginReft: theme.spacing(6),
     },
     search: {
-      
+      position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.black, 0.15),
+      backgroundColor: fade(theme.palette.common.white, 0.15),
       '&:hover': {
         backgroundColor: fade(theme.palette.common.white, 0.25),
       },
       marginRight: theme.spacing(2),
       marginLeft: 0,
-      width: '70%',
+      width: '100%',
       [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(3),
         width: 'auto',
       },
     },
     searchIcon: {
-      width: theme.spacing(7),
+      // padding: theme.spacing(0, 2),
       height: '100%',
       position: 'absolute',
       pointerEvents: 'none',
