@@ -3,16 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@material-ui/core": "^4.9.4",
-<<<<<<< HEAD
-=======
-    "@material-ui/icons": "^4.9.1",
->>>>>>> 0b2637594c8bb4f41ea4f57df82491515d511140
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-=======
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@fortawesome/fontawesome-free": "^5.12.1",
@@ -20,7 +12,6 @@
     "@material-ui/icons": "^4.9.1",
     "@testing-library/user-event": "^10.0.2",
     "@types/react-transition-group": "^4.2.4",
->>>>>>> 428a25d21eef981c9553d03b6e5dc65829f65ab2
     "axios": "^0.19.2",
     "babel-jest": "^24.7.0",
     "jest": "^24.9.0",
