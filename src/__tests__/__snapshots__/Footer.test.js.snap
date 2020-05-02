@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Footer correctly 1`] = `
+<footer>
+  <section>
+    <div
+      className="info"
+    >
+      <div>
+        Your Account
+        <ul>
+          <li>
+            Sign up
+          </li>
+          <li>
+            Log in
+          </li>
+          <li>
+            Help
+          </li>
+        </ul>
+      </div>
+      <div>
+        Discover
+        <ul>
+          <li>
+            Calendar
+          </li>
+          <li>
+            Topics
+          </li>
+          <li>
+            Cities
+          </li>
+        </ul>
+      </div>
+      <div>
+        Phoenix
+        <ul>
+          <li>
+            About
+          </li>
+          <li>
+            Phoenix Premium
+          </li>
+          <li>
+            Apps
+          </li>
+          <li>
+            Blog
+          </li>
+        </ul>
+      </div>
+      <div
+        className="follow"
+      >
+        Follow us
+        <ul>
+          <li>
+            <img
+              alt="facebook app badges"
+              src="facebook.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="twitter app badges"
+              src="twitter.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="youtube app badges"
+              src="youtube.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="instagram app badges"
+              src="instagram.png"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section
+    className="terms-section"
+  >
+    <div>
+      <div
+        className="fullTerms"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "color": "#f4f0f0",
+            }
+          }
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Terms Of Service
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+</footer>
+`;
+
+exports[`renders the Navbar correctly 1`] = `
+<footer>
+  <section>
+    <div
+      className="info"
+    >
+      <div>
+        Your Account
+        <ul>
+          <li>
+            Sign up
+          </li>
+          <li>
+            Log in
+          </li>
+          <li>
+            Help
+          </li>
+        </ul>
+      </div>
+      <div>
+        Discover
+        <ul>
+          <li>
+            Calendar
+          </li>
+          <li>
+            Topics
+          </li>
+          <li>
+            Cities
+          </li>
+        </ul>
+      </div>
+      <div>
+        Phoenix
+        <ul>
+          <li>
+            About
+          </li>
+          <li>
+            Phoenix Premium
+          </li>
+          <li>
+            Apps
+          </li>
+          <li>
+            Blog
+          </li>
+        </ul>
+      </div>
+      <div
+        className="follow"
+      >
+        Follow us
+        <ul>
+          <li>
+            <img
+              alt="facebook app badges"
+              src="facebook.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="twitter app badges"
+              src="twitter.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="youtube app badges"
+              src="youtube.png"
+            />
+          </li>
+          <li>
+            <img
+              alt="instagram app badges"
+              src="instagram.png"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section
+    className="terms-section"
+  >
+    <div>
+      <div
+        className="fullTerms"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "color": "#f4f0f0",
+            }
+          }
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Terms Of Service
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+</footer>
+`;

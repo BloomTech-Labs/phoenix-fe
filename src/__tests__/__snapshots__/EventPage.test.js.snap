@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches a snapshot of event page 1`] = `
+Array [
+  <h2 />,
+  <p />,
+  <p>
+    Location: 
+  </p>,
+  <p>
+    Starts: 
+    
+     
+    
+  </p>,
+  <p>
+    Ends: 
+    
+     
+    
+  </p>,
+]
+`;
+
+exports[`Renders the event page and matches a snapshot of the rendered page 1`] = `
+Array [
+  <h2 />,
+  <p />,
+  <p>
+    Location: 
+  </p>,
+  <p>
+    Starts: 
+    
+     
+    
+  </p>,
+  <p>
+    Ends: 
+    
+     
+    
+  </p>,
+]
+`;
+
+exports[`renders 3 'Phoenix' elements 1`] = `
+Array [
+  <h2 />,
+  <p />,
+  <p>
+    Location: 
+  </p>,
+  <p>
+    Starts: 
+    
+     
+    
+  </p>,
+  <p>
+    Ends: 
+    
+     
+    
+  </p>,
+]
+`;

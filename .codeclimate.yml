@@ -1,5 +1,21 @@
+version: "2"
+checks:
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: true
+    config:
+      threshold: 50
+  method-lines:
+    enabled: true
+    config:
+      threshold: 65
+
 exclude_patterns:
-- "tests/"
-- "spec/"
-- "**/vendor/"
-- "**/node_modules/"
+  - "**/__tests__/"
+  - "tests/"
+  - "spec/"
+  - "**/vendor/"
+  - "**/node_modules/"
+  - "**/*.test.js"
+  - "**/Terms/"

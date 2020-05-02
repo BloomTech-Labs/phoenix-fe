@@ -1,17 +1,11 @@
 .App {
   text-align: center;
   background-color: #F4F0F0;
+  display: flex;
+  flex-direction: column;
+  height: 1500px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  flex: 1 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
