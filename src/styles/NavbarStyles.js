@@ -31,8 +31,8 @@ const NavbarStyle = makeStyles(theme => ({
       },
     },
     searchIcon: {
-      width: theme.spacing(6),
-      height: '60%',
+      width: theme.spacing(7),
+      height: '100%',
       position: 'absolute',
       pointerEvents: 'none',
       display: 'flex',
