@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import EventPageStyle from '../../styles/EventPageStyles';
+import { Card, CardContent, Typography } from '@material-ui/core';
+
+const useStyles = EventPageStyle;
 
 const EventPage = (props) => {
+  const classes = useStyles();
   const [string, setString] = useState('');
   const [result, setRes] = useState([]);
   const [time, setTime] = useState({
@@ -85,17 +90,21 @@ const EventPage = (props) => {
   }, [eventID]);
 
   return (
-    <>
-      <h2>{result.summary}</h2>
-      <p>{result.description}</p>
-      <p>Location: {result.location}</p>
-      <p>
+    <div className={classes.root}>
+      <Card className={classes.card}>
+        <CardContent>
+      <Typography variant="h3" component="h2">{result.summary}</Typography>
+      <Typography variant="h5">{result.description}</Typography>
+      <Typography variant="h6">Location: {result.location}</Typography>
+      <Typography variant="h6">
         Starts: {time.startDate} {time.startTime}
-      </p>
-      <p>
+      </Typography>
+      <Typography variant="h6">
         Ends: {time.endDate} {time.endTime}
-      </p>
-    </>
+      </Typography>
+      </CardContent>
+      </Card>
+    </div>
   );
 };
 export default withRouter(EventPage);

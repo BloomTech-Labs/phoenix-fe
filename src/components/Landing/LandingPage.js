@@ -10,7 +10,6 @@ import barScene from "../../images/carousel4barscene.jpg";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "2rem auto",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
     },
@@ -23,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {},
   },
   firstthird: {
-    maxWidth: "80%",
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
     [theme.breakpoints.up("md")]: {},
+    height:"60%"
   },
   howtobar: {
     margin: "5rem",
