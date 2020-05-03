@@ -28,11 +28,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {},
     height:"60%"
   },
-  howtobar: {
-    margin: "5rem",
-    width: "80%",
-    [theme.breakpoints.up("md")]: {},
-  },
   banner: {
     display: "flex",
     alignItems: "center",
@@ -61,29 +56,6 @@ const useStyles = makeStyles((theme) => ({
   bannerDivRight: {
     margin: "100px 0",
     alignItems: "center",
-  },
-  svg: {
-    width: "20%",
-    height: "150px",
-    maxWidth: "25%",
-    maxHeight: "10%",
-    paddingTop: "3rem",
-    // opacity: "0.5",
-    [theme.breakpoints.down("sm")]: {},
-  },
-  imageContainer: {
-    display: "flex",
-    alignItems: "center",
-    width: "300px",
-    height: "100px",
-    justifyContent: "center",
-  },
-  carousel: {
-    width: "100%",
-    height: "300px",
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
   },
 }));
 
