@@ -156,7 +156,7 @@ function PrimarySearchAppBar(props) {
               <span className={classes.phoenix}>Phoenix</span>
             </Typography>
           </Link>
-          <div className={classes.search}>
+          <form className={classes.search} onSubmit={handleSubmit}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -173,7 +173,7 @@ function PrimarySearchAppBar(props) {
               autoComplete="off"
               value={string}
             />
-          </div>
+          </form>
           <Button classname={classes.submit} onClick={handleSubmit}>Submit</Button>
           <span className={classes.phoenix2}><Registration title="Register" /></span>
           <span className={classes.phoenix2}><Login /></span>
