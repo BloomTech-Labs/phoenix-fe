@@ -1,18 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import HowToBar from "../../images/howtobarphoenixlanding.png";
-import LandingPagePeople from "../../images/LandingPagePeople.jpg";
-import Calendar from "../../images/calTrans.png";
 import CTAbutton from "./CTAbutton";
-import LandPageCarousel from "../LandPageCarousel";
-import MockEvents from "../MockEvents";
-import LandingPageTestimony from "./LandingPageTestimony";
-import Panels from '../Landing/Carosel/Panels'
+import { Slider } from "./Slider/Slider";
+import coupleWine from "../../images/carousel1couplewine.jpg";
+import marathon from "../../images/carousel2marathon.jpg";
+import couplePark from "../../images/carousel3couplepark.jpg";
+import travelCouple from "../../images/carousel4travelcouple.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "2rem auto",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
     },
@@ -22,19 +19,19 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     margin: "50px 0 0 13.5rem",
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up("md")]: {},
   },
   firstthird: {
-    maxWidth: "80%",
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up("md")]: {},
+    height:"60%"
   },
   howtobar: {
     margin: "5rem",
     width: "80%",
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up("md")]: {},
   },
   banner: {
     display: "flex",
@@ -74,45 +71,50 @@ const useStyles = makeStyles((theme) => ({
     // opacity: "0.5",
     [theme.breakpoints.down("sm")]: {},
   },
-  caltrans: {
-    maxWidth: "80%",
-  }
-  
+  imageContainer: {
+    display: "flex",
+    alignItems: "center",
+    width: "300px",
+    height: "100px",
+    justifyContent: "center",
+  },
+  carousel: {
+    width: "100%",
+    height: "300px",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+  },
 }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
 
+  const media = [
+    {
+      source: coupleWine,
+    },
+    {
+      source: marathon,
+    },
+    {
+      source: couplePark,
+    },
+    {
+      source: travelCouple,
+    },
+  ];
+
   return (
     <main className={classes.root}>
-      <img src={HowToBar} alt="how to bar" className={classes.howtobar} />
       <div className={classes.firstthird}>
-        <Panels/>
+        <Slider media={media}></Slider>
       </div>
       <div className={classes.cta}>
         <CTAbutton />
       </div>
-      <div>
-      </div>
-      <div className={classes.banner}>
-        <div style={{ display: "flex", justifyContent: "flex-center" }}>
-          <LandingPageTestimony />
-          <div>
-          <img
-            src={LandingPagePeople}
-            alt="inclusive svg people"
-            className={classes.svg}
-          />
-          {/* <img
-                src={Calendar}
-                alt="inclusive svg people"
-                className={classes.caltrans}
-              /> */}
-          </div>
-        </div>
-        <div className={classes.bannerDivRight}>
-        </div>
-      </div>
+      <div></div>
+      <div className={classes.banner}>testimonials</div>
     </main>
   );
 }
