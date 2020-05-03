@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 const DetailBtn = (props) => {
   const eventID = props.event.event_id;
 
-  console.log(eventID);
   let push = () => {
     props.history.push(`/event/${eventID}`);
     window.location.reload();
