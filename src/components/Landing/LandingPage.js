@@ -2,10 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CTAbutton from "./CTAbutton";
 import { Slider } from "./Slider/Slider";
-import blurParty from "../../images/carousel1blurrparty.jpg";
+import coupleWine from "../../images/carousel1couplewine.jpg";
 import marathon from "../../images/carousel2marathon.jpg";
 import couplePark from "../../images/carousel3couplepark.jpg";
-import barScene from "../../images/carousel4barscene.jpg";
+import travelCouple from "../../images/carousel4travelcouple.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -92,7 +92,7 @@ export default function PrimarySearchAppBar() {
 
   const media = [
     {
-      source: blurParty,
+      source: coupleWine,
     },
     {
       source: marathon,
@@ -101,7 +101,7 @@ export default function PrimarySearchAppBar() {
       source: couplePark,
     },
     {
-      source: barScene,
+      source: travelCouple,
     },
   ];
 
