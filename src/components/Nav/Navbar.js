@@ -34,6 +34,17 @@ function PrimarySearchAppBar(props) {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [string, setString] = useState('');
   const [result, setRes] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  const token = localStorage.getItem('token')
+  
+  console.log(token,'token navbar')
+
+  if(token !== null && loggedIn === false){
+    setLoggedIn(true)
+  }
+
+  console.log(loggedIn, 'loggedin, navbar')
   
   let location = useLocation();
 
@@ -118,6 +129,12 @@ function PrimarySearchAppBar(props) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const logOut = () => {
+    localStorage.clear()
+    props.history.push('/')
+    window.location.reload()
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -133,6 +150,7 @@ function PrimarySearchAppBar(props) {
         <Link to='/dashboard'>Profile</Link>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={logOut}>Log Out</MenuItem>
     </Menu>
   );
 
@@ -174,28 +192,33 @@ function PrimarySearchAppBar(props) {
             />
           </form>
           <Button className={classes.submit} onClick={handleSubmit}>Submit</Button>
-          <span className={classes.phoenix2}><Registration title="Register" /></span>
-          <span className={classes.phoenix2}><Login /></span>
-          {!isBase && (
+          {loggedIn === true ? null : (
+            <span className={classes.phoenix2}><Registration title="Register" /></span>
+          )}
+          {loggedIn === true ? null : (
+            <span className={classes.phoenix2}><Login /></span>
+          )}
+          
+          {loggedIn === false ? null : (
           <Link to="/events" ><Button style={{ marginLeft: '150px' }} >Calendar</Button></Link>
           )}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          {!isBase && (
+          {loggedIn === false ? null : (
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
           )}
-           {!isBase && (
+           {loggedIn === false ? null : (
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
           )}
-          {!isBase && (
+          {loggedIn === false ? null : (
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -221,7 +244,7 @@ function PrimarySearchAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
-      {!isBase && (
+      {loggedIn === false ? null : (
       <RenderMobileMenu
         mobileMoreAnchorEl={mobileMoreAnchorEl}
         mobileMenuId={mobileMenuId}
