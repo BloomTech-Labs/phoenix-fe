@@ -6,6 +6,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { makeStyles } from '@material-ui/core';
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme)=> ({
     socialIcons: {
@@ -30,7 +31,6 @@ const Footer = () => {
                         <li>Sign up</li>
                         <li>Log in</li>
                         <li>Help</li>
-                        <li><Terms/></li>
                     </ul>
                 </div>
                 <div>
@@ -63,6 +63,9 @@ const Footer = () => {
         </section>
         <section className={classes.copyright}>
             <div className="copyright-text">
+                <Button variant="outlined" style={{ marginLeft: "16px" }}>
+                    <Terms />
+                </Button>
             <p>Made with ❤ © Lambda School 2020</p>
             </div>         
         </section>
