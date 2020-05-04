@@ -9,8 +9,8 @@ const LandPageTestimonyStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    height:"20%",
-    padding: "0 0 70%",
+    height:"100%",
+    padding: "0 0 60%",
     [theme.breakpoints.down("sm")]: {
       height: "100%",
       flexDirection: "column",
@@ -24,9 +24,9 @@ const LandPageTestimonyStyles = makeStyles((theme) => ({
     padding: "3% 0"
   },
   qblock: {
-    width: "30%",
+    width: "35%",
     padding: "3%",
-    height: "50%",
+    height: "100%",
     [theme.breakpoints.down("sm")]: {
       width: "95%",
     },
