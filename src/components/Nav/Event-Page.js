@@ -17,8 +17,6 @@ const EventPage = (props) => {
     endDate: '',
   });
 
-  console.log(props)
-
   const eventID = Number(props.match.params.id);
 
   useEffect(() => {
@@ -87,7 +85,7 @@ const EventPage = (props) => {
       let startO = result.start_time - 12 + 'pm';
       setTime({ startTime: startO });
     }
-  }, [eventID]);
+  }, [eventID, result.start_time, string]);
 
   return (
     <div className={classes.root}>

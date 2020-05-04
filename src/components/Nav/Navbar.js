@@ -65,7 +65,6 @@ function PrimarySearchAppBar(props) {
             var time = time1.split(':');
             var hours = Number(time[0]);
             var minutes = Number(time[1]);
-            var seconds = Number(time[2]);
             var timevalue;
             if(hours > 0 && hours <=12) {
               timevalue= "" + hours;
@@ -174,7 +173,7 @@ function PrimarySearchAppBar(props) {
               value={string}
             />
           </form>
-          <Button classname={classes.submit} onClick={handleSubmit}>Submit</Button>
+          <Button className={classes.submit} onClick={handleSubmit}>Submit</Button>
           <span className={classes.phoenix2}><Registration title="Register" /></span>
           <span className={classes.phoenix2}><Login /></span>
           {!isBase && (

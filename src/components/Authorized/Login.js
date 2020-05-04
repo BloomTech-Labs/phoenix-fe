@@ -81,7 +81,7 @@ const Login = props => {
                 name="password"
                 label="Password"
                 type="password"
-                minlength="8"
+                minLength="8"
                 value={props.password}
                 onChange={handleChange}
                 placeholder="Must be 8 characters"
