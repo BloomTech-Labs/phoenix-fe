@@ -6,6 +6,7 @@ import coupleWine from "../../images/carousel1couplewine.jpg";
 import marathon from "../../images/carousel2marathon.jpg";
 import couplePark from "../../images/carousel3couplepark.jpg";
 import travelCouple from "../../images/carousel4travelcouple.jpg";
+import LPT from "./LandingPageTestimony.js"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -114,7 +115,7 @@ export default function PrimarySearchAppBar() {
         <CTAbutton />
       </div>
       <div></div>
-      <div className={classes.banner}>testimonials</div>
+      <div className={classes.banner}><LPT/></div>
     </main>
   );
 }
