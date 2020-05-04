@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import CTAbutton from "./CTAbutton";
+import CTApage from "./CTApage.js";
 import { Slider } from "./Slider/Slider";
 import coupleWine from "../../images/carousel1couplewine.jpg";
 import marathon from "../../images/carousel2marathon.jpg";
@@ -15,11 +15,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cta: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    margin: "50px 0 0 13.5rem",
-    [theme.breakpoints.up("md")]: {},
+    margin: "20px auto",
+    height: "1000px",
   },
   firstthird: {
     display: "flex",
@@ -28,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {},
     height:"60%"
   },
+
   banner: {
     display: "flex",
     alignItems: "center",
@@ -83,9 +81,8 @@ export default function PrimarySearchAppBar() {
         <Slider media={media}></Slider>
       </div>
       <div className={classes.cta}>
-        <CTAbutton />
+        <CTApage />
       </div>
-      <div></div>
       <div className={classes.banner}>testimonials</div>
     </main>
   );
