@@ -63,7 +63,7 @@ const Footer = () => {
         </section>
         <section className={classes.copyright}>
             <div className="copyright-text">
-                <Button variant="outlined" style={{ marginLeft: "16px" }}>
+                <Button style={{ marginLeft: "16px" }}>
                     <Terms />
                 </Button>
             <p>Made with ❤ © Lambda School 2020</p>
