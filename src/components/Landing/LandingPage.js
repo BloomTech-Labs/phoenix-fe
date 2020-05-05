@@ -16,47 +16,31 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cta: {
-    margin: "20px auto",
-    height: "900px",
+    height: "100vh",
+    backgroundColor: "#f4f4f4",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
   },
   firstthird: {
     display: "flex",
     justifyContent: "center",
     flexDirection: "row",
     [theme.breakpoints.up("md")]: {},
-    height:"60%"
+    height:"100vh"
   },
-
   banner: {
+    backgroundColor: "#f4f4f4",
     display: "flex",
-    height: "20%",
+    height: "100vh",
     alignItems: "center",
     justifyContent: "center",
-    margin: "20px 10rem 20px 10rem",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       margin: "20px auto",
     },
   },
-  bannerDivLeft: {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    width: "40%",
-    fontSize: "1rem",
-    fontWeight: "600",
-    margin: "1rem 0 auto 5rem",
-    [theme.breakpoints.down("sm")]: {
-      width: "auto",
-      transform: "none",
-      backgroundImage: "none",
-    },
-  },
 
-  bannerDivRight: {
-    margin: "100px 0",
-    alignItems: "center",
-  },
 }));
 
 export default function PrimarySearchAppBar() {
