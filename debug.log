@@ -1,1 +1,2 @@
 [0317/224237.943:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0504/141801.869:ERROR:settings.cc(320)] Settings magic is not 1129342067

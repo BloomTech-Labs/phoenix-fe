@@ -6,6 +6,7 @@ import coupleWine from "../../images/carousel1couplewine.jpg";
 import marathon from "../../images/carousel2marathon.jpg";
 import couplePark from "../../images/carousel3couplepark.jpg";
 import travelCouple from "../../images/carousel4travelcouple.jpg";
+import LPT from "./LandingPageTestimony.js"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cta: {
     margin: "20px auto",
-    height: "1000px",
+    height: "900px",
   },
   firstthird: {
     display: "flex",
@@ -28,12 +29,13 @@ const useStyles = makeStyles((theme) => ({
 
   banner: {
     display: "flex",
+    height: "20%",
     alignItems: "center",
     justifyContent: "center",
-    margin: "0 10rem 0 10rem",
+    margin: "20px 10rem 20px 10rem",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
-      margin: "0 auto",
+      margin: "20px auto",
     },
   },
   bannerDivLeft: {
@@ -83,7 +85,9 @@ export default function PrimarySearchAppBar() {
       <div className={classes.cta}>
         <CTApage />
       </div>
-      <div className={classes.banner}>testimonials</div>
+      <div className={classes.banner}>
+        <LPT/>
+      </div>
     </main>
   );
 }
