@@ -84,8 +84,7 @@ export default function LandingPageTestimony() {
           Phoenix has really livened up my weekends. I'm glad I found Phoenix. Now I get to meet people like me. I never knew there was so much going on in my town.
           </Typography>
         </CardContent>
-      </CardActionArea>
-    
+      </CardActionArea>    
     </Card>
     </div>
     </div>

@@ -37,19 +37,11 @@ function PrimarySearchAppBar(props) {
   const [loggedIn, setLoggedIn] = useState(false)
 
   const token = localStorage.getItem('token')
-  
-  console.log(token,'token navbar')
 
   if(token !== null && loggedIn === false){
     setLoggedIn(true)
   }
-
-  console.log(loggedIn, 'loggedin, navbar')
   
-  let location = useLocation();
-
-  const isBase = "/" === location.pathname;
-
   
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -63,9 +55,7 @@ function PrimarySearchAppBar(props) {
     axiosWithAuth()
       .get('https://phoenix-be-staging.herokuapp.com/api/calendar')
       .then((res) => {
-        // console.log('response:', res);
         let token = localStorage.getItem('token');
-
         if (token) {
           let results = res.data.filter((item) => {
             return item.summary
@@ -83,13 +73,10 @@ function PrimarySearchAppBar(props) {
               timevalue= "" + (hours - 12);
             } else if(hours === 0) {
               timevalue= "12";
-            }
-           
+            }           
     
             timevalue += (minutes < 10) ? ":0" + minutes : ":" + minutes;
-            //timevalue += (seconds < 10) ? ":0" + seconds : ":" + seconds;
-            timevalue += (hours >=12) ? "P.M." : "A.M.";
-    
+            timevalue += (hours >=12) ? "P.M." : "A.M.";    
       
             return(timevalue)
           }
