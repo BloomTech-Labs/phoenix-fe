@@ -39,7 +39,7 @@ const classes = useStyles();
         </div>
         <div className={classes.qblock}>
           <img className={classes.media} src={Woman2}/>
-          <span>The Website was so easy to use and I was able to find a sewing circle near me. I'm having so much fun I've forgotten all about my husband</span>
+          <span>The Website was so easy to use and I was able to find activities near me. I'm having so much fun.</span>
         </div>
       </div>
       
