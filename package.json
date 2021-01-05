@@ -10,7 +10,7 @@
     "@material-ui/icons": "^4.9.1",
     "@testing-library/user-event": "^10.0.2",
     "@types/react-transition-group": "^4.2.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-jest": "^24.7.0",
     "jest": "^24.9.0",
     "jest-dom": "^4.0.0",
